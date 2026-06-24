@@ -1,0 +1,39 @@
+# Edge Cases & Error States
+# Tests: empty states, error states, back navigation edge cases
+
+appId: com.carepractice.app
+---
+- launchApp:
+    clearState: true
+
+# Verify onboarding renders correctly (no crashes)
+- assertVisible: "Care Practice"
+- assertVisible: "Get started"
+
+# Test back-button during onboarding: should not crash or exit
+- pressKey: back
+# App should still be on onboarding (or exit — both are acceptable for first launch)
+
+# Restart and go through onboarding normally
+- launchApp:
+    clearState: true
+- tapOn: "Get started"
+
+# Verify home screen empty state would show "No topics available yet."
+# if DB fails. With seed data, topics should render normally.
+- assertVisible: "Care Certificate Practice"
+
+# Progress screen empty state
+- tapOn: "Progress"
+- assertVisible: "No progress yet"
+- assertVisible: "Complete a quiz to see your stats here."
+
+# Back to home from empty state via button
+- tapOn: "Back to Home"
+- assertVisible: "Care Certificate Practice"
+
+# Paywall should show "No connection" message when offline
+# (can't test offline in this flow, but verified via RNTL tests)
+
+# Purchase confirmation with source parameter
+# (verified via RNTL tests since it requires purchase state)

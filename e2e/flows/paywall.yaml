@@ -1,0 +1,52 @@
+# Locked Topic → Paywall Flow
+# Tests that tapping a locked topic navigates to paywall
+
+appId: com.carepractice.app
+---
+- launchApp:
+    clearState: true
+
+# Complete onboarding
+- tapOn: "Get started"
+
+# Scroll down to find a locked topic
+- scrollUntilVisible:
+    element:
+      text: "Unlock to Start"
+    direction: DOWN
+
+# Tap the locked topic's button
+- tapOn:
+    text: "Unlock to Start"
+    index: 0
+
+# Paywall screen should appear
+- assertVisible: "Unlock Full Access"
+- assertVisible: "One-time purchase. No subscription. Ever."
+
+# Verify feature list
+- assertVisible: "What you get:"
+- assertVisible: "All 16 Care Certificate standards"
+- assertVisible: "Mock exam mode"
+
+# Verify purchase button exists
+- assertVisible: "Unlock full access"
+
+# Verify restore button exists
+- assertVisible: "Restore previous purchase"
+
+# Verify dismiss option
+- assertVisible: "Not now — go back"
+
+# Dismiss paywall
+- tapOn: "Not now — go back"
+
+# Should return to home
+- assertVisible: "Care Certificate Practice"
+
+# Also verify Mock Exam card redirects to paywall
+- tapOn: "Mock Exam"
+- assertVisible: "Unlock Full Access"
+
+# Dismiss
+- tapOn: "Not now — go back"

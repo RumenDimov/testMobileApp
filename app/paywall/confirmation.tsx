@@ -19,7 +19,7 @@ export default function PurchaseConfirmationScreen(): ReactElement {
   };
 
   return (
-    <View className="flex-1 bg-background justify-center items-center p-lg">
+    <View className="flex-1 bg-background justify-center items-center p-lg" testID="confirmation-screen">
       <View className="bg-primary rounded-full w-20 h-20 items-center justify-center mb-lg">
         <Text className="text-white text-4xl font-bold">✓</Text>
       </View>
@@ -50,6 +50,7 @@ export default function PurchaseConfirmationScreen(): ReactElement {
 
       <Pressable
         onPress={handleHome}
+        testID="confirmation-home"
         className="bg-primary py-3.5 px-xl rounded-button items-center min-h-[52px] justify-center w-full max-w-[320px]"
       >
         <Text className="text-button text-white">Back to Home</Text>

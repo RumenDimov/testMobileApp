@@ -1,0 +1,73 @@
+# Full Quiz Completion Flow
+# Completes an entire free-topic quiz end-to-end.
+# Answers each question, checks answer, advances, verifies results.
+
+appId: com.carepractice.app
+---
+- launchApp:
+    clearState: true
+
+# Complete onboarding
+- tapOn: "Get started"
+
+# Wait for topics to load
+- waitForAnimationToEnd
+
+# Tap first "Start Quiz" button
+- tapOn:
+    text: "Start Quiz"
+    index: 0
+
+# Wait for quiz to load
+- waitForAnimationToEnd
+
+# Loop through all questions (topic has ~5-10 questions)
+# Answer each by: select first option → Check Answer → Next Question
+- runFlow:
+    file: subflows/answer-question.yaml
+
+- runFlow:
+    file: subflows/answer-question.yaml
+
+- runFlow:
+    file: subflows/answer-question.yaml
+
+- runFlow:
+    file: subflows/answer-question.yaml
+
+- runFlow:
+    file: subflows/answer-question.yaml
+
+# If there are more questions, "Next Question" still appears
+# On last question, "See Results" appears — tap it
+- runFlow:
+    when:
+      visible: "Next Question"
+    file: subflows/answer-question.yaml
+
+- runFlow:
+    when:
+      visible: "Next Question"
+    file: subflows/answer-question.yaml
+
+- runFlow:
+    when:
+      visible: "Next Question"
+    file: subflows/answer-question.yaml
+
+# Now tap "See Results" for the final question
+- tapOn: "See Results"
+
+# Should navigate to results screen
+- waitForAnimationToEnd
+
+# Verify results screen
+- assertVisible: "Topic Complete"
+- assertVisible: "Retry Quiz"
+- assertVisible: "Back to Home"
+
+# Tap "Back to Home"
+- tapOn: "Back to Home"
+
+# Should return to home screen
+- assertVisible: "Care Certificate Practice"

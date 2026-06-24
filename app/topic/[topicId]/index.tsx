@@ -131,7 +131,7 @@ export default function QuizSessionScreen(): ReactElement {
 
   if (isLoading) {
     return (
-      <View className="flex-1 justify-center items-center bg-background">
+      <View className="flex-1 justify-center items-center bg-background" testID="quiz-loading">
         <ActivityIndicator size="large" color="#7C3AED" />
       </View>
     );
@@ -139,12 +139,13 @@ export default function QuizSessionScreen(): ReactElement {
 
   if (error) {
     return (
-      <View className="flex-1 justify-center items-center p-lg bg-background">
+      <View className="flex-1 justify-center items-center p-lg bg-background" testID="quiz-error">
         <Text className="text-body text-incorrect text-center">
           {error}
         </Text>
         <Pressable
           onPress={() => router.back()}
+          testID="quiz-error-back"
           className="mt-md py-3 px-lg rounded-button border border-primary"
         >
           <Text className="text-button text-primary">
@@ -158,7 +159,7 @@ export default function QuizSessionScreen(): ReactElement {
   const question = getCurrentQuestion();
   if (!question) {
     return (
-      <View className="flex-1 justify-center items-center bg-background">
+      <View className="flex-1 justify-center items-center bg-background" testID="quiz-empty">
         <Text className="text-body text-text-secondary">No question to display.</Text>
       </View>
     );
@@ -167,7 +168,7 @@ export default function QuizSessionScreen(): ReactElement {
   const selectedOptionId = getSelectedOptionId();
 
   return (
-    <View className="flex-1 bg-background">
+    <View className="flex-1 bg-background" testID="quiz-screen">
       <ProgressDots
         total={questions.length}
         current={currentIndex}
@@ -178,6 +179,7 @@ export default function QuizSessionScreen(): ReactElement {
       <ScrollView
         className="flex-1"
         contentContainerClassName="p-lg pb-xl"
+        testID="quiz-scroll"
       >
         <Text className="text-caption text-text-secondary mb-sm">
           Question {currentIndex + 1} of {questions.length}
@@ -210,6 +212,7 @@ export default function QuizSessionScreen(): ReactElement {
           return (
             <Pressable
               key={option.id}
+              testID={`option-${option.id}`}
               onPress={hasRevealed ? undefined : (): void => { selectAnswer(question.id, option.id); }}
               disabled={hasRevealed}
               className={`border-2 ${borderClass} ${bgClass} rounded-card p-md mb-3 min-h-[48px] justify-center`}
@@ -237,6 +240,7 @@ export default function QuizSessionScreen(): ReactElement {
         {!hasRevealed && selectedOptionId && (
           <Pressable
             onPress={() => revealAnswer()}
+            testID="check-answer-button"
             className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center w-full"
           >
             <Text className="text-button text-white">
@@ -248,6 +252,7 @@ export default function QuizSessionScreen(): ReactElement {
         {hasRevealed && (
           <Pressable
             onPress={() => advanceQuestion()}
+            testID="next-question-button"
             className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center w-full"
           >
             <Text className="text-button text-white">

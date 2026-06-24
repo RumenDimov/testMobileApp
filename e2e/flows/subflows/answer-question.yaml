@@ -1,0 +1,31 @@
+# Subflow: Answer a single quiz question
+# Prerequisite: Quiz screen is visible with a question displayed
+
+# Wait for question to be fully rendered
+- waitForAnimationToEnd
+
+# Assert question counter is visible
+- assertVisible: "Question"
+
+# Tap the first answer option (index 0 inside quiz-scroll)
+- tapOn:
+    index: 0
+    childOf:
+      id: "quiz-scroll"
+
+# "Check Answer" button should appear
+- assertVisible: "Check Answer"
+
+# Tap to reveal correct/incorrect
+- tapOn: "Check Answer"
+
+# Explanation should appear
+- assertVisible: "Explanation"
+
+# Tap "Next Question" if available, otherwise this will be handled
+# by the parent flow which knows when "See Results" is the next step
+- runFlow:
+    when:
+      visible: "Next Question"
+    commands:
+      - tapOn: "Next Question"

@@ -123,6 +123,7 @@ function CtaSection({
       <Pressable
         onPress={onPurchase}
         disabled={isBusy || !product}
+        testID="purchase-button"
         className={`bg-primary py-3.5 px-xl rounded-button items-center min-h-[52px] justify-center w-full mb-3 ${
           !product ? 'opacity-50' : ''
         }`}
@@ -141,6 +142,7 @@ function CtaSection({
       <Pressable
         onPress={onRestore}
         disabled={isBusy}
+        testID="restore-button"
         className="py-3 px-xl items-center min-h-[48px] justify-center"
       >
         {isRestoring ? (
@@ -167,6 +169,7 @@ function CtaSection({
 
       <Pressable
         onPress={onDismiss}
+        testID="dismiss-paywall"
         className="py-3 px-xl items-center min-h-[48px] justify-center mt-md"
       >
         <Text className="text-body text-text-secondary">
@@ -237,7 +240,7 @@ export default function PaywallScreen(): ReactElement {
   const isBusy = isPurchasing || isRestoring;
 
   return (
-    <View className="flex-1 bg-background">
+    <View className="flex-1 bg-background" testID="paywall-screen">
       <ScrollView
         className="flex-1"
         contentContainerClassName="p-lg pb-xl"

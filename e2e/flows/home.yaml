@@ -1,0 +1,52 @@
+# Home Screen Flow
+# Tests: topic list rendering, free/locked badges, navigation
+
+appId: com.carepractice.app
+---
+- launchApp:
+    clearState: true
+
+# Complete onboarding first
+- tapOn: "Get started"
+
+# Home screen should render
+- assertVisible: "Care Certificate Practice"
+- assertVisible: "Mock Exam"
+
+# Navigation buttons should be visible
+- assertVisible: "Progress"
+- assertVisible: "Settings"
+
+# Free topics should show "Free" badge
+- assertVisible: "Free"
+
+# Paid (locked) topics should show "Locked" badge
+- assertVisible: "Locked"
+
+# Should see "Start Quiz" buttons for free topics
+- assertVisible: "Start Quiz"
+
+# Scroll to verify multiple topics exist
+- scrollUntilVisible:
+    element:
+      text: "Care Certificate"
+    direction: DOWN
+
+# Tap Progress navigation
+- tapOn: "Progress"
+
+# Progress screen renders (empty state)
+- assertVisible: "No progress yet"
+
+# Go back
+- pressKey: back
+
+# Tap Settings
+- tapOn: "Settings"
+
+# Settings screen renders
+- assertVisible: "Restore Purchase"
+- assertVisible: "Disclaimer"
+
+# Go back
+- pressKey: back

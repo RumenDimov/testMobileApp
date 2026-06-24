@@ -1,0 +1,44 @@
+# Free Quiz — Complete Flow
+# Takes a free quiz from start to results, verifying every state
+
+appId: com.carepractice.app
+---
+- launchApp:
+    clearState: true
+
+# Complete onboarding
+- tapOn: "Get started"
+
+# Home screen renders
+- assertVisible: "Care Certificate Practice"
+
+# Tap first "Start Quiz" button (for a free topic)
+- tapOn:
+    text: "Start Quiz"
+    index: 0
+
+# Quiz screen loads — expect question counter
+- assertVisible: "Question 1 of"
+
+# Answer a question: tap the first answer option
+- tapOn:
+    id: "quiz-scroll"
+    childOf:
+      text: ".*"
+
+# Tap first pressable inside the scroll view
+# After selecting, "Check Answer" button should appear
+- assertVisible: "Check Answer"
+- tapOn: "Check Answer"
+
+# Explanation should appear after checking
+- assertVisible: "Explanation"
+
+# Tap "Next Question" to advance
+- tapOn: "Next Question"
+
+# Should now be on question 2
+- assertVisible: "Question 2 of"
+
+# Answer remaining questions until quiz complete
+# (The number varies by topic — the flow just validates the first answer cycle)

@@ -104,7 +104,7 @@ export default function CompletionScreen(): ReactElement {
       : ['Keep going!', 'Every attempt builds your understanding.', 'Read the explanations carefully and retry.'];
 
   return (
-    <ScrollView className="flex-1 bg-background">
+    <ScrollView className="flex-1 bg-background" testID="completion-screen">
       <View className="flex-1 justify-center items-center p-lg pt-xl">
         <Text className="text-display text-primary text-center mb-sm">
           {isMockExam ? 'Mock Exam Complete!' : 'Topic Complete!'}
@@ -143,6 +143,7 @@ export default function CompletionScreen(): ReactElement {
 
           <Pressable
             onPress={handleShare}
+            testID="share-button"
             className="bg-primary py-3.5 px-xl rounded-button items-center min-h-[52px] justify-center w-full mb-sm"
           >
             <Text className="text-button text-white">Share</Text>
