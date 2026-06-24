@@ -4,6 +4,7 @@ import { SQLiteProvider } from 'expo-sqlite';
 import { ActivityIndicator, Text, View } from 'react-native';
 import { DatabaseInitializer } from '../src/lib/DatabaseInitializer';
 import { usePurchaseStore } from '../src/store/usePurchaseStore';
+import { initAnalytics, trackEvent, shutdownAnalytics } from '../src/lib/analytics';
 import '../global.css';
 
 function LoadingFallback(): ReactElement {
@@ -30,9 +31,12 @@ function AppNavigator(): ReactElement {
   const cleanup = usePurchaseStore((s) => s.cleanup);
 
   useEffect(() => {
+    initAnalytics();
+    trackEvent('app_opened');
     initialize();
     return (): void => {
       cleanup();
+      shutdownAnalytics();
     };
   }, [initialize, cleanup]);
 
@@ -50,6 +54,9 @@ function AppNavigator(): ReactElement {
         <Stack.Screen name="paywall/index" />
         <Stack.Screen name="paywall/confirmation" />
         <Stack.Screen name="settings" />
+        <Stack.Screen name="progress" />
+        <Stack.Screen name="complete/[topicId]" />
+        <Stack.Screen name="onboarding" />
       </Stack>
     </DatabaseInitializer>
   );

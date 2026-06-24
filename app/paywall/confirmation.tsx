@@ -1,8 +1,18 @@
-import { type ReactElement } from 'react';
-import { router } from 'expo-router';
+import { useEffect, type ReactElement } from 'react';
+import { router, useLocalSearchParams } from 'expo-router';
 import { Pressable, Text, View } from 'react-native';
+import { trackEvent } from '../../src/lib/analytics';
 
 export default function PurchaseConfirmationScreen(): ReactElement {
+  const { source } = useLocalSearchParams<{ source?: string }>();
+
+  useEffect(() => {
+    if (source === 'purchase') {
+      trackEvent('purchase_completed');
+    } else if (source === 'restore') {
+      trackEvent('restore_completed');
+    }
+  }, [source]);
   const handleHome = (): void => {
     router.replace('/');
   };

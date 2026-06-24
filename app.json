@@ -27,6 +27,10 @@
       "expo-sqlite",
       "expo-router",
       "react-native-iap"
-    ]
+    ],
+    "extra": {
+      "posthogApiKey": "phc_placeholder",
+      "posthogHost": "https://eu.i.posthog.com"
+    }
   }
 }

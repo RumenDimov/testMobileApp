@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import Constants from 'expo-constants';
 import { usePurchaseStore } from '../src/store/usePurchaseStore';
+import { trackEvent } from '../src/lib/analytics';
 
 const FEEDBACK_EMAIL = 'carepractice.feedback@gmail.com';
 
@@ -39,6 +40,7 @@ export default function SettingsScreen(): ReactElement {
 
   const handleRestore = async (): Promise<void> => {
     setLocalError(undefined);
+    trackEvent('restore_purchase_initiated');
     await restorePurchases();
   };
 

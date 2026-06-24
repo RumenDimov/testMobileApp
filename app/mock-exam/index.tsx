@@ -10,6 +10,7 @@ import {
 import type { QuestionWithOptions } from '../../src/db/queries/questions';
 import { useMockExamStore } from '../../src/store/useMockExamStore';
 import { usePurchaseStore } from '../../src/store/usePurchaseStore';
+import { trackEvent } from '../../src/lib/analytics';
 
 function formatTime(seconds: number): string {
   const mins = Math.floor(seconds / 60);
@@ -74,6 +75,7 @@ export default function MockExamScreen(): ReactElement {
   const initialized = usePurchaseStore((s) => s.initialized);
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const examTrackedRef = useRef(false);
 
   useEffect(() => {
     if (!initialized) return;
@@ -85,10 +87,21 @@ export default function MockExamScreen(): ReactElement {
   }, [isPurchased, loadQuestions, initialized]);
 
   useEffect(() => {
-    if (isComplete) {
-      router.replace('/mock-exam/results');
+    if (!initialized || !isPurchased || !isComplete) return;
+
+    trackEvent('mock_exam_completed', {
+      score_correct: useMockExamStore.getState().getScoreCorrect(),
+      score_total: useMockExamStore.getState().getScoreTotal(),
+    });
+    router.replace('/mock-exam/results');
+  }, [initialized, isPurchased, isComplete]);
+
+  useEffect(() => {
+    if (initialized && isPurchased && !isLoading && !error && questions.length > 0 && !examTrackedRef.current) {
+      trackEvent('mock_exam_started', { question_count: questions.length });
+      examTrackedRef.current = true;
     }
-  }, [isComplete]);
+  }, [initialized, isPurchased, isLoading, error, questions.length]);
 
   useEffect(() => {
     if (!isLoading && questions.length > 0 && !timerRef.current) {

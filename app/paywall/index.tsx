@@ -1,4 +1,4 @@
-import { useEffect, type ReactElement } from 'react';
+import { useEffect, useRef, type ReactElement } from 'react';
 import { router } from 'expo-router';
 import {
   ActivityIndicator,
@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import type { Product } from 'react-native-iap';
 import { usePurchaseStore } from '../../src/store/usePurchaseStore';
+import { trackEvent } from '../../src/lib/analytics';
 
 function LoadingState(): ReactElement {
   return (
@@ -196,9 +197,16 @@ export default function PaywallScreen(): ReactElement {
     });
   }, [initialize, loadProducts]);
 
+  const purchaseSourceRef = useRef<'purchase' | 'restore' | undefined>(undefined);
+
   useEffect(() => {
-    if (isPurchased) {
-      router.replace('/paywall/confirmation');
+    trackEvent('paywall_viewed');
+  }, []);
+
+  useEffect(() => {
+    if (isPurchased && purchaseSourceRef.current) {
+      router.replace(`/paywall/confirmation?source=${purchaseSourceRef.current}`);
+      purchaseSourceRef.current = undefined;
     }
   }, [isPurchased]);
 
@@ -208,11 +216,17 @@ export default function PaywallScreen(): ReactElement {
 
   const handlePurchase = (): void => {
     if (isPurchasing || isRestoring) return;
+    purchaseSourceRef.current = 'purchase';
+    trackEvent('purchase_initiated', {
+      price: product?.displayPrice ?? 'unknown',
+    });
     purchase();
   };
 
   const handleRestore = (): void => {
     if (isPurchasing || isRestoring) return;
+    purchaseSourceRef.current = 'restore';
+    trackEvent('restore_purchase_initiated');
     restorePurchases();
   };
 
