@@ -2,7 +2,9 @@ import { type SQLiteDatabase } from 'expo-sqlite';
 import { CURRENT_SCHEMA_VERSION, initializeSchema } from './schema';
 
 const MIGRATIONS: Record<number, (db: SQLiteDatabase) => Promise<void>> = {
-  // Future migrations go here. Example:
+  // Future migrations go here.
+  // IMPORTANT (D7): Migrations that re-seed content must preserve the `progress` table.
+  // Example:
   // 2: async (db) => { await db.execAsync('ALTER TABLE ...'); },
 };
 
@@ -23,11 +25,14 @@ export async function runMigrations(db: SQLiteDatabase): Promise<void> {
 
   for (let v = currentVersion + 1; v <= CURRENT_SCHEMA_VERSION; v++) {
     const migration = MIGRATIONS[v];
-    if (migration) {
-      await db.withTransactionAsync(async () => {
-        await migration(db);
-        await db.execAsync(`PRAGMA user_version = ${v};`);
-      });
+    if (!migration) {
+      throw new Error(
+        `Migration ${v} is missing but required to reach schema version ${CURRENT_SCHEMA_VERSION}`,
+      );
     }
+    await db.withTransactionAsync(async () => {
+      await migration(db);
+      await db.execAsync(`PRAGMA user_version = ${v};`);
+    });
   }
 }

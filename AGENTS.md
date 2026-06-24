@@ -127,7 +127,7 @@ Keep the implementation simple and readable.
 - **progress** — the only runtime-writeable table; one row per topic attempt (`score_correct`, `score_total`, `is_mock_exam`, `attempted_at`)
 
 ### Navigation Map
-```
+```text
 Onboarding (first launch) → Home
 Home → Quiz Session (free topic)
 Home → Paywall (locked topic or Mock Exam)
