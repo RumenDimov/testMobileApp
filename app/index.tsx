@@ -169,7 +169,7 @@ export default function HomeScreen(): ReactElement {
   }
 
   return (
-    <ScrollView className="flex-1 bg-background">
+    <ScrollView className="flex-1 bg-background" testID="home-screen">
       <View className="p-lg relative">
         <Text className="text-title text-text-primary mb-lg">
           Care Certificate Practice
@@ -178,6 +178,7 @@ export default function HomeScreen(): ReactElement {
         <View className="absolute top-lg right-lg flex-row gap-sm">
           <Pressable
             onPress={(): void => router.push('/progress')}
+            testID="nav-progress"
             className="py-2 px-3 min-h-[48px] justify-center"
           >
             <Text className="text-caption font-semibold text-primary">
@@ -186,6 +187,7 @@ export default function HomeScreen(): ReactElement {
           </Pressable>
           <Pressable
             onPress={(): void => router.push('/settings')}
+            testID="nav-settings"
             className="py-2 px-3 min-h-[48px] justify-center"
           >
             <Text className="text-caption font-semibold text-primary">
@@ -196,6 +198,7 @@ export default function HomeScreen(): ReactElement {
 
         <Pressable
           onPress={handleMockExam}
+          testID="mock-exam-card"
           className={`rounded-card p-md mb-lg border-2 ${
             isPurchased
               ? 'bg-primary border-primary'

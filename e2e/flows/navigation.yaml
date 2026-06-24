@@ -1,0 +1,55 @@
+# Cross-Screen Navigation Flow
+# Tests all main navigation paths between screens
+
+appId: com.carepractice.app
+---
+- launchApp:
+    clearState: true
+
+# Complete onboarding → home
+- tapOn: "Get started"
+- assertVisible: "Care Certificate Practice"
+
+# Home → Settings
+- tapOn: "Settings"
+- assertVisible: "Restore Purchase"
+- pressKey: back
+- assertVisible: "Care Certificate Practice"
+
+# Home → Progress
+- tapOn: "Progress"
+- assertVisible: "No progress yet"
+- pressKey: back
+- assertVisible: "Care Certificate Practice"
+
+# Home (free topic) → Quiz → back
+- tapOn:
+    text: "Start Quiz"
+    index: 0
+- assertVisible: "Question 1 of"
+- pressKey: back
+- assertVisible: "Care Certificate Practice"
+
+# Home (locked topic) → Paywall → dismiss
+- scrollUntilVisible:
+    element:
+      text: "Unlock to Start"
+    direction: DOWN
+- tapOn:
+    text: "Unlock to Start"
+    index: 0
+- assertVisible: "Unlock Full Access"
+- tapOn: "Not now — go back"
+- assertVisible: "Care Certificate Practice"
+
+# Scroll back to top for Mock Exam
+- scrollUntilVisible:
+    element:
+      text: "Mock Exam"
+    direction: UP
+
+# Mock Exam → Paywall → dismiss
+- tapOn: "Mock Exam"
+- assertVisible: "Unlock Full Access"
+- tapOn: "Not now — go back"
+- assertVisible: "Care Certificate Practice"

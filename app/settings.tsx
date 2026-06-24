@@ -49,7 +49,7 @@ export default function SettingsScreen(): ReactElement {
   };
 
   return (
-    <ScrollView className="flex-1 bg-background">
+    <ScrollView className="flex-1 bg-background" testID="settings-screen">
       <View className="p-lg">
         <View className="flex-row items-center mb-lg">
           <Pressable
@@ -82,6 +82,7 @@ export default function SettingsScreen(): ReactElement {
           <Pressable
             onPress={handleRestore}
             disabled={isRestoring || isPurchased}
+            testID="settings-restore-button"
             className={`py-3 px-xl rounded-button items-center min-h-[48px] justify-center border border-primary ${
               isPurchased ? 'opacity-50' : ''
             }`}
@@ -106,6 +107,7 @@ export default function SettingsScreen(): ReactElement {
           </Text>
           <Pressable
             onPress={openFeedback}
+            testID="settings-feedback-button"
             className="py-3 px-xl rounded-button items-center min-h-[48px] justify-center border border-primary"
           >
             <Text className="text-button text-primary">Email feedback</Text>

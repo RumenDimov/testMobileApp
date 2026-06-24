@@ -1,0 +1,38 @@
+# Settings Screen Flow
+# Tests: settings accessibility, restore purchase, feedback, disclaimer
+
+appId: com.carepractice.app
+---
+- launchApp:
+    clearState: true
+
+# Complete onboarding
+- tapOn: "Get started"
+
+# Navigate to Settings
+- tapOn: "Settings"
+
+# Settings screen should render
+- assertVisible: "Restore Purchase"
+- assertVisible: "Send feedback"
+- assertVisible: "Disclaimer"
+
+# Restore purchase button should be present
+- assertVisible: "Restore previous purchase"
+
+# Feedback button should be present
+- assertVisible: "Email feedback"
+
+# Disclaimer should contain key text
+- assertVisible: "This app is a study aid"
+- assertVisible: "not affiliated with"
+
+# Version info should show
+# Use regex to match version pattern
+- assertVisible: "CarePractice v"
+
+# Go back
+- pressKey: back
+
+# Should return to home
+- assertVisible: "Care Certificate Practice"

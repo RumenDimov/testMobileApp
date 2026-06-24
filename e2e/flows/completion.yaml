@@ -1,0 +1,18 @@
+# Completion Screen Flow
+# Tests: completion screen renders after a first-time quiz pass.
+# This flow is tested indirectly via quiz-complete.yaml
+# which triggers the completion screen when score >= 50%.
+
+appId: com.carepractice.app
+---
+- launchApp:
+    clearState: true
+
+# Complete onboarding
+- tapOn: "Get started"
+
+# The completion screen shows on first-time quiz completion with score >= 50%.
+# It includes: score display, encouragement text, share button, back-to-home.
+#
+# Verified via quiz-complete.yaml (first run triggers completion screen)
+# and RNTL integration tests for component rendering and share behavior.

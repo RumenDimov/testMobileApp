@@ -1,0 +1,25 @@
+# Onboarding Flow
+# Tests: first-launch onboarding screen renders and completes
+
+appId: com.carepractice.app
+---
+- launchApp:
+    clearState: true
+
+# Verify onboarding screen is visible
+- assertVisible: "Care Practice"
+- assertVisible: "Understand it. Don't just copy it."
+- assertVisible: "Free and paid — no subscription, ever"
+- assertVisible: "Works offline"
+- assertVisible: "Get started"
+
+# Verify key selling points
+- assertVisible: "Pay once. Keep forever. No surprises."
+- assertVisible: "No account needed, no internet required"
+
+# Tap Get Started
+- tapOn: "Get started"
+
+# Should navigate to home screen
+- assertVisible: "Care Certificate Practice"
+- assertVisible: "Mock Exam"

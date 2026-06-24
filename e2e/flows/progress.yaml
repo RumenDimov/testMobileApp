@@ -1,0 +1,23 @@
+# Progress Screen Flow
+# Tests: empty state, navigation to progress from home
+
+appId: com.carepractice.app
+---
+- launchApp:
+    clearState: true
+
+# Complete onboarding
+- tapOn: "Get started"
+
+# Navigate to Progress
+- tapOn: "Progress"
+
+# Empty state should render since no quizzes taken
+- assertVisible: "No progress yet"
+- assertVisible: "Complete a quiz to see your stats here."
+
+# "Back to Home" button should work
+- tapOn: "Back to Home"
+
+# Should return to home
+- assertVisible: "Care Certificate Practice"

@@ -1,0 +1,18 @@
+# Maestro Configuration
+# Documentation: https://maestro.mobile.dev
+
+appId: com.carepractice.app
+name: CarePractice
+
+# Default timeout settings (ms)
+timeout:
+  find: 60000
+  waitForAnimation: 5000
+
+# Clear state before each test
+onFlowStart:
+  - clearState
+
+# Test environment
+env:
+  PLATFORM: android

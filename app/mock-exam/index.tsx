@@ -131,7 +131,7 @@ export default function MockExamScreen(): ReactElement {
 
   if (isLoading) {
     return (
-      <View className="flex-1 justify-center items-center bg-background">
+      <View className="flex-1 justify-center items-center bg-background" testID="mock-exam-loading">
         <ActivityIndicator size="large" color="#7C3AED" />
         <Text className="text-body text-text-secondary mt-md">
           Loading mock exam...
@@ -171,14 +171,14 @@ export default function MockExamScreen(): ReactElement {
   const timeColor = timeRemaining <= 60 ? 'text-incorrect' : 'text-text-primary';
 
   return (
-    <View className="flex-1 bg-background">
+    <View className="flex-1 bg-background" testID="mock-exam-screen">
       <View className="flex-row justify-between items-center px-lg pt-lg pb-sm">
         <View className="flex-row items-center">
           <Text className="text-caption font-semibold text-primary mr-sm">
             Mock Exam
           </Text>
         </View>
-        <Text className={`text-button ${timeColor}`}>
+        <Text className={`text-button ${timeColor}`} testID="timer-display">
           {formatTime(timeRemaining)}
         </Text>
       </View>
@@ -225,6 +225,7 @@ export default function MockExamScreen(): ReactElement {
           return (
             <Pressable
               key={option.id}
+              testID={`mock-option-${option.id}`}
               onPress={hasRevealed ? undefined : (): void => { selectAnswer(question.id, option.id); }}
               disabled={hasRevealed}
               className={`border-2 ${borderClass} ${bgClass} rounded-card p-md mb-3 min-h-[48px] justify-center`}
@@ -252,6 +253,7 @@ export default function MockExamScreen(): ReactElement {
         {!hasRevealed && selectedOptionId && (
           <Pressable
             onPress={() => revealAnswer()}
+            testID="mock-check-answer-button"
             className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center w-full"
           >
             <Text className="text-button text-white">
@@ -263,6 +265,7 @@ export default function MockExamScreen(): ReactElement {
         {hasRevealed && (
           <Pressable
             onPress={() => advanceQuestion()}
+            testID="mock-next-question-button"
             className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center w-full"
           >
             <Text className="text-button text-white">

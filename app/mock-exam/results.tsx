@@ -66,7 +66,7 @@ export default function MockExamResultsScreen(): ReactElement {
   const scoreColorClass = percentage >= 80 ? 'text-correct' : percentage >= 50 ? 'text-primary' : 'text-incorrect';
 
   return (
-    <View className="flex-1 bg-background justify-center items-center p-lg">
+    <View className="flex-1 bg-background justify-center items-center p-lg" testID="mock-exam-results-screen">
       <Text className="text-caption font-semibold text-primary mb-sm">
         Mock Exam Complete
       </Text>
@@ -103,6 +103,7 @@ export default function MockExamResultsScreen(): ReactElement {
 
       <Pressable
         onPress={handleRetry}
+        testID="mock-exam-retry-button"
         className="bg-primary py-3.5 px-xl rounded-button items-center min-h-[52px] justify-center w-full max-w-[320px] mb-3"
       >
         <Text className="text-button text-white">

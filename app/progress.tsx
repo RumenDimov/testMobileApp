@@ -36,6 +36,7 @@ function EmptyState(): ReactElement {
       </Text>
       <Pressable
         onPress={(): void => router.replace('/')}
+        testID="progress-home-button"
         className="py-3 px-xl rounded-button bg-primary"
       >
         <Text className="text-button text-white">Back to Home</Text>
@@ -74,7 +75,7 @@ export default function ProgressScreen(): ReactElement {
   const totalTopics = topicProgress.length;
 
   return (
-    <ScrollView className="flex-1 bg-background">
+    <ScrollView className="flex-1 bg-background" testID="progress-screen">
       <View className="p-lg">
         <View className="flex-row items-center mb-lg">
           <Pressable

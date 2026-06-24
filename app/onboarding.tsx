@@ -26,7 +26,7 @@ export default function OnboardingScreen(): ReactElement {
   };
 
   return (
-    <ScrollView className="flex-1 bg-background">
+    <ScrollView className="flex-1 bg-background" testID="onboarding-screen">
       <View className="flex-1 justify-center items-center p-lg pt-xl">
         <View className="bg-primary rounded-3xl w-20 h-20 items-center justify-center mb-lg">
           <Text className="text-display text-white">📚</Text>
@@ -77,6 +77,7 @@ export default function OnboardingScreen(): ReactElement {
 
         <Pressable
           onPress={handleGetStarted}
+          testID="get-started-button"
           className="bg-primary py-3.5 px-xl rounded-button items-center min-h-[52px] justify-center w-full max-w-[360px]"
         >
           <Text className="text-button text-white">Get started</Text>
