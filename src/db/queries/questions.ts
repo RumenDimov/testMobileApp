@@ -97,10 +97,17 @@ export async function getTopicBestScores(
   db: SQLiteDatabase,
 ): Promise<TopicBestScore[]> {
   return db.getAllAsync<TopicBestScore>(
-    `SELECT topic_id, MAX(score_correct) as best_correct, MAX(score_total) as best_total
-     FROM progress
-     WHERE is_mock_exam = 0
-     GROUP BY topic_id;`,
+    `SELECT topic_id, best_correct, best_total
+     FROM (
+       SELECT topic_id, score_correct as best_correct, score_total as best_total,
+              ROW_NUMBER() OVER (
+                PARTITION BY topic_id
+                ORDER BY CAST(score_correct AS REAL) / CAST(score_total AS REAL) DESC, score_correct DESC
+              ) as rn
+       FROM progress
+       WHERE is_mock_exam = 0 AND score_total > 0
+     ) ranked
+     WHERE rn = 1;`,
   );
 }
 

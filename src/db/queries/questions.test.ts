@@ -155,7 +155,7 @@ describe('getTopicBestScores', () => {
     const result = await getTopicBestScores(db);
 
     expect(db.getAllAsync).toHaveBeenCalledWith(
-      expect.stringContaining('MAX(score_correct)'),
+      expect.stringContaining('ROW_NUMBER() OVER'),
     );
     expect(result).toEqual(expected);
   });

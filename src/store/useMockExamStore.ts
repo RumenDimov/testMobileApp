@@ -16,7 +16,6 @@ type MockExamState = {
   isLoading: boolean;
   error: string | undefined;
   timeRemaining: number;
-  timerId: ReturnType<typeof setInterval> | null;
 
   loadQuestions: () => Promise<void>;
   selectAnswer: (questionId: string, optionId: string) => void;
@@ -39,7 +38,6 @@ export const useMockExamStore = create<MockExamState>((set, get) => ({
   isLoading: false,
   error: undefined,
   timeRemaining: MOCK_EXAM_DURATION,
-  timerId: null,
 
   loadQuestions: async (): Promise<void> => {
     set({
@@ -120,11 +118,6 @@ export const useMockExamStore = create<MockExamState>((set, get) => ({
         // Progress save failing should not block mock exam completion
       }
 
-      const { timerId } = get();
-      if (timerId) {
-        clearInterval(timerId);
-      }
-
       set({ isComplete: true, hasRevealed: false });
     } else {
       set({
@@ -135,11 +128,6 @@ export const useMockExamStore = create<MockExamState>((set, get) => ({
   },
 
   reset: (): void => {
-    const { timerId } = get();
-    if (timerId) {
-      clearInterval(timerId);
-    }
-
     set({
       questions: [],
       currentIndex: 0,
@@ -149,7 +137,6 @@ export const useMockExamStore = create<MockExamState>((set, get) => ({
       isLoading: false,
       error: undefined,
       timeRemaining: MOCK_EXAM_DURATION,
-      timerId: null,
     });
   },
 
@@ -170,17 +157,12 @@ export const useMockExamStore = create<MockExamState>((set, get) => ({
 
       try {
         const db = getDb();
-        saveProgress(db, 'mock-exam', scoreCorrect, questions.length, true);
+        void saveProgress(db, 'mock-exam', scoreCorrect, questions.length, true).catch(() => {});
       } catch {
-        // Progress save failing should not block mock exam completion
+        // getDb() failure should not block mock exam completion
       }
 
-      const { timerId } = get();
-      if (timerId) {
-        clearInterval(timerId);
-      }
-
-      set({ timeRemaining: 0, isComplete: true, hasRevealed: false, timerId: null });
+      set({ timeRemaining: 0, isComplete: true, hasRevealed: false });
     } else {
       set({ timeRemaining: newTime });
     }
