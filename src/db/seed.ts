@@ -6,6 +6,27 @@ import {
   type AnswerOption,
 } from './schema';
 
+export type ContentOption = {
+  id?: string;
+  label: string;
+  is_correct: number;
+  sort_order?: number;
+};
+
+export type ContentQuestion = {
+  id?: string;
+  source_criterion: string;
+  prompt: string;
+  explanation: string;
+  sort_order?: number;
+  options: ContentOption[];
+};
+
+export type ContentTopic = {
+  topic: Topic;
+  questions: ContentQuestion[];
+};
+
 export type SeedTopic = {
   topic: Omit<Topic, 'qualification_id'>;
   questions: Array<
@@ -23,6 +44,59 @@ export type SeedBundle = {
 
 function generateId(prefix: string, index: number): string {
   return `${prefix}-${String(index).padStart(3, '0')}`;
+}
+
+export async function ensureQualification(
+  db: SQLiteDatabase,
+  qualification: Qualification,
+): Promise<void> {
+  await db.runAsync(
+    'INSERT OR IGNORE INTO qualifications (id, title, description, sort_order) VALUES (?, ?, ?, ?);',
+    [qualification.id, qualification.title, qualification.description, qualification.sort_order],
+  );
+}
+
+export async function seedContentTopic(
+  db: SQLiteDatabase,
+  content: ContentTopic,
+): Promise<void> {
+  const { topic } = content;
+
+  await db.withTransactionAsync(async () => {
+    await db.runAsync(
+      'INSERT OR IGNORE INTO topics (id, qualification_id, title, summary, sort_order, is_free) VALUES (?, ?, ?, ?, ?, ?);',
+      [topic.id, topic.qualification_id, topic.title, topic.summary, topic.sort_order, topic.is_free],
+    );
+
+    for (let qi = 0; qi < content.questions.length; qi++) {
+      const q = content.questions[qi];
+      const questionId = q.id ?? generateId('q', qi);
+      const sortOrder = q.sort_order ?? qi;
+
+      const correctCount = q.options.filter((opt) => opt.is_correct === 1).length;
+      if (correctCount !== 1) {
+        throw new Error(
+          `Question "${q.prompt}" must have exactly one correct answer, found ${correctCount}`,
+        );
+      }
+
+      await db.runAsync(
+        'INSERT OR IGNORE INTO questions (id, topic_id, source_criterion, prompt, explanation, sort_order) VALUES (?, ?, ?, ?, ?, ?);',
+        [questionId, topic.id, q.source_criterion, q.prompt, q.explanation, sortOrder],
+      );
+
+      for (let oi = 0; oi < q.options.length; oi++) {
+        const opt = q.options[oi];
+        const optionId = opt.id ?? generateId('opt', qi * 10 + oi);
+        const optSortOrder = opt.sort_order ?? oi;
+
+        await db.runAsync(
+          'INSERT OR IGNORE INTO answer_options (id, question_id, label, is_correct, sort_order) VALUES (?, ?, ?, ?, ?);',
+          [optionId, questionId, opt.label, opt.is_correct, optSortOrder],
+        );
+      }
+    }
+  });
 }
 
 export async function seedFromBundle(
