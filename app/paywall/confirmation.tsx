@@ -1,8 +1,12 @@
-import { type ReactElement } from 'react';
+import { useEffect, type ReactElement } from 'react';
 import { router } from 'expo-router';
 import { Pressable, Text, View } from 'react-native';
+import { trackEvent } from '../../src/lib/analytics';
 
 export default function PurchaseConfirmationScreen(): ReactElement {
+  useEffect(() => {
+    trackEvent('purchase_completed');
+  }, []);
   const handleHome = (): void => {
     router.replace('/');
   };

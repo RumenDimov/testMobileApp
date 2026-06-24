@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import type { Product } from 'react-native-iap';
 import { usePurchaseStore } from '../../src/store/usePurchaseStore';
+import { trackEvent } from '../../src/lib/analytics';
 
 function LoadingState(): ReactElement {
   return (
@@ -194,6 +195,7 @@ export default function PaywallScreen(): ReactElement {
     initialize().then(() => {
       loadProducts();
     });
+    trackEvent('paywall_viewed');
   }, [initialize, loadProducts]);
 
   useEffect(() => {
@@ -208,6 +210,9 @@ export default function PaywallScreen(): ReactElement {
 
   const handlePurchase = (): void => {
     if (isPurchasing || isRestoring) return;
+    trackEvent('purchase_initiated', {
+      price: product?.displayPrice ?? 'unknown',
+    });
     purchase();
   };
 

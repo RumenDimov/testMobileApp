@@ -1,13 +1,38 @@
-import { type ReactElement } from 'react';
+import { useEffect, useState, type ReactElement } from 'react';
 import { router, useLocalSearchParams } from 'expo-router';
 import { Pressable, Text, View } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useQuizStore } from '../../../src/store/useQuizStore';
+
+function getCompletionKey(topicId: string): string {
+  return `completion_shown_${topicId}`;
+}
 
 export default function TopicResultsScreen(): ReactElement {
   const { topicId } = useLocalSearchParams<{ topicId: string }>();
   const scoreCorrect = useQuizStore((s) => s.getScoreCorrect());
   const scoreTotal = useQuizStore((s) => s.getScoreTotal());
   const reset = useQuizStore((s) => s.reset);
+  const [checkedCompletion, setCheckedCompletion] = useState(false);
+
+  useEffect(() => {
+    if (!topicId || checkedCompletion) return;
+
+    async function checkFirstCompletion(): Promise<void> {
+      try {
+        const alreadyShown = await AsyncStorage.getItem(getCompletionKey(topicId));
+        if (!alreadyShown && scoreCorrect > 0 && scoreCorrect / scoreTotal >= 0.5) {
+          router.replace(`/complete/${topicId}`);
+          return;
+        }
+      } catch {
+        // AsyncStorage failure should not block the results screen
+      }
+      setCheckedCompletion(true);
+    }
+
+    checkFirstCompletion();
+  }, [topicId, checkedCompletion, scoreCorrect, scoreTotal]);
 
   if (scoreTotal === 0) {
     return (

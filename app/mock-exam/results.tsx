@@ -1,12 +1,37 @@
-import { type ReactElement } from 'react';
+import { useEffect, useState, type ReactElement } from 'react';
 import { router } from 'expo-router';
 import { Pressable, Text, View } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useMockExamStore } from '../../src/store/useMockExamStore';
+
+function getCompletionKey(topicId: string): string {
+  return `completion_shown_${topicId}`;
+}
 
 export default function MockExamResultsScreen(): ReactElement {
   const scoreCorrect = useMockExamStore((s) => s.getScoreCorrect());
   const scoreTotal = useMockExamStore((s) => s.getScoreTotal());
   const reset = useMockExamStore((s) => s.reset);
+  const [checkedCompletion, setCheckedCompletion] = useState(false);
+
+  useEffect(() => {
+    if (checkedCompletion) return;
+
+    async function checkFirstCompletion(): Promise<void> {
+      try {
+        const alreadyShown = await AsyncStorage.getItem(getCompletionKey('mock-exam'));
+        if (!alreadyShown && scoreCorrect > 0 && scoreCorrect / scoreTotal >= 0.5) {
+          router.replace('/complete/mock-exam');
+          return;
+        }
+      } catch {
+        // AsyncStorage failure should not block the results screen
+      }
+      setCheckedCompletion(true);
+    }
+
+    checkFirstCompletion();
+  }, [checkedCompletion, scoreCorrect, scoreTotal]);
 
   if (scoreTotal === 0) {
     return (

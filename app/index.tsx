@@ -2,6 +2,7 @@ import { useEffect, useState, type ReactElement } from 'react';
 import { router } from 'expo-router';
 import { ActivityIndicator, Pressable, ScrollView, Text, View } from 'react-native';
 import { useSQLiteContext } from 'expo-sqlite';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { TopicSummary, TopicBestScore } from '../src/db/queries/questions';
 import { getAllTopics, getTopicBestScores } from '../src/db/queries/questions';
 import { usePurchaseStore } from '../src/store/usePurchaseStore';
@@ -105,8 +106,26 @@ export default function HomeScreen(): ReactElement {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | undefined>(undefined);
   const isPurchased = usePurchaseStore((s) => s.isPurchased);
+  const [onboardingDone, setOnboardingDone] = useState(false);
 
   useEffect(() => {
+    async function checkOnboarding(): Promise<void> {
+      try {
+        const done = await AsyncStorage.getItem('onboarding_complete');
+        if (!done) {
+          router.replace('/onboarding');
+          return;
+        }
+      } catch {
+        // AsyncStorage failure — show home anyway
+      }
+      setOnboardingDone(true);
+    }
+    checkOnboarding();
+  }, []);
+
+  useEffect(() => {
+    if (!onboardingDone) return;
     async function load(): Promise<void> {
       try {
         const [result, scores] = await Promise.all([
@@ -127,7 +146,7 @@ export default function HomeScreen(): ReactElement {
       }
     }
     load();
-  }, [db]);
+  }, [db, onboardingDone]);
 
   const handlePurchaseRequired = (): void => {
     router.push('/paywall');
@@ -156,14 +175,24 @@ export default function HomeScreen(): ReactElement {
           Care Certificate Practice
         </Text>
 
-        <Pressable
-          onPress={(): void => router.push('/settings')}
-          className="absolute top-lg right-lg py-2 px-3 min-h-[44px] justify-center"
-        >
-          <Text className="text-caption font-semibold text-primary">
-            Settings
-          </Text>
-        </Pressable>
+        <View className="absolute top-lg right-lg flex-row gap-sm">
+          <Pressable
+            onPress={(): void => router.push('/progress')}
+            className="py-2 px-3 min-h-[44px] justify-center"
+          >
+            <Text className="text-caption font-semibold text-primary">
+              Progress
+            </Text>
+          </Pressable>
+          <Pressable
+            onPress={(): void => router.push('/settings')}
+            className="py-2 px-3 min-h-[44px] justify-center"
+          >
+            <Text className="text-caption font-semibold text-primary">
+              Settings
+            </Text>
+          </Pressable>
+        </View>
 
         <Pressable
           onPress={handleMockExam}

@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactElement } from 'react';
+import { useEffect, useRef, useState, type ReactElement } from 'react';
 import { router, useLocalSearchParams } from 'expo-router';
 import {
   ActivityIndicator,
@@ -12,6 +12,7 @@ import type { QuestionWithOptions } from '../../../src/db/queries/questions';
 import { getTopic } from '../../../src/db/queries/questions';
 import { useQuizStore } from '../../../src/store/useQuizStore';
 import { usePurchaseStore } from '../../../src/store/usePurchaseStore';
+import { trackEvent } from '../../../src/lib/analytics';
 
 type ProgressDotsProps = {
   total: number;
@@ -69,6 +70,7 @@ export default function QuizSessionScreen(): ReactElement {
   const isPurchased = usePurchaseStore((s) => s.isPurchased);
   const initialized = usePurchaseStore((s) => s.initialized);
   const [accessChecked, setAccessChecked] = useState(false);
+  const quizTrackedRef = useRef(false);
 
   useEffect(() => {
     if (!topicId || accessChecked) return;
@@ -97,9 +99,21 @@ export default function QuizSessionScreen(): ReactElement {
 
   useEffect(() => {
     if (isComplete) {
+      trackEvent('quiz_completed', {
+        topic_id: topicId,
+        score_correct: useQuizStore.getState().getScoreCorrect(),
+        score_total: useQuizStore.getState().getScoreTotal(),
+      });
       router.replace(`/topic/${topicId}/results`);
     }
   }, [isComplete, topicId]);
+
+  useEffect(() => {
+    if (!isLoading && !error && questions.length > 0 && !quizTrackedRef.current) {
+      trackEvent('quiz_started', { topic_id: topicId, question_count: questions.length });
+      quizTrackedRef.current = true;
+    }
+  }, [isLoading, error, questions.length, topicId]);
 
   if (isLoading) {
     return (
