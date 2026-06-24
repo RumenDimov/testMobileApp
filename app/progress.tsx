@@ -17,7 +17,7 @@ function ErrorState({ message, onRetry }: { message: string; onRetry: () => void
       <Text className="text-body text-incorrect text-center mb-md">{message}</Text>
       <Pressable
         onPress={onRetry}
-        className="py-3 px-xl rounded-button border-2 border-primary"
+        className="py-3 px-xl rounded-button border border-primary"
       >
         <Text className="text-button text-primary">Try again</Text>
       </Pressable>

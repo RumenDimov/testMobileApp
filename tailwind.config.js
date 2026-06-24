@@ -18,6 +18,9 @@ module.exports = {
         'free-tier': '#7C3AED',
         locked: '#9E9CA6',
         divider: '#E8E5EC',
+        'correct-light': '#F0FDF4',
+        'incorrect-light': '#FEF2F2',
+        'explanation-bg': '#F5F3FA',
       },
       fontFamily: {
         sans: ['System'],

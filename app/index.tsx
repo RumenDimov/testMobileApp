@@ -36,7 +36,7 @@ function TopicCard({ topic, bestScore, isPurchased, onPurchaseRequired }: TopicC
             Free
           </Text>
         ) : isPurchased ? (
-          <Text className="text-caption font-semibold text-correct bg-[#F0FDF4] px-sm py-xs rounded-lg">
+          <Text className="text-caption font-semibold text-correct bg-correct-light px-sm py-xs rounded-lg">
             Unlocked
           </Text>
         ) : (
@@ -178,7 +178,7 @@ export default function HomeScreen(): ReactElement {
         <View className="absolute top-lg right-lg flex-row gap-sm">
           <Pressable
             onPress={(): void => router.push('/progress')}
-            className="py-2 px-3 min-h-[44px] justify-center"
+            className="py-2 px-3 min-h-[48px] justify-center"
           >
             <Text className="text-caption font-semibold text-primary">
               Progress
@@ -186,7 +186,7 @@ export default function HomeScreen(): ReactElement {
           </Pressable>
           <Pressable
             onPress={(): void => router.push('/settings')}
-            className="py-2 px-3 min-h-[44px] justify-center"
+            className="py-2 px-3 min-h-[48px] justify-center"
           >
             <Text className="text-caption font-semibold text-primary">
               Settings

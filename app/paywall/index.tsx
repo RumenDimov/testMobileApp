@@ -115,7 +115,7 @@ function CtaSection({
   return (
     <View className="items-center">
       {error && (
-        <View className="bg-[#FEF2F2] rounded-card p-md mb-lg border border-incorrect w-full">
+        <View className="bg-incorrect-light rounded-card p-md mb-lg border border-incorrect w-full">
           <Text className="text-body text-incorrect">{error}</Text>
         </View>
       )}
@@ -201,6 +201,7 @@ export default function PaywallScreen(): ReactElement {
 
   useEffect(() => {
     trackEvent('paywall_viewed');
+    trackEvent('paywall_view');
   }, []);
 
   useEffect(() => {
@@ -240,7 +241,7 @@ export default function PaywallScreen(): ReactElement {
     <View className="flex-1 bg-background">
       <ScrollView
         className="flex-1"
-        contentContainerClassName="p-6 pb-12"
+        contentContainerClassName="p-lg pb-xl"
       >
         <HeroSection
           isLoadingProducts={isLoadingProducts}

@@ -1,7 +1,8 @@
-import { type ReactElement } from 'react';
+import { useEffect, type ReactElement } from 'react';
 import { router } from 'expo-router';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { trackEvent } from '../src/lib/analytics';
 
 const ONBOARDING_KEY = 'onboarding_complete';
 
@@ -14,7 +15,12 @@ async function markOnboardingComplete(): Promise<void> {
 }
 
 export default function OnboardingScreen(): ReactElement {
+  useEffect(() => {
+    trackEvent('onboarding_viewed');
+  }, []);
+
   const handleGetStarted = async (): Promise<void> => {
+    trackEvent('onboarding_completed');
     await markOnboardingComplete();
     router.replace('/');
   };
@@ -35,7 +41,7 @@ export default function OnboardingScreen(): ReactElement {
           qualifications — built for 10-minute gaps between shifts.
         </Text>
 
-        <View className="bg-surface rounded-card p-lg mb-lg border border-divider w-full max-w-[360px]">
+        <View className="bg-surface rounded-card p-md mb-lg border border-divider w-full max-w-[360px]">
           <Text className="text-heading text-primary mb-sm">
             Understand it. Don&apos;t just copy it.
           </Text>
@@ -46,7 +52,7 @@ export default function OnboardingScreen(): ReactElement {
           </Text>
         </View>
 
-        <View className="bg-primary-light rounded-card p-lg mb-lg w-full max-w-[360px]">
+        <View className="bg-primary-light rounded-card p-md mb-lg border border-divider w-full max-w-[360px]">
           <Text className="text-heading text-primary mb-sm">
             Free and paid — no subscription, ever
           </Text>
@@ -59,7 +65,7 @@ export default function OnboardingScreen(): ReactElement {
           </Text>
         </View>
 
-        <View className="bg-surface rounded-card p-lg mb-xl border border-divider w-full max-w-[360px]">
+        <View className="bg-surface rounded-card p-md mb-xl border border-divider w-full max-w-[360px]">
           <Text className="text-heading text-text-primary mb-sm">
             Works offline
           </Text>

@@ -9,6 +9,7 @@ export default function PurchaseConfirmationScreen(): ReactElement {
   useEffect(() => {
     if (source === 'purchase') {
       trackEvent('purchase_completed');
+      trackEvent('purchase');
     } else if (source === 'restore') {
       trackEvent('restore_completed');
     }

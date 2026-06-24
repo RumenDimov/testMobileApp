@@ -72,7 +72,7 @@ export default function TopicResultsScreen(): ReactElement {
         Topic Complete
       </Text>
 
-      <View className="bg-surface rounded-2xl p-xl items-center mb-xl border border-divider w-full max-w-[320px]">
+      <View className="bg-surface rounded-card p-md items-center mb-xl border border-divider w-full max-w-[320px]">
         <Text className={`text-5xl font-bold ${scoreColorClass} mb-sm`}>
           {scoreCorrect}/{scoreTotal}
         </Text>
@@ -109,7 +109,7 @@ export default function TopicResultsScreen(): ReactElement {
 
       <Pressable
         onPress={handleHome}
-        className="py-3.5 px-xl rounded-button items-center min-h-[52px] justify-center w-full max-w-[320px] border-2 border-primary"
+        className="py-3.5 px-xl rounded-button items-center min-h-[52px] justify-center w-full max-w-[320px] border border-primary"
       >
         <Text className="text-button text-primary">
           Back to Home

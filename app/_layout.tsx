@@ -2,6 +2,7 @@ import { Suspense, useEffect, type ReactElement } from 'react';
 import { Stack } from 'expo-router';
 import { SQLiteProvider } from 'expo-sqlite';
 import { ActivityIndicator, Text, View } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { DatabaseInitializer } from '../src/lib/DatabaseInitializer';
 import { usePurchaseStore } from '../src/store/usePurchaseStore';
 import { initAnalytics, trackEvent, shutdownAnalytics } from '../src/lib/analytics';
@@ -9,7 +10,7 @@ import '../global.css';
 
 function LoadingFallback(): ReactElement {
   return (
-    <View className="flex-1 justify-center items-center">
+    <View className="flex-1 justify-center items-center bg-background">
       <ActivityIndicator size="large" color="#7C3AED" />
       <Text className="mt-3 text-body text-text-secondary">
         Loading...
@@ -20,7 +21,7 @@ function LoadingFallback(): ReactElement {
 
 function ErrorFallback({ message }: { message: string }): ReactElement {
   return (
-    <View className="flex-1 justify-center items-center p-lg">
+    <View className="flex-1 justify-center items-center p-lg bg-background">
       <Text className="text-body text-incorrect text-center">{message}</Text>
     </View>
   );
@@ -33,6 +34,14 @@ function AppNavigator(): ReactElement {
   useEffect(() => {
     initAnalytics();
     trackEvent('app_opened');
+
+    AsyncStorage.getItem('app_install_tracked').then((tracked) => {
+      if (!tracked) {
+        trackEvent('install_source');
+        AsyncStorage.setItem('app_install_tracked', 'true').catch(() => {});
+      }
+    }).catch(() => {});
+
     initialize();
     return (): void => {
       cleanup();
