@@ -1,12 +1,17 @@
 import PostHog, { type PostHogOptions } from 'posthog-react-native';
+import Constants from 'expo-constants';
 
 let client: PostHog | undefined;
 
-const POSTHOG_API_KEY = 'phc_placeholder';
-const POSTHOG_HOST = 'https://eu.i.posthog.com';
+const POSTHOG_API_KEY: string =
+  (Constants.expoConfig?.extra?.posthogApiKey as string | undefined) ?? '';
+const POSTHOG_HOST: string =
+  (Constants.expoConfig?.extra?.posthogHost as string | undefined) ?? 'https://eu.i.posthog.com';
 
+/** Initialise the PostHog client. Safe to call multiple times — no-op after first success. */
 export function initAnalytics(): void {
   if (client) return;
+  if (!POSTHOG_API_KEY) return;
 
   try {
     const options: PostHogOptions = {
@@ -23,6 +28,11 @@ export function initAnalytics(): void {
   }
 }
 
+/**
+ * Emit a named event with optional properties.
+ * @param eventName — snake_case event identifier
+ * @param properties — optional flat key-value payload (string | number | boolean values only)
+ */
 export function trackEvent(
   eventName: string,
   properties?: Record<string, string | number | boolean>,
@@ -36,18 +46,7 @@ export function trackEvent(
   }
 }
 
-export function identifyUser(distinctId?: string): void {
-  if (!client) return;
-
-  try {
-    if (distinctId) {
-      client.identify(distinctId);
-    }
-  } catch {
-    // Best-effort only
-  }
-}
-
+/** Flush pending events. Call before app termination. */
 export function shutdownAnalytics(): void {
   if (!client) return;
 

@@ -42,13 +42,13 @@ export default function CompletionScreen(): ReactElement {
   }, [topicId, db, isMockExam]);
 
   useEffect(() => {
-    if (!topicId) return;
+    if (!topicId || scoreTotal === 0) return;
     trackEvent('completion_screen_viewed', {
       topic_id: topicId,
       is_mock_exam: isMockExam,
     });
     AsyncStorage.setItem(getCompletionKey(topicId), 'true').catch(() => {});
-  }, [topicId, isMockExam]);
+  }, [topicId, isMockExam, scoreTotal]);
 
   const handleShare = async (): Promise<void> => {
     const pct = scoreTotal > 0 ? Math.round((scoreCorrect / scoreTotal) * 100) : 0;
@@ -71,6 +71,21 @@ export default function CompletionScreen(): ReactElement {
     }
   };
 
+  useEffect(() => {
+    if (scoreTotal === 0) {
+      if (isMockExam) {
+        mockReset();
+      } else {
+        quizReset();
+      }
+      router.replace('/');
+    }
+  }, [scoreTotal, isMockExam, mockReset, quizReset]);
+
+  if (scoreTotal === 0) {
+    return <View className="flex-1 bg-background" />;
+  }
+
   const handleHome = (): void => {
     if (isMockExam) {
       mockReset();
@@ -79,11 +94,6 @@ export default function CompletionScreen(): ReactElement {
     }
     router.replace('/');
   };
-
-  if (scoreTotal === 0) {
-    handleHome();
-    return <View className="flex-1 bg-background" />;
-  }
 
   const percentage = Math.round((scoreCorrect / scoreTotal) * 100);
   const scoreColorClass = percentage >= 80 ? 'text-correct' : percentage >= 50 ? 'text-primary' : 'text-incorrect';

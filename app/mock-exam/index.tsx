@@ -87,21 +87,21 @@ export default function MockExamScreen(): ReactElement {
   }, [isPurchased, loadQuestions, initialized]);
 
   useEffect(() => {
-    if (isComplete) {
-      trackEvent('mock_exam_completed', {
-        score_correct: useMockExamStore.getState().getScoreCorrect(),
-        score_total: useMockExamStore.getState().getScoreTotal(),
-      });
-      router.replace('/mock-exam/results');
-    }
-  }, [isComplete]);
+    if (!initialized || !isPurchased || !isComplete) return;
+
+    trackEvent('mock_exam_completed', {
+      score_correct: useMockExamStore.getState().getScoreCorrect(),
+      score_total: useMockExamStore.getState().getScoreTotal(),
+    });
+    router.replace('/mock-exam/results');
+  }, [initialized, isPurchased, isComplete]);
 
   useEffect(() => {
-    if (!isLoading && !error && questions.length > 0 && !examTrackedRef.current) {
+    if (initialized && isPurchased && !isLoading && !error && questions.length > 0 && !examTrackedRef.current) {
       trackEvent('mock_exam_started', { question_count: questions.length });
       examTrackedRef.current = true;
     }
-  }, [isLoading, error, questions.length]);
+  }, [initialized, isPurchased, isLoading, error, questions.length]);
 
   useEffect(() => {
     if (!isLoading && questions.length > 0 && !timerRef.current) {

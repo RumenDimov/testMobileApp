@@ -1,4 +1,4 @@
-import { useEffect, type ReactElement } from 'react';
+import { useEffect, useRef, type ReactElement } from 'react';
 import { router } from 'expo-router';
 import {
   ActivityIndicator,
@@ -195,12 +195,17 @@ export default function PaywallScreen(): ReactElement {
     initialize().then(() => {
       loadProducts();
     });
-    trackEvent('paywall_viewed');
   }, [initialize, loadProducts]);
+
+  const purchaseSourceRef = useRef<'purchase' | 'restore'>('purchase');
+
+  useEffect(() => {
+    trackEvent('paywall_viewed');
+  }, []);
 
   useEffect(() => {
     if (isPurchased) {
-      router.replace('/paywall/confirmation');
+      router.replace(`/paywall/confirmation?source=${purchaseSourceRef.current}`);
     }
   }, [isPurchased]);
 
@@ -210,6 +215,7 @@ export default function PaywallScreen(): ReactElement {
 
   const handlePurchase = (): void => {
     if (isPurchasing || isRestoring) return;
+    purchaseSourceRef.current = 'purchase';
     trackEvent('purchase_initiated', {
       price: product?.displayPrice ?? 'unknown',
     });
@@ -218,6 +224,8 @@ export default function PaywallScreen(): ReactElement {
 
   const handleRestore = (): void => {
     if (isPurchasing || isRestoring) return;
+    purchaseSourceRef.current = 'restore';
+    trackEvent('restore_purchase_initiated');
     restorePurchases();
   };
 

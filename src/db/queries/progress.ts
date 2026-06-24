@@ -87,7 +87,13 @@ export async function getAllTopicProgress(
        t.title as topic_title,
        t.is_free,
        COUNT(p.id) as attempts,
-       COALESCE(MAX(p.score_correct), 0) as best_correct,
+       COALESCE(
+         (SELECT score_correct FROM progress p2
+          WHERE p2.topic_id = t.id AND p2.is_mock_exam = 0
+          ORDER BY CAST(p2.score_correct AS REAL) / CAST(p2.score_total AS REAL) DESC, p2.score_correct DESC
+          LIMIT 1),
+         0
+       ) as best_correct,
        COALESCE(
          (SELECT score_total FROM progress p2
           WHERE p2.topic_id = t.id AND p2.is_mock_exam = 0
@@ -109,7 +115,13 @@ export async function getMockExamStats(
   const row = await db.getFirstAsync<MockExamStats>(
     `SELECT
        COUNT(*) as attempts,
-       COALESCE(MAX(score_correct), 0) as best_correct,
+       COALESCE(
+         (SELECT score_correct FROM progress
+          WHERE is_mock_exam = 1
+          ORDER BY CAST(score_correct AS REAL) / CAST(score_total AS REAL) DESC, score_correct DESC
+          LIMIT 1),
+         0
+       ) as best_correct,
        COALESCE(
          (SELECT score_total FROM progress
           WHERE is_mock_exam = 1
