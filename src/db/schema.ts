@@ -96,6 +96,7 @@ export type Progress = {
 
 export async function initializeSchema(db: SQLiteDatabase): Promise<void> {
   await db.withTransactionAsync(async () => {
+    await db.execAsync('PRAGMA foreign_keys = ON;');
     for (const statement of ALL_TABLES) {
       await db.execAsync(statement);
     }

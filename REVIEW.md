@@ -23,12 +23,12 @@ Execute these and report any failures:
 
 ```sh
 npx tsc --noEmit
-npx expo test --passWithNoTests 2>&1 || true
+npx expo test --passWithNoTests 2>&1
 ```
 
 If the project has linting configured, also run:
 ```sh
-npx eslint . --ext .ts,.tsx 2>&1 || true
+npx eslint . --ext .ts,.tsx 2>&1
 ```
 
 ---
@@ -179,7 +179,7 @@ If the PR introduces new behaviour, verify against:
 
 After completing all sections, produce a single block:
 
-```
+```text
 ## Review Summary
 
 **Verdict:** APPROVED / CHANGES REQUESTED

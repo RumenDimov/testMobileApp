@@ -1,9 +1,10 @@
-import '../global.css';
+import { type ReactElement } from 'react';
+import './global.css';
 
 import { StatusBar } from 'expo-status-bar';
 import { Text, View } from 'react-native';
 
-export function App() {
+export function App(): ReactElement {
   return (
     <View className="flex-1 items-center justify-center bg-background">
       <Text className="text-body text-text-primary">

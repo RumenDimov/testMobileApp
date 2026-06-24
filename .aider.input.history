@@ -1,0 +1,28 @@
+
+# 2026-06-23 21:08:05.331442
++y
+
+# 2026-06-23 21:13:11.102296
++write AGENTS.md file at the root of the project folder that is to outline the following: Role. What kind of engineer the AI is acting as. Example: "Senior Expo
++and React Native engineer."
++Project overview. What you're building, in three to five lines.
++Tech stack. Exact libraries, with versions if they matter.
++Development philosophy. Feature by feature, simplest version first, no
++overengineering.
++Architecture. Folder structure with one line of purpose per folder.
++UI rules. Match attached designs exactly. What not to approximate.
++Styling rules. NativeWind first. When to fall back to StyleSheet.
++Exception list (SafeAreaView, Modal, Animated views, etc). Example given: You are an expert React Native and Expo engineer helping me build
++[APP_NAME].
++Write clean, simple, maintainable code. Prioritize clarity over
++unnecessary abstraction.
++Think like a senior mobile developer.
++---
++## Project Overview
++We are building [APP_NAME], [ONE_LINE_DESCRIPTION].
++The app includes:
++[FEATURE_LIST]
++Keep the implementation simple and readable. In order to write this, use the documents in the docs folder, there are 3 documents Product Summary, Screen and Build Sequence, Technical Specification. If you have any specific questions ask me. This AGENTS.md file is very very very important
+
+# 2026-06-23 21:18:50.851593
++/exit

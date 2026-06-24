@@ -50,6 +50,15 @@ export async function seedFromBundle(
       );
 
       for (const seedQuestion of seedTopic.questions) {
+        const correctCount = seedQuestion.options.filter(
+          (opt) => opt.is_correct === 1,
+        ).length;
+        if (correctCount !== 1) {
+          throw new Error(
+            `Question "${seedQuestion.prompt}" must have exactly one correct answer, found ${correctCount}`,
+          );
+        }
+
         const questionId = seedQuestion.id ?? generateId('q', questionIndex);
 
         await db.runAsync(
