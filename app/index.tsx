@@ -1,15 +1,16 @@
 import { useEffect, useState, type ReactElement } from 'react';
 import { router } from 'expo-router';
-import { ActivityIndicator, Pressable, Text, View } from 'react-native';
+import { ActivityIndicator, Pressable, ScrollView, Text, View } from 'react-native';
 import { useSQLiteContext } from 'expo-sqlite';
-import type { TopicSummary } from '../src/db/queries/questions';
-import { getAllTopics } from '../src/db/queries/questions';
+import type { TopicSummary, TopicBestScore } from '../src/db/queries/questions';
+import { getAllTopics, getTopicBestScores } from '../src/db/queries/questions';
 
 type TopicCardProps = {
   topic: TopicSummary;
+  bestScore: TopicBestScore | undefined;
 };
 
-function TopicCard({ topic }: TopicCardProps): ReactElement {
+function TopicCard({ topic, bestScore }: TopicCardProps): ReactElement {
   return (
     <View className="bg-surface rounded-card p-md mb-3 border border-divider">
       <View className="flex-row justify-between items-center">
@@ -17,11 +18,11 @@ function TopicCard({ topic }: TopicCardProps): ReactElement {
           {topic.title}
         </Text>
         {topic.is_free === 1 ? (
-          <Text className="text-xs font-semibold text-primary bg-primary-light px-sm py-xs rounded-lg">
+          <Text className="text-caption font-semibold text-primary bg-primary-light px-sm py-xs rounded-lg">
             Free
           </Text>
         ) : (
-          <Text className="text-xs font-semibold text-locked bg-divider px-sm py-xs rounded-lg">
+          <Text className="text-caption font-semibold text-locked bg-divider px-sm py-xs rounded-lg">
             Locked
           </Text>
         )}
@@ -31,9 +32,16 @@ function TopicCard({ topic }: TopicCardProps): ReactElement {
         {topic.summary}
       </Text>
 
-      <Text className="text-caption text-text-secondary mb-3">
-        {topic.question_count} questions
-      </Text>
+      <View className="flex-row justify-between items-center mb-3">
+        <Text className="text-caption text-text-secondary">
+          {topic.question_count} questions
+        </Text>
+        {bestScore && (
+          <Text className="text-caption text-text-secondary">
+            Best: {bestScore.best_correct}/{bestScore.best_total}
+          </Text>
+        )}
+      </View>
 
       <Pressable
         onPress={() => router.push(`/topic/${topic.id}`)}
@@ -74,14 +82,23 @@ function EmptyState(): ReactElement {
 export default function HomeScreen(): ReactElement {
   const db = useSQLiteContext();
   const [topics, setTopics] = useState<TopicSummary[]>([]);
+  const [bestScores, setBestScores] = useState<Map<string, TopicBestScore>>(new Map());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     async function load(): Promise<void> {
       try {
-        const result = await getAllTopics(db);
+        const [result, scores] = await Promise.all([
+          getAllTopics(db),
+          getTopicBestScores(db),
+        ]);
         setTopics(result);
+        const scoreMap = new Map<string, TopicBestScore>();
+        for (const score of scores) {
+          scoreMap.set(score.topic_id, score);
+        }
+        setBestScores(scoreMap);
         setError(undefined);
       } catch {
         setError('Unable to load topics. Please try again.');
@@ -101,16 +118,38 @@ export default function HomeScreen(): ReactElement {
   }
 
   return (
-    <View className="flex-1 p-lg bg-background">
-      <Text className="text-title text-text-primary mb-lg">
-        Care Certificate Practice
-      </Text>
+    <ScrollView className="flex-1 bg-background">
+      <View className="p-lg">
+        <Text className="text-title text-text-primary mb-lg">
+          Care Certificate Practice
+        </Text>
 
-      {topics.map((topic) => (
-        <TopicCard key={topic.id} topic={topic} />
-      ))}
+        <Pressable
+          onPress={() => router.push('/mock-exam')}
+          className="bg-primary rounded-card p-md mb-lg border-2 border-primary"
+        >
+          <Text className="text-button text-white text-center mb-sm">
+            Mock Exam
+          </Text>
+          <Text className="text-caption text-white/80 text-center">
+            Timed, mixed-topic practice from all paid standards
+          </Text>
+        </Pressable>
 
-      {topics.length === 0 && <EmptyState />}
-    </View>
+        <Text className="text-heading text-text-primary mb-md">
+          Care Certificate
+        </Text>
+
+        {topics.map((topic) => (
+          <TopicCard
+            key={topic.id}
+            topic={topic}
+            bestScore={bestScores.get(topic.id)}
+          />
+        ))}
+
+        {topics.length === 0 && <EmptyState />}
+      </View>
+    </ScrollView>
   );
 }

@@ -34,6 +34,8 @@ function AppNavigator(): ReactElement {
         <Stack.Screen name="index" />
         <Stack.Screen name="topic/[topicId]/index" />
         <Stack.Screen name="topic/[topicId]/results" />
+        <Stack.Screen name="mock-exam/index" />
+        <Stack.Screen name="mock-exam/results" />
       </Stack>
     </DatabaseInitializer>
   );

@@ -9,6 +9,16 @@ export type TopicSummary = Topic & {
   question_count: number;
 };
 
+export type TopicBestScore = {
+  topic_id: string;
+  best_correct: number;
+  best_total: number;
+};
+
+export type MockExamQuestion = QuestionWithOptions & {
+  topic_id: string;
+};
+
 export async function getTopic(
   db: SQLiteDatabase,
   topicId: string,
@@ -81,4 +91,54 @@ export async function getAllTopics(
      GROUP BY t.id
      ORDER BY t.sort_order;`,
   );
+}
+
+export async function getTopicBestScores(
+  db: SQLiteDatabase,
+): Promise<TopicBestScore[]> {
+  return db.getAllAsync<TopicBestScore>(
+    `SELECT topic_id, MAX(score_correct) as best_correct, MAX(score_total) as best_total
+     FROM progress
+     WHERE is_mock_exam = 0
+     GROUP BY topic_id;`,
+  );
+}
+
+export async function getMockExamQuestions(
+  db: SQLiteDatabase,
+  limit: number,
+): Promise<QuestionWithOptions[]> {
+  const questions = await db.getAllAsync<Question>(
+    `SELECT id, topic_id, source_criterion, prompt, explanation, sort_order
+     FROM questions
+     WHERE topic_id IN (SELECT id FROM topics WHERE is_free = 0)
+     ORDER BY RANDOM()
+     LIMIT ?;`,
+    [limit],
+  );
+
+  if (questions.length === 0) {
+    return [];
+  }
+
+  const placeholders = questions.map(() => '?').join(', ');
+  const questionIds = questions.map((q) => q.id);
+  const options = await db.getAllAsync<AnswerOption>(
+    `SELECT id, question_id, label, is_correct, sort_order
+     FROM answer_options WHERE question_id IN (${placeholders})
+     ORDER BY sort_order;`,
+    questionIds,
+  );
+
+  const byQuestion = new Map<string, AnswerOption[]>();
+  for (const option of options) {
+    const list = byQuestion.get(option.question_id) ?? [];
+    list.push(option);
+    byQuestion.set(option.question_id, list);
+  }
+
+  return questions.map((question) => ({
+    ...question,
+    options: byQuestion.get(question.id) ?? [],
+  }));
 }
