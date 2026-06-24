@@ -67,6 +67,7 @@ export default function QuizSessionScreen(): ReactElement {
   const currentIndex = useQuizStore((s) => s.currentIndex);
   const answers = useQuizStore((s) => s.answers);
   const isPurchased = usePurchaseStore((s) => s.isPurchased);
+  const initialized = usePurchaseStore((s) => s.initialized);
   const [accessChecked, setAccessChecked] = useState(false);
 
   useEffect(() => {
@@ -80,6 +81,7 @@ export default function QuizSessionScreen(): ReactElement {
           return;
         }
         if (topic.is_free !== 1 && !isPurchased) {
+          if (!initialized) return; // Wait for purchase init before redirecting
           router.replace('/paywall');
           return;
         }
@@ -91,7 +93,7 @@ export default function QuizSessionScreen(): ReactElement {
     }
 
     checkAccess();
-  }, [topicId, db, isPurchased, accessChecked, loadQuestions]);
+  }, [topicId, db, isPurchased, initialized, accessChecked, loadQuestions]);
 
   useEffect(() => {
     if (isComplete) {

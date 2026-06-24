@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { usePurchaseStore } from './usePurchaseStore';
 
 // We test the Zustand store's synchronous actions.
@@ -45,44 +46,49 @@ describe('usePurchaseStore', () => {
     });
 
     it('persists to AsyncStorage', async () => {
-      // AsyncStorage is mocked by jest-expo preset
       await usePurchaseStore.getState().setPurchased(true);
-      const { isPurchased } = usePurchaseStore.getState();
-      expect(isPurchased).toBe(true);
+      const stored = await AsyncStorage.getItem('is_purchased');
+      expect(stored).toBe('true');
     });
   });
 
   describe('purchase action', () => {
-    it('sets isPurchasing true when starting purchase', () => {
-      // Calling purchase() will attempt to call the native module,
-      // which will throw in test environment. We verify the state
-      // transitions via direct store manipulation.
-      usePurchaseStore.setState({ isPurchasing: true });
+    it('sets isPurchasing true and clears error when starting purchase', async () => {
+      // Set an error first to verify it gets cleared
+      usePurchaseStore.setState({ error: 'Previous error' });
+      // purchase() calls requestPurchase (mocked) — the setState before it is synchronous
+      const promise = usePurchaseStore.getState().purchase();
       expect(usePurchaseStore.getState().isPurchasing).toBe(true);
-    });
-
-    it('clears error when starting purchase', () => {
-      usePurchaseStore.setState({ error: 'Previous error', isPurchasing: true });
-      expect(usePurchaseStore.getState().error).toBe('Previous error');
+      expect(usePurchaseStore.getState().error).toBeUndefined();
+      await promise;
     });
   });
 
   describe('restorePurchases action', () => {
-    it('sets isRestoring true', () => {
-      usePurchaseStore.setState({ isRestoring: true });
+    it('sets isRestoring true and clears error when starting restore', async () => {
+      usePurchaseStore.setState({ error: 'Previous error' });
+      const promise = usePurchaseStore.getState().restorePurchases();
       expect(usePurchaseStore.getState().isRestoring).toBe(true);
+      expect(usePurchaseStore.getState().error).toBeUndefined();
+      await promise;
     });
 
-    it('clears error when starting restore', () => {
-      usePurchaseStore.setState({ error: 'Previous error', isRestoring: true });
-      expect(usePurchaseStore.getState().isRestoring).toBe(true);
+    it('reports no purchases found when account has none', async () => {
+      await usePurchaseStore.getState().restorePurchases();
+      expect(usePurchaseStore.getState().isRestoring).toBe(false);
+      expect(usePurchaseStore.getState().error).toBe(
+        'No previous purchases found on this account.',
+      );
     });
   });
 
   describe('loadProducts action', () => {
-    it('sets isLoadingProducts true', () => {
-      usePurchaseStore.setState({ isLoadingProducts: true });
+    it('sets isLoadingProducts true and clears error', async () => {
+      usePurchaseStore.setState({ error: 'Previous error' });
+      const promise = usePurchaseStore.getState().loadProducts();
       expect(usePurchaseStore.getState().isLoadingProducts).toBe(true);
+      expect(usePurchaseStore.getState().error).toBeUndefined();
+      await promise;
     });
   });
 

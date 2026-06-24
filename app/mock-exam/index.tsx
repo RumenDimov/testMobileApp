@@ -71,16 +71,18 @@ export default function MockExamScreen(): ReactElement {
   const timeRemaining = useMockExamStore((s) => s.timeRemaining);
   const tick = useMockExamStore((s) => s.tick);
   const isPurchased = usePurchaseStore((s) => s.isPurchased);
+  const initialized = usePurchaseStore((s) => s.initialized);
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
+    if (!initialized) return;
     if (!isPurchased) {
       router.replace('/paywall');
       return;
     }
     loadQuestions();
-  }, [isPurchased, loadQuestions]);
+  }, [isPurchased, loadQuestions, initialized]);
 
   useEffect(() => {
     if (isComplete) {
@@ -102,6 +104,17 @@ export default function MockExamScreen(): ReactElement {
       }
     };
   }, [isLoading, questions.length, tick]);
+
+  if (!initialized) {
+    return (
+      <View className="flex-1 justify-center items-center bg-background">
+        <ActivityIndicator size="large" color="#7C3AED" />
+        <Text className="text-body text-text-secondary mt-md">
+          Checking purchase status...
+        </Text>
+      </View>
+    );
+  }
 
   if (isLoading) {
     return (

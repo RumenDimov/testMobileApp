@@ -49,6 +49,7 @@ const initialState: PurchaseState = {
 
 let purchaseListener: EventSubscription | undefined;
 let errorListener: EventSubscription | undefined;
+let initializePromise: Promise<void> | undefined;
 
 async function loadStoredPurchaseFlag(): Promise<boolean> {
   try {
@@ -65,57 +66,79 @@ export const usePurchaseStore = create<PurchaseState & PurchaseActions>(
 
     initialize: async (): Promise<void> => {
       if (get().initialized) return;
+      if (initializePromise) return initializePromise;
 
-      try {
-        await initConnection();
-        set({ connected: true });
+      initializePromise = (async (): Promise<void> => {
+        try {
+          await initConnection();
+          set({ connected: true });
 
-        purchaseListener = purchaseUpdatedListener(
-          async (purchase: Purchase) => {
-            if (
-              purchase.productId === PRODUCT_SKU &&
-              purchase.purchaseState === 'purchased'
-            ) {
-              await finishTransaction({ purchase, isConsumable: false });
-              await get().setPurchased(true);
-              set({ isPurchasing: false });
-            }
-          },
-        );
+          purchaseListener = purchaseUpdatedListener(
+            async (purchase: Purchase) => {
+              if (
+                purchase.productId === PRODUCT_SKU &&
+                purchase.purchaseState === 'purchased'
+              ) {
+                try {
+                  await finishTransaction({
+                    purchase,
+                    isConsumable: false,
+                  });
+                  await get().setPurchased(true);
+                } catch {
+                  // Transaction finish failure should not block state update
+                }
+                set({ isPurchasing: false });
+              }
+            },
+          );
 
-        errorListener = purchaseErrorListener(
-          (iapError: PurchaseError) => {
-            set({
-              isPurchasing: false,
-              isRestoring: false,
-              error: iapError.message || 'Purchase failed. Please try again.',
-            });
-          },
-        );
+          errorListener = purchaseErrorListener(
+            (iapError: PurchaseError) => {
+              set({
+                isPurchasing: false,
+                isRestoring: false,
+                error:
+                  iapError.message || 'Purchase failed. Please try again.',
+              });
+            },
+          );
 
-        // Check existing purchases (restore-on-launch)
-        const storedFlag = await loadStoredPurchaseFlag();
-        if (storedFlag) {
-          set({ isPurchased: true });
-        } else {
+          // Check purchases: always consult Play Store first, use cached flag as offline fallback
+          let hasValidPurchase = false;
           try {
             const purchases = await getAvailablePurchases();
-            const hasUnlock = purchases.some(
+            hasValidPurchase = purchases.some(
               (p) => p.productId === PRODUCT_SKU,
             );
-            if (hasUnlock) {
-              await get().setPurchased(true);
-            }
           } catch {
-            // Silently ignore - store may not be ready for query yet
+            // Store query failed — fall through to cached flag
           }
-        }
 
-        set({ initialized: true });
-      } catch (err) {
-        const message =
-          err instanceof Error ? err.message : 'Failed to connect to store';
-        set({ error: message, initialized: true });
+          if (hasValidPurchase) {
+            await get().setPurchased(true);
+          } else {
+            const storedFlag = await loadStoredPurchaseFlag();
+            if (storedFlag) {
+              set({ isPurchased: true });
+            }
+          }
+
+          set({ initialized: true });
+        } catch (err) {
+          const message =
+            err instanceof Error
+              ? err.message
+              : 'Failed to connect to store';
+          // Leave initialized false so callers can retry
+          set({ error: message, connected: false });
+        }
+      })();
+
+      try {
+        await initializePromise;
+      } finally {
+        initializePromise = undefined;
       }
     },
 
