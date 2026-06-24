@@ -200,7 +200,6 @@ export default function PaywallScreen(): ReactElement {
   const purchaseSourceRef = useRef<'purchase' | 'restore' | undefined>(undefined);
 
   useEffect(() => {
-    trackEvent('paywall_viewed');
     trackEvent('paywall_view');
   }, []);
 

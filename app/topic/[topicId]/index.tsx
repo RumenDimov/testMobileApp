@@ -88,9 +88,7 @@ export default function QuizSessionScreen(): ReactElement {
           router.replace('/paywall');
           return;
         }
-        if (topic.is_free === 1) {
-          isFreeRef.current = true;
-        }
+        isFreeRef.current = topic.is_free === 1;
         setAccessChecked(true);
         loadQuestions(topicId);
       } catch {
