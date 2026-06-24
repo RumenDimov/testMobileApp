@@ -1,13 +1,13 @@
 /// <reference types="jest" />
 import { render, fireEvent, waitFor } from '@testing-library/react-native';
-import { useRouter, useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import TopicResultsScreen from '../../../topic/[topicId]/results';
 import { useQuizStore } from '../../../../src/store/useQuizStore';
 import { setDb } from '../../../../src/lib/db';
 import { createMockDb } from '../../../../src/test-utils/mocks';
 
-const mockRouter = useRouter();
+const mockRouter = router;
 const mockUseLocalSearchParams = useLocalSearchParams as jest.Mock;
 const mockDb = createMockDb();
 
@@ -53,7 +53,7 @@ describe('TopicResultsScreen', () => {
   });
 
   it('renders retry and home buttons', () => {
-    const { getByText, getByTestId } = render(<TopicResultsScreen />);
+    const { getByTestId } = render(<TopicResultsScreen />);
     expect(getByTestId('retry-button')).toBeTruthy();
     expect(getByTestId('home-button')).toBeTruthy();
   });

@@ -1,10 +1,10 @@
 /// <reference types="jest" />
-import { render, fireEvent, waitFor, screen } from '@testing-library/react-native';
-import { useRouter } from 'expo-router';
+import { render, fireEvent, waitFor } from '@testing-library/react-native';
+import { router } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import OnboardingScreen from '../onboarding';
 
-const mockRouter = useRouter();
+const mockRouter = router;
 
 beforeEach(() => {
   jest.clearAllMocks();
@@ -29,7 +29,7 @@ describe('OnboardingScreen', () => {
   });
 
   it('marks onboarding complete and navigates on Get started tap', async () => {
-    const { getByText, getByTestId } = render(<OnboardingScreen />);
+    const { getByText } = render(<OnboardingScreen />);
 
     fireEvent.press(getByText('Get started'));
 

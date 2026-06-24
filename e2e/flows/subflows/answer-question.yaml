@@ -7,11 +7,10 @@
 # Assert question counter is visible
 - assertVisible: "Question"
 
-# Tap the first answer option (index 0 inside quiz-scroll)
+# Tap the first answer option (regex match on option testID)
 - tapOn:
+    id: "option-.*"
     index: 0
-    childOf:
-      id: "quiz-scroll"
 
 # "Check Answer" button should appear
 - assertVisible: "Check Answer"

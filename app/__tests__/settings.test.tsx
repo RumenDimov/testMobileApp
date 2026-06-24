@@ -1,15 +1,13 @@
 /// <reference types="jest" />
 import { render, fireEvent, waitFor } from '@testing-library/react-native';
-import { useRouter } from 'expo-router';
-import { useSQLiteContext } from 'expo-sqlite';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { router } from 'expo-router';
 import SettingsScreen from '../settings';
 import { usePurchaseStore } from '../../src/store/usePurchaseStore';
 import { Linking } from 'react-native';
 import { setDb } from '../../src/lib/db';
 import { createMockDb } from '../../src/test-utils/mocks';
 
-const mockRouter = useRouter();
+const mockRouter = router;
 const mockDb = createMockDb();
 
 beforeEach(() => {

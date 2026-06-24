@@ -1,9 +1,9 @@
 /// <reference types="jest" />
 import { render, fireEvent } from '@testing-library/react-native';
-import { useRouter, useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import PurchaseConfirmationScreen from '../../paywall/confirmation';
 
-const mockRouter = useRouter();
+const mockRouter = router;
 const mockUseLocalSearchParams = useLocalSearchParams as jest.Mock;
 
 beforeEach(() => {

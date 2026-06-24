@@ -1,10 +1,10 @@
 /// <reference types="jest" />
 import { render, fireEvent, waitFor } from '@testing-library/react-native';
-import { useRouter } from 'expo-router';
+import { router } from 'expo-router';
 import PaywallScreen from '../../paywall/index';
 import { usePurchaseStore } from '../../../src/store/usePurchaseStore';
 
-const mockRouter = useRouter();
+const mockRouter = router;
 
 beforeEach(() => {
   jest.clearAllMocks();

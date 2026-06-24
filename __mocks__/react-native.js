@@ -1,32 +1,38 @@
 // Manual mock for react-native in Jest.
 // Prevents native module errors (DevMenu, TurboModuleRegistry) in test env.
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports -- Jest manual mock is CommonJS
 const React = require('react');
 
 // ActivityIndicator mock
 const ActivityIndicator = React.forwardRef((props, ref) =>
   React.createElement('ActivityIndicator', { ...props, ref }),
 );
+ActivityIndicator.displayName = 'ActivityIndicator';
 
 // Pressable mock
 const Pressable = React.forwardRef((props, ref) =>
   React.createElement('Pressable', { ...props, ref, accessibilityRole: 'button' }),
 );
+Pressable.displayName = 'Pressable';
 
 // Text mock
 const Text = React.forwardRef((props, ref) =>
   React.createElement('Text', { ...props, ref }),
 );
+Text.displayName = 'Text';
 
 // View mock
 const View = React.forwardRef((props, ref) =>
   React.createElement('View', { ...props, ref }),
 );
+View.displayName = 'View';
 
 // ScrollView mock
 const ScrollView = React.forwardRef((props, ref) =>
   React.createElement('RCTScrollView', { ...props, ref }),
 );
+ScrollView.displayName = 'ScrollView';
 
 // Linking mock
 const Linking = {
@@ -62,6 +68,30 @@ const Dimensions = {
   addEventListener: jest.fn(() => ({ remove: jest.fn() })),
 };
 
+// FlatList stub — just renders children
+const FlatList = React.forwardRef((props, ref) =>
+  React.createElement('RCTFlatList', { ...props, ref }),
+);
+FlatList.displayName = 'FlatList';
+
+// Animated API stub
+const AnimatedView = React.forwardRef((props, ref) =>
+  React.createElement('AnimatedView', { ...props, ref }),
+);
+AnimatedView.displayName = 'Animated.View';
+
+// TouchableOpacity stub
+const TouchableOpacity = React.forwardRef((props, ref) =>
+  React.createElement('TouchableOpacity', { ...props, ref }),
+);
+TouchableOpacity.displayName = 'TouchableOpacity';
+
+// Modal stub
+const Modal = React.forwardRef((props, ref) =>
+  React.createElement('Modal', { ...props, ref }),
+);
+Modal.displayName = 'Modal';
+
 module.exports = {
   ActivityIndicator,
   Pressable,
@@ -73,20 +103,13 @@ module.exports = {
   Platform,
   StyleSheet,
   Dimensions,
-  // FlatList stub — just renders children
-  FlatList: React.forwardRef((props, ref) =>
-    React.createElement('RCTFlatList', { ...props, ref }),
-  ),
+  FlatList,
   // Other commonly imported RN APIs
   Animated: {
-    View: React.forwardRef((props, ref) => React.createElement('AnimatedView', { ...props, ref })),
+    View: AnimatedView,
   },
-  TouchableOpacity: React.forwardRef((props, ref) =>
-    React.createElement('TouchableOpacity', { ...props, ref }),
-  ),
-  Modal: React.forwardRef((props, ref) =>
-    React.createElement('Modal', { ...props, ref }),
-  ),
+  TouchableOpacity,
+  Modal,
   Alert: {
     alert: jest.fn(),
   },

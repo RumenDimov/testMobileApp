@@ -1,10 +1,10 @@
 /// <reference types="jest" />
 import { render, fireEvent } from '@testing-library/react-native';
-import { useRouter } from 'expo-router';
+import { router } from 'expo-router';
 import ProgressScreen from '../progress';
 import { useProgressStore } from '../../src/store/useProgressStore';
 
-const mockRouter = useRouter();
+const mockRouter = router;
 
 beforeEach(() => {
   jest.clearAllMocks();

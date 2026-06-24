@@ -18,15 +18,13 @@ appId: com.carepractice.app
     index: 0
 
 # Quiz screen loads — expect question counter
-- assertVisible: "Question 1 of"
+- assertVisible: ".*Question 1 of.*"
 
 # Answer a question: tap the first answer option
 - tapOn:
-    id: "quiz-scroll"
-    childOf:
-      text: ".*"
+    id: "option-.*"
+    index: 0
 
-# Tap first pressable inside the scroll view
 # After selecting, "Check Answer" button should appear
 - assertVisible: "Check Answer"
 - tapOn: "Check Answer"
@@ -38,7 +36,7 @@ appId: com.carepractice.app
 - tapOn: "Next Question"
 
 # Should now be on question 2
-- assertVisible: "Question 2 of"
+- assertVisible: ".*Question 2 of.*"
 
 # Answer remaining questions until quiz complete
 # (The number varies by topic — the flow just validates the first answer cycle)

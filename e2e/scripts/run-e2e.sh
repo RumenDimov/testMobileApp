@@ -26,7 +26,7 @@ echo ""
 
 # Step 1: Check Android emulator/device
 echo "[1/4] Checking Android device..."
-DEVICES=$(adb devices -l 2>/dev/null | grep -v "List of devices" | grep -v "^$" | wc -l || echo "0")
+DEVICES=$(adb devices -l 2>/dev/null | awk 'NR>1 && NF{count++} END{print count+0}')
 if [ "$DEVICES" -eq 0 ]; then
   echo "ERROR: No Android device/emulator connected."
   echo "Start an emulator or connect a device with USB debugging enabled."
