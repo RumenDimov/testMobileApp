@@ -1,8 +1,9 @@
-import { Suspense, type ReactElement } from 'react';
+import { Suspense, useEffect, type ReactElement } from 'react';
 import { Stack } from 'expo-router';
 import { SQLiteProvider } from 'expo-sqlite';
 import { ActivityIndicator, Text, View } from 'react-native';
 import { DatabaseInitializer } from '../src/lib/DatabaseInitializer';
+import { usePurchaseStore } from '../src/store/usePurchaseStore';
 import '../global.css';
 
 function LoadingFallback(): ReactElement {
@@ -25,6 +26,16 @@ function ErrorFallback({ message }: { message: string }): ReactElement {
 }
 
 function AppNavigator(): ReactElement {
+  const initialize = usePurchaseStore((s) => s.initialize);
+  const cleanup = usePurchaseStore((s) => s.cleanup);
+
+  useEffect(() => {
+    initialize();
+    return (): void => {
+      cleanup();
+    };
+  }, [initialize, cleanup]);
+
   return (
     <DatabaseInitializer
       fallback={<LoadingFallback />}
@@ -36,6 +47,8 @@ function AppNavigator(): ReactElement {
         <Stack.Screen name="topic/[topicId]/results" />
         <Stack.Screen name="mock-exam/index" />
         <Stack.Screen name="mock-exam/results" />
+        <Stack.Screen name="paywall/index" />
+        <Stack.Screen name="paywall/confirmation" />
       </Stack>
     </DatabaseInitializer>
   );

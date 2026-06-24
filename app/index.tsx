@@ -4,13 +4,26 @@ import { ActivityIndicator, Pressable, ScrollView, Text, View } from 'react-nati
 import { useSQLiteContext } from 'expo-sqlite';
 import type { TopicSummary, TopicBestScore } from '../src/db/queries/questions';
 import { getAllTopics, getTopicBestScores } from '../src/db/queries/questions';
+import { usePurchaseStore } from '../src/store/usePurchaseStore';
 
 type TopicCardProps = {
   topic: TopicSummary;
   bestScore: TopicBestScore | undefined;
+  isPurchased: boolean;
+  onPurchaseRequired: () => void;
 };
 
-function TopicCard({ topic, bestScore }: TopicCardProps): ReactElement {
+function TopicCard({ topic, bestScore, isPurchased, onPurchaseRequired }: TopicCardProps): ReactElement {
+  const isAccessible = topic.is_free === 1 || isPurchased;
+
+  const handlePress = (): void => {
+    if (isAccessible) {
+      router.push(`/topic/${topic.id}`);
+    } else {
+      onPurchaseRequired();
+    }
+  };
+
   return (
     <View className="bg-surface rounded-card p-md mb-3 border border-divider">
       <View className="flex-row justify-between items-center">
@@ -20,6 +33,10 @@ function TopicCard({ topic, bestScore }: TopicCardProps): ReactElement {
         {topic.is_free === 1 ? (
           <Text className="text-caption font-semibold text-primary bg-primary-light px-sm py-xs rounded-lg">
             Free
+          </Text>
+        ) : isPurchased ? (
+          <Text className="text-caption font-semibold text-correct bg-[#F0FDF4] px-sm py-xs rounded-lg">
+            Unlocked
           </Text>
         ) : (
           <Text className="text-caption font-semibold text-locked bg-divider px-sm py-xs rounded-lg">
@@ -44,11 +61,13 @@ function TopicCard({ topic, bestScore }: TopicCardProps): ReactElement {
       </View>
 
       <Pressable
-        onPress={() => router.push(`/topic/${topic.id}`)}
-        className="bg-primary py-3 px-lg rounded-button items-center min-h-[48px] justify-center"
+        onPress={handlePress}
+        className={`py-3 px-lg rounded-button items-center min-h-[48px] justify-center ${
+          isAccessible ? 'bg-primary' : 'bg-locked'
+        }`}
       >
         <Text className="text-button text-white">
-          Start Quiz
+          {isAccessible ? 'Start Quiz' : 'Unlock to Start'}
         </Text>
       </Pressable>
     </View>
@@ -85,6 +104,7 @@ export default function HomeScreen(): ReactElement {
   const [bestScores, setBestScores] = useState<Map<string, TopicBestScore>>(new Map());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | undefined>(undefined);
+  const isPurchased = usePurchaseStore((s) => s.isPurchased);
 
   useEffect(() => {
     async function load(): Promise<void> {
@@ -109,6 +129,18 @@ export default function HomeScreen(): ReactElement {
     load();
   }, [db]);
 
+  const handlePurchaseRequired = (): void => {
+    router.push('/paywall');
+  };
+
+  const handleMockExam = (): void => {
+    if (isPurchased) {
+      router.push('/mock-exam');
+    } else {
+      router.push('/paywall');
+    }
+  };
+
   if (loading) {
     return <LoadingState />;
   }
@@ -125,14 +157,20 @@ export default function HomeScreen(): ReactElement {
         </Text>
 
         <Pressable
-          onPress={() => router.push('/mock-exam')}
-          className="bg-primary rounded-card p-md mb-lg border-2 border-primary"
+          onPress={handleMockExam}
+          className={`rounded-card p-md mb-lg border-2 ${
+            isPurchased
+              ? 'bg-primary border-primary'
+              : 'bg-locked border-locked'
+          }`}
         >
           <Text className="text-button text-white text-center mb-sm">
             Mock Exam
           </Text>
           <Text className="text-caption text-white/80 text-center">
-            Timed, mixed-topic practice from all paid standards
+            {isPurchased
+              ? 'Timed, mixed-topic practice from all paid standards'
+              : 'Unlock with full access'}
           </Text>
         </Pressable>
 
@@ -145,6 +183,8 @@ export default function HomeScreen(): ReactElement {
             key={topic.id}
             topic={topic}
             bestScore={bestScores.get(topic.id)}
+            isPurchased={isPurchased}
+            onPurchaseRequired={handlePurchaseRequired}
           />
         ))}
 
