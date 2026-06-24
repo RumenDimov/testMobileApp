@@ -1,0 +1,192 @@
+{
+  "topic": {
+    "id": "cc-standard-10",
+    "qualification_id": "care-certificate",
+    "title": "Standard 10: Safeguarding Adults",
+    "summary": "Recognising abuse and neglect, understanding your role, and knowing how and where to report safeguarding concerns.",
+    "sort_order": 10,
+    "is_free": 1
+  },
+  "questions": [
+    {
+      "id": "cc10-q01",
+      "source_criterion": "10.1a Explain the term 'safeguarding adults'",
+      "prompt": "What does 'safeguarding adults' mean?",
+      "options": [
+        { "label": "Protecting an adult's right to live in safety, free from abuse and neglect", "is_correct": true },
+        { "label": "Making all decisions for an adult so they cannot be harmed", "is_correct": false },
+        { "label": "Keeping an adult in a care home rather than at home", "is_correct": false },
+        { "label": "Only acting after abuse has already happened", "is_correct": false }
+      ],
+      "explanation": "The Care Act 2014 defines adult safeguarding as protecting an adult's right to live in safety, free from abuse and neglect. It is about prevention as well as response, and it balances keeping someone safe with respecting their right to make their own choices."
+    },
+    {
+      "id": "cc10-q02",
+      "source_criterion": "10.1b Explain your own role and responsibilities in safeguarding individuals",
+      "prompt": "As a care worker, what should you do first if you suspect an individual is being abused?",
+      "options": [
+        { "label": "Investigate the situation yourself before telling anyone", "is_correct": false },
+        { "label": "Report it in line with your employer's safeguarding policy, usually to your manager", "is_correct": true },
+        { "label": "Wait to see if it happens again before doing anything", "is_correct": false },
+        { "label": "Discuss it with other residents or service users first", "is_correct": false }
+      ],
+      "explanation": "Every worker has a part to play in safeguarding. Your responsibility is to report any concerns or suspicions of abuse in line with your employer's agreed ways of working, usually starting with your manager — not to investigate or confront the situation yourself."
+    },
+    {
+      "id": "cc10-q03",
+      "source_criterion": "10.1c List different types of abuse",
+      "prompt": "Which of the following is an example of financial abuse?",
+      "options": [
+        { "label": "Someone using a person's bank card without their permission", "is_correct": true },
+        { "label": "Shouting at someone to frighten them", "is_correct": false },
+        { "label": "Leaving someone without food for a day", "is_correct": false },
+        { "label": "Excluding someone from group activities", "is_correct": false }
+      ],
+      "explanation": "Financial or material abuse is the use of a person's funds, property or belongings without their permission — including theft, fraud, scams, or misuse of someone's money or possessions."
+    },
+    {
+      "id": "cc10-q04",
+      "source_criterion": "10.1c List different types of abuse",
+      "prompt": "An individual has unexplained bruises in different stages of healing. Which type of abuse does this most likely indicate?",
+      "options": [
+        { "label": "Physical abuse", "is_correct": true },
+        { "label": "Discriminatory abuse", "is_correct": false },
+        { "label": "Organisational abuse", "is_correct": false },
+        { "label": "Modern slavery", "is_correct": false }
+      ],
+      "explanation": "Unexplained injuries, especially multiple injuries of different ages, are a key indicator of physical abuse. Signs include unexplained bruises, broken bones, burns, or bite marks."
+    },
+    {
+      "id": "cc10-q05",
+      "source_criterion": "10.1d Explain the term 'harm'",
+      "prompt": "Which best describes the meaning of 'harm' in a safeguarding context?",
+      "options": [
+        { "label": "Only physical injury caused on purpose", "is_correct": false },
+        { "label": "Ill treatment, impairment of health or development, self-harm, neglect, or unlawful conduct affecting a person's rights or property", "is_correct": true },
+        { "label": "Any disagreement between a worker and the person they support", "is_correct": false },
+        { "label": "Harm caused only by family members", "is_correct": false }
+      ],
+      "explanation": "Harm is a broad term. It includes ill treatment (such as sexual abuse or exploitation), impairment of physical or mental health or development, self-harm and neglect, and unlawful conduct that affects a person's property, rights or interests — for example, financial abuse."
+    },
+    {
+      "id": "cc10-q06",
+      "source_criterion": "10.1e Explain why an individual may be more vulnerable to abuse or neglect",
+      "prompt": "Why might someone being cared for in their own home be more vulnerable to abuse going unnoticed?",
+      "options": [
+        { "label": "Because it is easier for an abuser to hide their actions when there are fewer other people present", "is_correct": true },
+        { "label": "Because home care workers are not trained at all", "is_correct": false },
+        { "label": "Because people are never abused in their own homes", "is_correct": false },
+        { "label": "Because home care is always unsupervised by law", "is_correct": false }
+      ],
+      "explanation": "In an individual's own home, there are often fewer people around, which can make it easier for an abuser to hide their actions from others. This is one of several factors that can increase vulnerability to abuse or neglect."
+    },
+    {
+      "id": "cc10-q07",
+      "source_criterion": "10.1f Describe what is meant by 'restrictive practice'",
+      "prompt": "When is the use of restrictive practice (such as physical restraint) acceptable?",
+      "options": [
+        { "label": "Whenever a worker feels it would make their job easier", "is_correct": false },
+        { "label": "Only when legally and ethically justified, and only when absolutely necessary to prevent serious harm", "is_correct": true },
+        { "label": "Whenever a family member requests it", "is_correct": false },
+        { "label": "Restrictive practice should never be used under any circumstances", "is_correct": false }
+      ],
+      "explanation": "Restrictive practice must always be legally and ethically justified, and should only ever be used when absolutely necessary to prevent serious harm. Used inappropriately, it will almost certainly breach a person's human rights."
+    },
+    {
+      "id": "cc10-q08",
+      "source_criterion": "10.1k Describe where to get information and advice about your role in safeguarding",
+      "prompt": "Which of these is a genuine source of advice and information on safeguarding responsibilities?",
+      "options": [
+        { "label": "Your manager and your employer's policies and procedures", "is_correct": true },
+        { "label": "Asking a friend who works in an unrelated job", "is_correct": false },
+        { "label": "Guessing based on what feels reasonable", "is_correct": false },
+        { "label": "Only the individual you are supporting", "is_correct": false }
+      ],
+      "explanation": "Your manager, your employer's agreed ways of working, formal safeguarding training, and trusted external sources such as the Care Quality Commission (CQC) or Skills for Care are genuine sources of advice. When in doubt, your manager should always be your first point of contact."
+    },
+    {
+      "id": "cc10-q09",
+      "source_criterion": "10.2a Describe how a care environment can promote or undermine dignity and rights",
+      "prompt": "Which of these promotes an individual's dignity and rights?",
+      "options": [
+        { "label": "Keeping communication open and involving the individual in decisions about their own care", "is_correct": true },
+        { "label": "Making all care decisions without asking the individual", "is_correct": false },
+        { "label": "Only allowing visits at times that suit the staff rota", "is_correct": false },
+        { "label": "Discouraging individuals from raising concerns", "is_correct": false }
+      ],
+      "explanation": "A care environment that promotes dignity and rights keeps communication open, builds relationships on trust, and ensures individuals play an active part in decisions about their own care and support."
+    },
+    {
+      "id": "cc10-q10",
+      "source_criterion": "10.2b & c Explain person-centred care, active participation, choice and rights in keeping individuals safe",
+      "prompt": "How does person-centred care help reduce the risk of abuse or neglect?",
+      "options": [
+        { "label": "It removes the individual's ability to make decisions, keeping them fully protected", "is_correct": false },
+        { "label": "It puts the individual at the centre of decisions about their own care, reducing unfair or harmful treatment", "is_correct": true },
+        { "label": "It means staff make decisions faster with less paperwork", "is_correct": false },
+        { "label": "It only applies to physical health needs", "is_correct": false }
+      ],
+      "explanation": "Person-centred care means working together with the individual to plan care that meets their unique needs. Putting the individual in control of decisions about their own care reduces the risk of negative, unfair, or harmful treatment."
+    },
+    {
+      "id": "cc10-q11",
+      "source_criterion": "10.2e List ways the likelihood of abuse can be reduced by managing risk and focusing on prevention",
+      "prompt": "What is 'risk enablement' in the context of safeguarding?",
+      "options": [
+        { "label": "Removing all risk from an individual's life, even if it limits their independence", "is_correct": false },
+        { "label": "Supporting individuals to identify and assess their own risks, so they can make informed choices and take the risks they choose", "is_correct": true },
+        { "label": "Ignoring risk entirely to save time", "is_correct": false },
+        { "label": "A legal process only carried out by the local authority", "is_correct": false }
+      ],
+      "explanation": "Risk enablement supports individuals to understand and weigh up risks themselves, rather than removing their choices altogether. It is a key part of person-centred care — the individual is treated as the expert on their own life and care."
+    },
+    {
+      "id": "cc10-q12",
+      "source_criterion": "10.3a Explain what to do when abuse or neglect is suspected, including whistleblowing",
+      "prompt": "What is 'whistleblowing' in a care setting?",
+      "options": [
+        { "label": "Reporting unsafe or illegal practices in the workplace, including to someone outside the organisation if necessary", "is_correct": true },
+        { "label": "Telling a colleague's secrets to other staff", "is_correct": false },
+        { "label": "Only something managers are allowed to do", "is_correct": false },
+        { "label": "An informal chat with no formal process behind it", "is_correct": false }
+      ],
+      "explanation": "Whistleblowing is the reporting of unsafe or illegal practices at work. Your first step is usually your manager, but if the concern is about your manager, or your concern isn't acted on, you can go to someone more senior or an external body such as the CQC, a union representative, or the police."
+    },
+    {
+      "id": "cc10-q13",
+      "source_criterion": "10.4a List relevant legislation relating to safeguarding adults",
+      "prompt": "Which piece of legislation places a duty on local authorities to make enquiries when an adult is believed to be at risk of abuse or neglect?",
+      "options": [
+        { "label": "The Equality Act 2010", "is_correct": false },
+        { "label": "The Care Act 2014", "is_correct": true },
+        { "label": "The Data Protection Act 2018", "is_correct": false },
+        { "label": "The Health and Safety at Work Act 1974", "is_correct": false }
+      ],
+      "explanation": "The Care Act 2014 makes it the duty of local authorities to make enquiries if someone is being abused or neglected, or is at risk of this. It also requires local authorities to set up Safeguarding Adults Boards (SABs)."
+    },
+    {
+      "id": "cc10-q14",
+      "source_criterion": "10.4b Explain the importance of sharing information with relevant agencies",
+      "prompt": "Why is it important to share safeguarding information with relevant agencies, even though it involves personal data?",
+      "options": [
+        { "label": "Information should never be shared under any circumstances, to protect privacy", "is_correct": false },
+        { "label": "Sharing on a 'need-to-know' basis helps protect the individual from harm and ensures they get the right support — while still following GDPR principles", "is_correct": true },
+        { "label": "Information can be shared with anyone who asks for it", "is_correct": false },
+        { "label": "Only the police are allowed to receive safeguarding information", "is_correct": false }
+      ],
+      "explanation": "Information should be shared on a 'need-to-know' basis when it's in the adult's interest, in line with GDPR. Confidentiality must not be confused with secrecy — sharing the right information with the right people helps protect adults from harm."
+    },
+    {
+      "id": "cc10-q15",
+      "source_criterion": "10.4c Describe actions to take if concerns are not acted upon",
+      "prompt": "You reported a safeguarding concern to your manager, but you don't believe it was taken seriously or passed on. What should you do?",
+      "options": [
+        { "label": "Drop the matter, since you have already reported it once", "is_correct": false },
+        { "label": "Escalate to a more senior manager, or report it externally — for example to the CQC, the local safeguarding team, or the police", "is_correct": true },
+        { "label": "Confront the manager publicly in front of colleagues", "is_correct": false },
+        { "label": "Wait several months before raising it again", "is_correct": false }
+      ],
+      "explanation": "If your concerns are not taken seriously or shared with other agencies, you should escalate the matter — for example to a more senior manager or the Registered Manager, and if necessary to the CQC, the local safeguarding team, or the police, following your organisation's whistleblowing policy."
+    }
+  ]
+}
