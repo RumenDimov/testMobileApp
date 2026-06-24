@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import type { QuestionWithOptions } from '../../src/db/queries/questions';
 import { useMockExamStore } from '../../src/store/useMockExamStore';
+import { usePurchaseStore } from '../../src/store/usePurchaseStore';
 
 function formatTime(seconds: number): string {
   const mins = Math.floor(seconds / 60);
@@ -69,12 +70,17 @@ export default function MockExamScreen(): ReactElement {
   const answers = useMockExamStore((s) => s.answers);
   const timeRemaining = useMockExamStore((s) => s.timeRemaining);
   const tick = useMockExamStore((s) => s.tick);
+  const isPurchased = usePurchaseStore((s) => s.isPurchased);
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
+    if (!isPurchased) {
+      router.replace('/paywall');
+      return;
+    }
     loadQuestions();
-  }, [loadQuestions]);
+  }, [isPurchased, loadQuestions]);
 
   useEffect(() => {
     if (isComplete) {

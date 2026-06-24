@@ -1,4 +1,4 @@
-import { useEffect, type ReactElement } from 'react';
+import { useEffect, useState, type ReactElement } from 'react';
 import { router, useLocalSearchParams } from 'expo-router';
 import {
   ActivityIndicator,
@@ -7,8 +7,11 @@ import {
   Text,
   View,
 } from 'react-native';
+import { useSQLiteContext } from 'expo-sqlite';
 import type { QuestionWithOptions } from '../../../src/db/queries/questions';
+import { getTopic } from '../../../src/db/queries/questions';
 import { useQuizStore } from '../../../src/store/useQuizStore';
+import { usePurchaseStore } from '../../../src/store/usePurchaseStore';
 
 type ProgressDotsProps = {
   total: number;
@@ -49,6 +52,7 @@ function ProgressDots({
 
 export default function QuizSessionScreen(): ReactElement {
   const { topicId } = useLocalSearchParams<{ topicId: string }>();
+  const db = useSQLiteContext();
   const loadQuestions = useQuizStore((s) => s.loadQuestions);
   const isComplete = useQuizStore((s) => s.isComplete);
   const isLoading = useQuizStore((s) => s.isLoading);
@@ -62,12 +66,32 @@ export default function QuizSessionScreen(): ReactElement {
   const questions = useQuizStore((s) => s.questions);
   const currentIndex = useQuizStore((s) => s.currentIndex);
   const answers = useQuizStore((s) => s.answers);
+  const isPurchased = usePurchaseStore((s) => s.isPurchased);
+  const [accessChecked, setAccessChecked] = useState(false);
 
   useEffect(() => {
-    if (topicId) {
-      loadQuestions(topicId);
+    if (!topicId || accessChecked) return;
+
+    async function checkAccess(): Promise<void> {
+      try {
+        const topic = await getTopic(db, topicId);
+        if (!topic) {
+          router.replace('/');
+          return;
+        }
+        if (topic.is_free !== 1 && !isPurchased) {
+          router.replace('/paywall');
+          return;
+        }
+        setAccessChecked(true);
+        loadQuestions(topicId);
+      } catch {
+        router.replace('/');
+      }
     }
-  }, [topicId, loadQuestions]);
+
+    checkAccess();
+  }, [topicId, db, isPurchased, accessChecked, loadQuestions]);
 
   useEffect(() => {
     if (isComplete) {
