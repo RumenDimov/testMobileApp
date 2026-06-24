@@ -27,7 +27,7 @@ type QuizState = {
   loadQuestions: (topicId: string) => Promise<void>;
   selectAnswer: (questionId: string, optionId: string) => void;
   revealAnswer: () => void;
-  nextQuestion: () => void;
+  advanceQuestion: () => void;
   reset: () => void;
   getCurrentQuestion: () => QuestionWithOptions | undefined;
   getSelectedOptionId: () => string | undefined;
@@ -94,7 +94,7 @@ export const useQuizStore = create<QuizState>((set, get) => ({
     set({ hasRevealed: true });
   },
 
-  nextQuestion: async (): Promise<void> => {
+  advanceQuestion: async (): Promise<void> => {
     const { currentIndex, questions, topicId, answers, isComplete } = get();
 
     if (isComplete) return;

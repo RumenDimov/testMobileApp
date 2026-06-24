@@ -20,7 +20,7 @@ type MockExamState = {
   loadQuestions: () => Promise<void>;
   selectAnswer: (questionId: string, optionId: string) => void;
   revealAnswer: () => void;
-  nextQuestion: () => Promise<void>;
+  advanceQuestion: () => Promise<void>;
   reset: () => void;
   tick: () => void;
   getCurrentQuestion: () => QuestionWithOptions | undefined;
@@ -99,7 +99,7 @@ export const useMockExamStore = create<MockExamState>((set, get) => ({
     set({ hasRevealed: true });
   },
 
-  nextQuestion: async (): Promise<void> => {
+  advanceQuestion: async (): Promise<void> => {
     const { currentIndex, questions, answers, isComplete } = get();
 
     if (isComplete) return;

@@ -49,6 +49,7 @@ function AppNavigator(): ReactElement {
         <Stack.Screen name="mock-exam/results" />
         <Stack.Screen name="paywall/index" />
         <Stack.Screen name="paywall/confirmation" />
+        <Stack.Screen name="settings" />
       </Stack>
     </DatabaseInitializer>
   );
