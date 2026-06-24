@@ -7,9 +7,9 @@ import '../global.css';
 
 function LoadingFallback(): ReactElement {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View className="flex-1 justify-center items-center">
       <ActivityIndicator size="large" color="#7C3AED" />
-      <Text style={{ marginTop: 12, fontSize: 16, color: '#6B6570' }}>
+      <Text className="mt-3 text-body text-text-secondary">
         Loading...
       </Text>
     </View>
@@ -18,8 +18,8 @@ function LoadingFallback(): ReactElement {
 
 function ErrorFallback({ message }: { message: string }): ReactElement {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24 }}>
-      <Text style={{ fontSize: 16, color: '#DC4C4C', textAlign: 'center' }}>{message}</Text>
+    <View className="flex-1 justify-center items-center p-lg">
+      <Text className="text-body text-incorrect text-center">{message}</Text>
     </View>
   );
 }

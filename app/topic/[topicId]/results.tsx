@@ -5,26 +5,21 @@ import { useQuizStore } from '../../../src/store/useQuizStore';
 
 export default function TopicResultsScreen(): ReactElement {
   const { topicId } = useLocalSearchParams<{ topicId: string }>();
-  const store = useQuizStore();
-  const scoreCorrect = store.getScoreCorrect();
-  const scoreTotal = store.getScoreTotal();
+  const scoreCorrect = useQuizStore((s) => s.getScoreCorrect());
+  const scoreTotal = useQuizStore((s) => s.getScoreTotal());
+  const reset = useQuizStore((s) => s.reset);
 
   if (scoreTotal === 0) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24, backgroundColor: '#FDFBFE' }}>
-        <Text style={{ fontSize: 16, color: '#6B6570', marginBottom: 16 }}>
+      <View className="flex-1 justify-center items-center p-lg bg-background">
+        <Text className="text-body text-text-secondary mb-md">
           No quiz session in progress.
         </Text>
         <Pressable
           onPress={() => router.replace('/')}
-          style={{
-            paddingVertical: 14,
-            paddingHorizontal: 32,
-            borderRadius: 8,
-            backgroundColor: '#7C3AED',
-          }}
+          className="py-3.5 px-xl rounded-button bg-primary"
         >
-          <Text style={{ color: '#FFFFFF', fontSize: 16, fontWeight: '600' }}>
+          <Text className="text-button text-white">
             Back to Home
           </Text>
         </Pressable>
@@ -35,69 +30,44 @@ export default function TopicResultsScreen(): ReactElement {
   const percentage = scoreTotal > 0 ? Math.round((scoreCorrect / scoreTotal) * 100) : 0;
 
   const handleRetry = (): void => {
-    store.reset();
+    reset();
     router.replace(`/topic/${topicId}`);
   };
 
   const handleHome = (): void => {
-    store.reset();
+    reset();
     router.replace('/');
   };
 
+  const scoreColorClass = percentage >= 80 ? 'text-correct' : percentage >= 50 ? 'text-primary' : 'text-incorrect';
+
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: '#FDFBFE',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 24,
-      }}
-    >
-      <Text style={{ fontSize: 22, fontWeight: '600', color: '#1E1B1E', marginBottom: 16 }}>
+    <View className="flex-1 bg-background justify-center items-center p-lg">
+      <Text className="text-title text-text-primary mb-md">
         Topic Complete
       </Text>
 
-      <View
-        style={{
-          backgroundColor: '#FFFFFF',
-          borderRadius: 16,
-          padding: 32,
-          alignItems: 'center',
-          marginBottom: 32,
-          borderWidth: 1,
-          borderColor: '#E8E5EC',
-          width: '100%',
-          maxWidth: 320,
-        }}
-      >
-        <Text
-          style={{
-            fontSize: 48,
-            fontWeight: '700',
-            color: percentage >= 70 ? '#16A34A' : '#DC4C4C',
-            marginBottom: 8,
-          }}
-        >
+      <View className="bg-surface rounded-2xl p-xl items-center mb-xl border border-divider w-full max-w-[320px]">
+        <Text className={`text-5xl font-bold ${scoreColorClass} mb-sm`}>
           {scoreCorrect}/{scoreTotal}
         </Text>
 
-        <Text style={{ fontSize: 16, color: '#6B6570', marginBottom: 16 }}>
+        <Text className="text-body text-text-secondary mb-md">
           {percentage}% correct
         </Text>
 
         {percentage >= 80 && (
-          <Text style={{ fontSize: 16, color: '#16A34A', fontWeight: '600', textAlign: 'center' }}>
+          <Text className="text-body text-correct font-semibold text-center">
             Great job! You really know this material.
           </Text>
         )}
         {percentage >= 50 && percentage < 80 && (
-          <Text style={{ fontSize: 16, color: '#7C3AED', fontWeight: '600', textAlign: 'center' }}>
+          <Text className="text-body text-primary font-semibold text-center">
             Good effort. Review the explanations and try again.
           </Text>
         )}
         {percentage < 50 && (
-          <Text style={{ fontSize: 16, color: '#DC4C4C', fontWeight: '600', textAlign: 'center' }}>
+          <Text className="text-body text-incorrect font-semibold text-center">
             Keep studying. Read the explanations carefully and retry.
           </Text>
         )}
@@ -105,40 +75,18 @@ export default function TopicResultsScreen(): ReactElement {
 
       <Pressable
         onPress={handleRetry}
-        style={{
-          backgroundColor: '#7C3AED',
-          paddingVertical: 14,
-          paddingHorizontal: 32,
-          borderRadius: 8,
-          alignItems: 'center',
-          minHeight: 52,
-          justifyContent: 'center',
-          width: '100%',
-          maxWidth: 320,
-          marginBottom: 12,
-        }}
+        className="bg-primary py-3.5 px-xl rounded-button items-center min-h-[52px] justify-center w-full max-w-[320px] mb-3"
       >
-        <Text style={{ color: '#FFFFFF', fontSize: 16, fontWeight: '600' }}>
+        <Text className="text-button text-white">
           Retry Quiz
         </Text>
       </Pressable>
 
       <Pressable
         onPress={handleHome}
-        style={{
-          paddingVertical: 14,
-          paddingHorizontal: 32,
-          borderRadius: 8,
-          alignItems: 'center',
-          minHeight: 52,
-          justifyContent: 'center',
-          width: '100%',
-          maxWidth: 320,
-          borderWidth: 2,
-          borderColor: '#7C3AED',
-        }}
+        className="py-3.5 px-xl rounded-button items-center min-h-[52px] justify-center w-full max-w-[320px] border-2 border-primary"
       >
-        <Text style={{ color: '#7C3AED', fontSize: 16, fontWeight: '600' }}>
+        <Text className="text-button text-primary">
           Back to Home
         </Text>
       </Pressable>

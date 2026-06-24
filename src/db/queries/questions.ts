@@ -45,18 +45,29 @@ export async function getQuestionsByTopic(
     [topicId],
   );
 
-  const result: QuestionWithOptions[] = [];
-
-  for (const question of questions) {
-    const options = await db.getAllAsync<AnswerOption>(
-      'SELECT id, question_id, label, is_correct, sort_order FROM answer_options WHERE question_id = ? ORDER BY sort_order;',
-      [question.id],
-    );
-
-    result.push({ ...question, options });
+  if (questions.length === 0) {
+    return [];
   }
 
-  return result;
+  const placeholders = questions.map(() => '?').join(', ');
+  const options = await db.getAllAsync<AnswerOption>(
+    `SELECT id, question_id, label, is_correct, sort_order
+     FROM answer_options WHERE question_id IN (${placeholders})
+     ORDER BY sort_order;`,
+    questions.map((q) => q.id),
+  );
+
+  const byQuestion = new Map<string, AnswerOption[]>();
+  for (const option of options) {
+    const list = byQuestion.get(option.question_id) ?? [];
+    list.push(option);
+    byQuestion.set(option.question_id, list);
+  }
+
+  return questions.map((question) => ({
+    ...question,
+    options: byQuestion.get(question.id) ?? [],
+  }));
 }
 
 export async function getAllTopics(

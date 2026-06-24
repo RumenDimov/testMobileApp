@@ -87,7 +87,7 @@ export async function seedContentTopic(
 
       for (let oi = 0; oi < q.options.length; oi++) {
         const opt = q.options[oi];
-        const optionId = opt.id ?? generateId('opt', qi * 10 + oi);
+        const optionId = opt.id ?? `${questionId}-opt-${String(oi).padStart(3, '0')}`;
         const optSortOrder = opt.sort_order ?? oi;
 
         await db.runAsync(

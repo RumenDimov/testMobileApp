@@ -16,7 +16,7 @@ export async function saveProgress(
   scoreTotal: number,
   isMockExam: boolean,
 ): Promise<string> {
-  const id = `prog-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  const id = `prog-${Date.now()}-${Math.random().toString(36).slice(2, 12)}`;
   const attemptedAt = new Date().toISOString();
 
   await db.runAsync(

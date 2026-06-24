@@ -7,44 +7,39 @@ import {
   Text,
   View,
 } from 'react-native';
+import type { QuestionWithOptions } from '../../../src/db/queries/questions';
 import { useQuizStore } from '../../../src/store/useQuizStore';
+
+type ProgressDotsProps = {
+  total: number;
+  current: number;
+  answers: Record<string, string>;
+  questions: QuestionWithOptions[];
+};
 
 function ProgressDots({
   total,
   current,
   answers,
-}: {
-  total: number;
-  current: number;
-  answers: Record<string, string>;
-}): ReactElement {
+  questions,
+}: ProgressDotsProps): ReactElement {
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        justifyContent: 'center',
-        gap: 8,
-        paddingVertical: 16,
-      }}
-    >
+    <View className="flex-row justify-center gap-sm py-md">
       {Array.from({ length: total }).map((_, i) => {
-        const question = useQuizStore.getState().questions[i];
+        const question = questions[i];
         const answered = question ? answers[question.id] !== undefined : false;
         const isCurrent = i === current;
 
         return (
           <View
             key={i}
-            style={{
-              width: 12,
-              height: 12,
-              borderRadius: 6,
-              backgroundColor: isCurrent
-                ? '#7C3AED'
+            className={`w-3 h-3 rounded-full ${
+              isCurrent
+                ? 'bg-primary'
                 : answered
-                  ? '#C4B5FD'
-                  : '#E8E5EC',
-            }}
+                  ? 'bg-primary-light'
+                  : 'bg-divider'
+            }`}
           />
         );
       })}
@@ -54,46 +49,51 @@ function ProgressDots({
 
 export default function QuizSessionScreen(): ReactElement {
   const { topicId } = useLocalSearchParams<{ topicId: string }>();
-  const store = useQuizStore();
+  const loadQuestions = useQuizStore((s) => s.loadQuestions);
+  const isComplete = useQuizStore((s) => s.isComplete);
+  const isLoading = useQuizStore((s) => s.isLoading);
+  const error = useQuizStore((s) => s.error);
+  const getCurrentQuestion = useQuizStore((s) => s.getCurrentQuestion);
+  const getSelectedOptionId = useQuizStore((s) => s.getSelectedOptionId);
+  const hasRevealed = useQuizStore((s) => s.hasRevealed);
+  const selectAnswer = useQuizStore((s) => s.selectAnswer);
+  const revealAnswer = useQuizStore((s) => s.revealAnswer);
+  const nextQuestion = useQuizStore((s) => s.nextQuestion);
+  const questions = useQuizStore((s) => s.questions);
+  const currentIndex = useQuizStore((s) => s.currentIndex);
+  const answers = useQuizStore((s) => s.answers);
 
   useEffect(() => {
     if (topicId) {
-      store.loadQuestions(topicId);
+      loadQuestions(topicId);
     }
-  }, [topicId, store]);
+  }, [topicId, loadQuestions]);
 
   useEffect(() => {
-    if (store.isComplete) {
+    if (isComplete) {
       router.replace(`/topic/${topicId}/results`);
     }
-  }, [store.isComplete, topicId]);
+  }, [isComplete, topicId]);
 
-  if (store.isLoading) {
+  if (isLoading) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View className="flex-1 justify-center items-center">
         <ActivityIndicator size="large" color="#7C3AED" />
       </View>
     );
   }
 
-  if (store.error) {
+  if (error) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24 }}>
-        <Text style={{ fontSize: 16, color: '#DC4C4C', textAlign: 'center' }}>
-          {store.error}
+      <View className="flex-1 justify-center items-center p-lg">
+        <Text className="text-body text-incorrect text-center">
+          {error}
         </Text>
         <Pressable
           onPress={() => router.back()}
-          style={{
-            marginTop: 16,
-            paddingVertical: 12,
-            paddingHorizontal: 24,
-            borderRadius: 8,
-            borderWidth: 2,
-            borderColor: '#7C3AED',
-          }}
+          className="mt-md py-3 px-lg rounded-button border-2 border-primary"
         >
-          <Text style={{ color: '#7C3AED', fontSize: 16, fontWeight: '600' }}>
+          <Text className="text-button text-primary">
             Go Back
           </Text>
         </Pressable>
@@ -101,151 +101,107 @@ export default function QuizSessionScreen(): ReactElement {
     );
   }
 
-  const question = store.getCurrentQuestion();
+  const question = getCurrentQuestion();
   if (!question) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text style={{ fontSize: 16, color: '#6B6570' }}>No question to display.</Text>
+      <View className="flex-1 justify-center items-center">
+        <Text className="text-body text-text-secondary">No question to display.</Text>
       </View>
     );
   }
 
-  const selectedOptionId = store.getSelectedOptionId();
+  const selectedOptionId = getSelectedOptionId();
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#FDFBFE' }}>
+    <View className="flex-1 bg-background">
       <ProgressDots
-        total={store.questions.length}
-        current={store.currentIndex}
-        answers={store.answers}
+        total={questions.length}
+        current={currentIndex}
+        answers={answers}
+        questions={questions}
       />
 
       <ScrollView
-        style={{ flex: 1 }}
+        className="flex-1"
         contentContainerStyle={{ padding: 24, paddingBottom: 48 }}
       >
-        <Text style={{ fontSize: 14, color: '#6B6570', marginBottom: 8 }}>
-          Question {store.currentIndex + 1} of {store.questions.length}
+        <Text className="text-caption text-text-secondary mb-sm">
+          Question {currentIndex + 1} of {questions.length}
         </Text>
 
-        <Text
-          style={{
-            fontSize: 18,
-            fontWeight: '600',
-            color: '#1E1B1E',
-            marginBottom: 24,
-            lineHeight: 26,
-          }}
-        >
+        <Text className="text-heading text-text-primary mb-lg">
           {question.prompt}
         </Text>
 
         {question.options.map((option) => {
-          let borderColor = '#E8E5EC';
-          let backgroundColor = '#FFFFFF';
-          let textColor = '#1E1B1E';
+          let borderClass = 'border-divider';
+          let bgClass = 'bg-surface';
+          let textColorClass = 'text-text-primary';
 
-          if (store.hasRevealed) {
+          if (hasRevealed) {
             if (option.is_correct === 1) {
-              borderColor = '#16A34A';
-              backgroundColor = '#F0FDF4';
-              textColor = '#16A34A';
+              borderClass = 'border-correct';
+              bgClass = 'bg-[#F0FDF4]';
+              textColorClass = 'text-correct';
             } else if (option.id === selectedOptionId && option.is_correct === 0) {
-              borderColor = '#DC4C4C';
-              backgroundColor = '#FEF2F2';
-              textColor = '#DC4C4C';
+              borderClass = 'border-incorrect';
+              bgClass = 'bg-[#FEF2F2]';
+              textColorClass = 'text-incorrect';
             }
           } else if (option.id === selectedOptionId) {
-            borderColor = '#7C3AED';
-            backgroundColor = '#EDE9FE';
+            borderClass = 'border-primary';
+            bgClass = 'bg-primary-light';
           }
 
           return (
             <Pressable
               key={option.id}
               onPress={() => {
-                if (!store.hasRevealed) {
-                  store.selectAnswer(question.id, option.id);
+                if (!hasRevealed) {
+                  selectAnswer(question.id, option.id);
                 }
               }}
-              disabled={store.hasRevealed}
-              style={{
-                borderWidth: 2,
-                borderColor,
-                backgroundColor,
-                borderRadius: 12,
-                padding: 16,
-                marginBottom: 12,
-                minHeight: 48,
-                justifyContent: 'center',
-              }}
+              disabled={hasRevealed}
+              className={`border-2 ${borderClass} ${bgClass} rounded-card p-md mb-3 min-h-[48px] justify-center`}
             >
-              <Text style={{ fontSize: 16, color: textColor, lineHeight: 24 }}>
+              <Text className={`text-body ${textColorClass}`}>
                 {option.label}
               </Text>
             </Pressable>
           );
         })}
 
-        {store.hasRevealed && (
-          <View
-            style={{
-              backgroundColor: '#F5F3FA',
-              borderRadius: 12,
-              padding: 16,
-              marginTop: 8,
-            }}
-          >
-            <Text
-              style={{
-                fontSize: 14,
-                fontWeight: '600',
-                color: '#7C3AED',
-                marginBottom: 8,
-              }}
-            >
+        {hasRevealed && (
+          <View className="bg-[#F5F3FA] rounded-card p-md mt-sm">
+            <Text className="text-caption font-semibold text-primary mb-sm">
               Explanation
             </Text>
-            <Text style={{ fontSize: 16, color: '#1E1B1E', lineHeight: 24 }}>
+            <Text className="text-body text-text-primary">
               {question.explanation}
             </Text>
           </View>
         )}
       </ScrollView>
 
-      <View style={{ padding: 24, paddingTop: 0 }}>
-        {!store.hasRevealed && selectedOptionId && (
+      <View className="px-lg pt-0">
+        {!hasRevealed && selectedOptionId && (
           <Pressable
-            onPress={() => store.revealAnswer()}
-            style={{
-              backgroundColor: '#7C3AED',
-              paddingVertical: 14,
-              borderRadius: 8,
-              alignItems: 'center',
-              minHeight: 52,
-              justifyContent: 'center',
-            }}
+            onPress={() => revealAnswer()}
+            className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center"
           >
-            <Text style={{ color: '#FFFFFF', fontSize: 16, fontWeight: '600' }}>
+            <Text className="text-button text-white">
               Check Answer
             </Text>
           </Pressable>
         )}
 
-        {store.hasRevealed && (
+        {hasRevealed && (
           <Pressable
-            onPress={() => store.nextQuestion()}
-            style={{
-              backgroundColor: '#7C3AED',
-              paddingVertical: 14,
-              borderRadius: 8,
-              alignItems: 'center',
-              minHeight: 52,
-              justifyContent: 'center',
-            }}
+            onPress={() => nextQuestion()}
+            className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center"
           >
-            <Text style={{ color: '#FFFFFF', fontSize: 16, fontWeight: '600' }}>
-              {store.currentIndex >= store.questions.length - 1
+            <Text className="text-button text-white">
+              {currentIndex >= questions.length - 1
                 ? 'See Results'
                 : 'Next Question'}
             </Text>

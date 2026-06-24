@@ -4,6 +4,16 @@ import { getQuestionsByTopic } from '../db/queries/questions';
 import { saveProgress } from '../db/queries/progress';
 import { getDb } from '../lib/db';
 
+function emptyQuizState(): { questions: QuestionWithOptions[]; currentIndex: number; answers: Record<string, string>; hasRevealed: boolean; isComplete: boolean } {
+  return {
+    questions: [] as QuestionWithOptions[],
+    currentIndex: 0,
+    answers: {} as Record<string, string>,
+    hasRevealed: false,
+    isComplete: false,
+  };
+}
+
 type QuizState = {
   topicId: string;
   questions: QuestionWithOptions[];
@@ -36,20 +46,19 @@ export const useQuizStore = create<QuizState>((set, get) => ({
   error: undefined,
 
   loadQuestions: async (topicId: string): Promise<void> => {
-    set({ isLoading: true, error: undefined, topicId });
+    set({ isLoading: true, error: undefined, topicId, ...emptyQuizState() });
 
     try {
       const db = getDb();
       const questions = await getQuestionsByTopic(db, topicId);
 
       if (questions.length === 0) {
-        set({ error: 'No questions found for this topic', isLoading: false });
+        set({ error: 'No questions found for this topic', isLoading: false, ...emptyQuizState() });
         return;
       }
 
       set({
         questions,
-        topicId,
         currentIndex: 0,
         answers: {},
         hasRevealed: false,
@@ -60,6 +69,7 @@ export const useQuizStore = create<QuizState>((set, get) => ({
       set({
         error: err instanceof Error ? err.message : 'Failed to load questions',
         isLoading: false,
+        ...emptyQuizState(),
       });
     }
   },

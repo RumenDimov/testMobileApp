@@ -5,16 +5,86 @@ import { useSQLiteContext } from 'expo-sqlite';
 import type { TopicSummary } from '../src/db/queries/questions';
 import { getAllTopics } from '../src/db/queries/questions';
 
+type TopicCardProps = {
+  topic: TopicSummary;
+};
+
+function TopicCard({ topic }: TopicCardProps): ReactElement {
+  return (
+    <View className="bg-surface rounded-card p-md mb-3 border border-divider">
+      <View className="flex-row justify-between items-center">
+        <Text className="text-heading text-text-primary flex-1">
+          {topic.title}
+        </Text>
+        {topic.is_free === 1 ? (
+          <Text className="text-xs font-semibold text-primary bg-primary-light px-sm py-xs rounded-lg">
+            Free
+          </Text>
+        ) : (
+          <Text className="text-xs font-semibold text-locked bg-divider px-sm py-xs rounded-lg">
+            Locked
+          </Text>
+        )}
+      </View>
+
+      <Text className="text-caption text-text-secondary mt-1 mb-3">
+        {topic.summary}
+      </Text>
+
+      <Text className="text-caption text-text-secondary mb-3">
+        {topic.question_count} questions
+      </Text>
+
+      <Pressable
+        onPress={() => router.push(`/topic/${topic.id}`)}
+        className="bg-primary py-3 px-lg rounded-button items-center min-h-[48px] justify-center"
+      >
+        <Text className="text-button text-white">
+          Start Quiz
+        </Text>
+      </Pressable>
+    </View>
+  );
+}
+
+function LoadingState(): ReactElement {
+  return (
+    <View className="flex-1 justify-center items-center">
+      <ActivityIndicator size="large" color="#7C3AED" />
+    </View>
+  );
+}
+
+function ErrorState({ message }: { message: string }): ReactElement {
+  return (
+    <View className="flex-1 justify-center items-center p-lg">
+      <Text className="text-body text-incorrect text-center">{message}</Text>
+    </View>
+  );
+}
+
+function EmptyState(): ReactElement {
+  return (
+    <Text className="text-body text-text-secondary text-center mt-12">
+      No topics available yet.
+    </Text>
+  );
+}
+
 export default function HomeScreen(): ReactElement {
   const db = useSQLiteContext();
   const [topics, setTopics] = useState<TopicSummary[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     async function load(): Promise<void> {
       try {
         const result = await getAllTopics(db);
         setTopics(result);
+        setError(undefined);
+      } catch {
+        setError('Unable to load topics. Please try again.');
       } finally {
         setLoading(false);
       }
@@ -23,82 +93,24 @@ export default function HomeScreen(): ReactElement {
   }, [db]);
 
   if (loading) {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <ActivityIndicator size="large" color="#7C3AED" />
-      </View>
-    );
+    return <LoadingState />;
+  }
+
+  if (error) {
+    return <ErrorState message={error} />;
   }
 
   return (
-    <View style={{ flex: 1, padding: 24, backgroundColor: '#FDFBFE' }}>
-      <Text style={{ fontSize: 22, fontWeight: '600', color: '#1E1B1E', marginBottom: 24 }}>
+    <View className="flex-1 p-lg bg-background">
+      <Text className="text-title text-text-primary mb-lg">
         Care Certificate Practice
       </Text>
 
       {topics.map((topic) => (
-        <View
-          key={topic.id}
-          style={{
-            backgroundColor: '#FFFFFF',
-            borderRadius: 12,
-            padding: 16,
-            marginBottom: 12,
-            borderWidth: 1,
-            borderColor: '#E8E5EC',
-          }}
-        >
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-            <Text style={{ fontSize: 18, fontWeight: '600', color: '#1E1B1E', flex: 1 }}>
-              {topic.title}
-            </Text>
-            <Text
-              style={{
-                fontSize: 12,
-                fontWeight: '600',
-                color: '#7C3AED',
-                backgroundColor: '#EDE9FE',
-                paddingHorizontal: 8,
-                paddingVertical: 4,
-                borderRadius: 8,
-              }}
-            >
-              Free
-            </Text>
-          </View>
-
-          <Text style={{ fontSize: 14, color: '#6B6570', marginTop: 4, marginBottom: 12 }}>
-            {topic.summary}
-          </Text>
-
-          <Text style={{ fontSize: 14, color: '#6B6570', marginBottom: 12 }}>
-            {topic.question_count} questions
-          </Text>
-
-          <Pressable
-            onPress={() => router.push(`/topic/${topic.id}`)}
-            style={{
-              backgroundColor: '#7C3AED',
-              paddingVertical: 12,
-              paddingHorizontal: 24,
-              borderRadius: 8,
-              alignItems: 'center',
-              minHeight: 48,
-              justifyContent: 'center',
-            }}
-          >
-            <Text style={{ color: '#FFFFFF', fontSize: 16, fontWeight: '600' }}>
-              Start Quiz
-            </Text>
-          </Pressable>
-        </View>
+        <TopicCard key={topic.id} topic={topic} />
       ))}
 
-      {topics.length === 0 && (
-        <Text style={{ fontSize: 16, color: '#6B6570', textAlign: 'center', marginTop: 48 }}>
-          No topics available yet.
-        </Text>
-      )}
+      {topics.length === 0 && <EmptyState />}
     </View>
   );
 }
