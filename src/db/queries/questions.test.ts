@@ -5,6 +5,8 @@ import {
   getTopicWithCount,
   getQuestionsByTopic,
   getAllTopics,
+  getTopicBestScores,
+  getMockExamQuestions,
 } from './questions';
 
 function createMockDb(): SQLiteDatabase {
@@ -136,6 +138,66 @@ describe('getAllTopics', () => {
     (db.getAllAsync as jest.Mock).mockResolvedValue([]);
 
     const result = await getAllTopics(db);
+
+    expect(result).toEqual([]);
+  });
+});
+
+describe('getTopicBestScores', () => {
+  it('returns best scores grouped by topic', async () => {
+    const db = createMockDb();
+    const expected = [
+      { topic_id: 't1', best_correct: 8, best_total: 10 },
+      { topic_id: 't2', best_correct: 5, best_total: 10 },
+    ];
+    (db.getAllAsync as jest.Mock).mockResolvedValue(expected);
+
+    const result = await getTopicBestScores(db);
+
+    expect(db.getAllAsync).toHaveBeenCalledWith(
+      expect.stringContaining('ROW_NUMBER() OVER'),
+    );
+    expect(result).toEqual(expected);
+  });
+
+  it('returns empty array when no progress exists', async () => {
+    const db = createMockDb();
+    (db.getAllAsync as jest.Mock).mockResolvedValue([]);
+
+    const result = await getTopicBestScores(db);
+
+    expect(result).toEqual([]);
+  });
+});
+
+describe('getMockExamQuestions', () => {
+  it('returns random questions from paid topics with options', async () => {
+    const db = createMockDb();
+    const questions = [
+      { id: 'q1', topic_id: 't2', prompt: 'Q1', explanation: 'E1', source_criterion: 'SC1', sort_order: 0 },
+      { id: 'q2', topic_id: 't3', prompt: 'Q2', explanation: 'E2', source_criterion: 'SC2', sort_order: 1 },
+    ];
+    const options = [
+      { id: 'o1', question_id: 'q1', label: 'A', is_correct: 1, sort_order: 0 },
+      { id: 'o2', question_id: 'q1', label: 'B', is_correct: 0, sort_order: 1 },
+      { id: 'o3', question_id: 'q2', label: 'C', is_correct: 1, sort_order: 0 },
+      { id: 'o4', question_id: 'q2', label: 'D', is_correct: 0, sort_order: 1 },
+    ];
+    (db.getAllAsync as jest.Mock).mockResolvedValueOnce(questions).mockResolvedValueOnce(options);
+
+    const result = await getMockExamQuestions(db, 2);
+
+    expect(db.getAllAsync).toHaveBeenCalledTimes(2);
+    expect(result).toHaveLength(2);
+    expect(result[0].options).toHaveLength(2);
+    expect(result[1].options).toHaveLength(2);
+  });
+
+  it('returns empty array when no questions exist', async () => {
+    const db = createMockDb();
+    (db.getAllAsync as jest.Mock).mockResolvedValue([]);
+
+    const result = await getMockExamQuestions(db, 10);
 
     expect(result).toEqual([]);
   });
