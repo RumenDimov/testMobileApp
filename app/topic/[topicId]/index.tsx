@@ -62,7 +62,7 @@ export default function QuizSessionScreen(): ReactElement {
   const hasRevealed = useQuizStore((s) => s.hasRevealed);
   const selectAnswer = useQuizStore((s) => s.selectAnswer);
   const revealAnswer = useQuizStore((s) => s.revealAnswer);
-  const nextQuestion = useQuizStore((s) => s.nextQuestion);
+  const advanceQuestion = useQuizStore((s) => s.advanceQuestion);
   const questions = useQuizStore((s) => s.questions);
   const currentIndex = useQuizStore((s) => s.currentIndex);
   const answers = useQuizStore((s) => s.answers);
@@ -149,7 +149,7 @@ export default function QuizSessionScreen(): ReactElement {
 
       <ScrollView
         className="flex-1"
-        contentContainerStyle={{ padding: 24, paddingBottom: 48 }}
+        contentContainerClassName="p-lg pb-xl"
       >
         <Text className="text-caption text-text-secondary mb-sm">
           Question {currentIndex + 1} of {questions.length}
@@ -182,11 +182,7 @@ export default function QuizSessionScreen(): ReactElement {
           return (
             <Pressable
               key={option.id}
-              onPress={() => {
-                if (!hasRevealed) {
-                  selectAnswer(question.id, option.id);
-                }
-              }}
+              onPress={hasRevealed ? undefined : (): void => { selectAnswer(question.id, option.id); }}
               disabled={hasRevealed}
               className={`border-2 ${borderClass} ${bgClass} rounded-card p-md mb-3 min-h-[48px] justify-center`}
             >
@@ -223,7 +219,7 @@ export default function QuizSessionScreen(): ReactElement {
 
         {hasRevealed && (
           <Pressable
-            onPress={() => nextQuestion()}
+            onPress={() => advanceQuestion()}
             className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center"
           >
             <Text className="text-button text-white">

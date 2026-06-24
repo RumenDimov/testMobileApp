@@ -139,7 +139,7 @@ describe('useMockExamStore', () => {
     });
   });
 
-  describe('nextQuestion', () => {
+  describe('advanceQuestion', () => {
     it('moves to next question when not at the end', async () => {
       const mockQuestions = [createMockQuestion({ id: 'q1' }), createMockQuestion({ id: 'q2' })];
       (getDb as jest.Mock).mockReturnValue({} as SQLiteDatabase);
@@ -156,7 +156,7 @@ describe('useMockExamStore', () => {
         useMockExamStore.getState().revealAnswer();
       });
       await act(async () => {
-        await useMockExamStore.getState().nextQuestion();
+        await useMockExamStore.getState().advanceQuestion();
       });
 
       expect(useMockExamStore.getState().currentIndex).toBe(1);
@@ -180,7 +180,7 @@ describe('useMockExamStore', () => {
         useMockExamStore.getState().revealAnswer();
       });
       await act(async () => {
-        await useMockExamStore.getState().nextQuestion();
+        await useMockExamStore.getState().advanceQuestion();
       });
 
       expect(useMockExamStore.getState().isComplete).toBe(true);

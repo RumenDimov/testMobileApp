@@ -1,0 +1,192 @@
+{
+  "topic": {
+    "id": "cc-standard-1",
+    "qualification_id": "care-certificate",
+    "title": "Standard 1: Understand Your Role",
+    "summary": "Understanding your main duties and responsibilities, working in agreed ways, building effective working relationships, and working in partnership with others.",
+    "sort_order": 1,
+    "is_free": 1
+  },
+  "questions": [
+    {
+      "id": "cc1-q01",
+      "source_criterion": "1.1a Describe your main duties and responsibilities",
+      "prompt": "What is the main purpose of a job description in a care role?",
+      "options": [
+        { "label": "It outlines your main duties, responsibilities, and who you report to", "is_correct": true },
+        { "label": "It lists every single task you will ever do in your role", "is_correct": false },
+        { "label": "It is only needed when you first apply for the job", "is_correct": false },
+        { "label": "It is a legal contract that cannot be changed", "is_correct": false }
+      ],
+      "explanation": "A job description gives you an overall picture of your role, including your main duties and responsibilities and who you report to. It cannot list every task you will ever do, but it should give you a clear understanding of what is expected of you."
+    },
+    {
+      "id": "cc1-q02",
+      "source_criterion": "1.1b List the standards, codes of conduct and practices that relate to your role",
+      "prompt": "Which document sets out the moral and ethical standards expected of all health and social care workers in England?",
+      "options": [
+        { "label": "The Code of Conduct for Healthcare Support Workers and Adult Social Care Workers in England", "is_correct": true },
+        { "label": "The Health and Safety at Work Act 1974", "is_correct": false },
+        { "label": "The individual's care plan", "is_correct": false },
+        { "label": "The organisation's staff rota", "is_correct": false }
+      ],
+      "explanation": "The Code of Conduct for Healthcare Support Workers and Adult Social Care Workers in England sets out the moral and ethical standards expected of all workers. The Care Certificate itself is another key standard that new workers must complete before working without supervision."
+    },
+    {
+      "id": "cc1-q03",
+      "source_criterion": "1.1d Explain how your previous experiences, attitudes and beliefs may affect the way you work",
+      "prompt": "Why is it important for a care worker to be self-aware about their own attitudes and beliefs?",
+      "options": [
+        { "label": "Because your attitudes and beliefs could lead you to make unfair assumptions about individuals if you are not aware of them", "is_correct": true },
+        { "label": "Because you should always impose your own beliefs on the individuals you support", "is_correct": false },
+        { "label": "Because having beliefs means you cannot be a good care worker", "is_correct": false },
+        { "label": "Because self-awareness is only relevant for managers, not care workers", "is_correct": false }
+      ],
+      "explanation": "Your background, upbringing, and experiences shape your attitudes and beliefs. While these may have led you to choose care work, they could also cause you to make incorrect assumptions about others. Developing self-awareness helps you check this and work in a way that respects each individual's own beliefs and values."
+    },
+    {
+      "id": "cc1-q04",
+      "source_criterion": "1.2a Describe your employment rights and responsibilities",
+      "prompt": "Under the Health and Safety at Work etc. Act 1974, what right do you have as a care worker?",
+      "options": [
+        { "label": "The right to work in a safe environment and to be provided with necessary safety equipment free of charge", "is_correct": true },
+        { "label": "The right to refuse any task you do not want to do", "is_correct": false },
+        { "label": "The right to decide your own working hours", "is_correct": false },
+        { "label": "The right to ignore safety procedures if you are busy", "is_correct": false }
+      ],
+      "explanation": "The Health and Safety at Work etc. Act 1974 gives you the right to work in a safe environment and to be provided with the equipment you need to stay safe, free of charge. With those rights come responsibilities — you must also work in the ways your employer has told you are safe."
+    },
+    {
+      "id": "cc1-q05",
+      "source_criterion": "1.2b List the aims, objectives and values of the service in which they work",
+      "prompt": "Why is it important for you to understand your organisation's aims, objectives and values?",
+      "options": [
+        { "label": "It helps you understand your own role and how your work contributes to what the organisation wants to achieve", "is_correct": true },
+        { "label": "It is only important for managers to know these", "is_correct": false },
+        { "label": "They are the same for every care organisation so there is no need to check", "is_correct": false },
+        { "label": "They only matter when the organisation is being inspected by the CQC", "is_correct": false }
+      ],
+      "explanation": "Understanding your organisation's values, aims and objectives helps you see how your role fits into the bigger picture. If your employer does not have these written down, you should ask your manager to explain them to you."
+    },
+    {
+      "id": "cc1-q06",
+      "source_criterion": "1.2c Explain why it is important to work in ways that are agreed with their employer",
+      "prompt": "What could happen if you do not follow your employer's agreed ways of working?",
+      "options": [
+        { "label": "You could harm yourself or others without meaning to, and could face disciplinary procedures", "is_correct": true },
+        { "label": "Nothing — agreed ways of working are just suggestions", "is_correct": false },
+        { "label": "You would only be given a verbal warning the first time", "is_correct": false },
+        { "label": "Your employer would simply change the agreed ways to match what you did", "is_correct": false }
+      ],
+      "explanation": "Agreed ways of working ensure you are working within the law and providing care that meets individuals' needs. If you do not follow them, you could unintentionally harm yourself or others, and you could face disciplinary procedures, dismissal, or even prosecution."
+    },
+    {
+      "id": "cc1-q07",
+      "source_criterion": "1.2e Explain how and when to escalate any concerns they might have (whistleblowing)",
+      "prompt": "What should you do if you believe something is unsafe or illegal at work, but it involves your manager?",
+      "options": [
+        { "label": "Follow your employer's whistleblowing procedure — speak to someone more senior or an external body such as the CQC", "is_correct": true },
+        { "label": "Ignore it because it involves your manager", "is_correct": false },
+        { "label": "Discuss it informally with other colleagues but take no formal action", "is_correct": false },
+        { "label": "Leave the job immediately without saying anything", "is_correct": false }
+      ],
+      "explanation": "Whistleblowing means reporting things that are not right, illegal, or where someone is neglecting their duties. In most cases you start with your manager, but if the concern involves your manager, or if your concern is not acted on, you should follow your employer's whistleblowing procedure and report it to someone more senior or an external body."
+    },
+    {
+      "id": "cc1-q08",
+      "source_criterion": "1.2f Explain why it is important to be honest and identify where errors may have occurred and to tell the appropriate person",
+      "prompt": "When a mistake happens at work, why is it important to be honest and report it?",
+      "options": [
+        { "label": "It allows action to be taken to reduce the impact, and lessons to be learned from what went wrong", "is_correct": true },
+        { "label": "Mistakes should be hidden to avoid getting into trouble", "is_correct": false },
+        { "label": "Only serious mistakes need to be reported", "is_correct": false },
+        { "label": "It is better to fix the mistake yourself without telling anyone", "is_correct": false }
+      ],
+      "explanation": "Everyone makes mistakes. Being honest and identifying errors allows you to take action that may reduce the harm caused, and helps everyone learn from what went wrong. This is known as the Duty of Candour — being open and honest when things go wrong."
+    },
+    {
+      "id": "cc1-q09",
+      "source_criterion": "1.3a Describe their responsibilities to the individuals they support",
+      "prompt": "Which of the following is a key responsibility you have towards the individuals you support?",
+      "options": [
+        { "label": "Ensuring their safety and welfare by following their care plan and involving them in decisions about their care", "is_correct": true },
+        { "label": "Making all decisions for them to save time", "is_correct": false },
+        { "label": "Only involving their family, never the individual themselves", "is_correct": false },
+        { "label": "Treating everyone the same regardless of their individual needs", "is_correct": false }
+      ],
+      "explanation": "Your responsibilities include protecting individuals' safety and welfare, ensuring their care meets their needs by involving them in planning and review, and treating them fairly by promoting equality, diversity, and upholding their dignity and human rights."
+    },
+    {
+      "id": "cc1-q10",
+      "source_criterion": "1.3b Explain how a working relationship is different from a personal relationship",
+      "prompt": "What is the main difference between a working relationship and a personal relationship?",
+      "options": [
+        { "label": "A working relationship is based on a professional role and agreed boundaries, while a personal relationship is based on friendship and choice", "is_correct": true },
+        { "label": "There is no difference — they are the same thing", "is_correct": false },
+        { "label": "A working relationship is always more important than a personal one", "is_correct": false },
+        { "label": "Personal relationships are allowed in a care setting but working relationships are not", "is_correct": false }
+      ],
+      "explanation": "A working relationship is based around your professional role, with clear boundaries, policies and agreed ways of working. A personal relationship is based on friendship, choice and mutual interests. It is important to keep these separate to maintain professionalism and protect both you and the individuals you support."
+    },
+    {
+      "id": "cc1-q11",
+      "source_criterion": "1.3c Describe different working relationships in health and social care settings",
+      "prompt": "Which of the following are the four main types of working relationships in health and social care?",
+      "options": [
+        { "label": "Individuals and their friends/family, colleagues and managers, people from other workplaces, and volunteers/community groups", "is_correct": true },
+        { "label": "Only doctors and nurses", "is_correct": false },
+        { "label": "Managers and external inspectors only", "is_correct": false },
+        { "label": "Care workers and the local authority only", "is_correct": false }
+      ],
+      "explanation": "The four main working relationships are: individuals and their friends and family; your colleagues and managers; people from other workplaces (including advocates); and volunteers and community groups. All should involve mutual respect and a focus on working together in the individual's best interests."
+    },
+    {
+      "id": "cc1-q12",
+      "source_criterion": "1.4a & b Explain why it is important to work in teams and in partnership with others",
+      "prompt": "Why is partnership working important in health and social care?",
+      "options": [
+        { "label": "Serious case reviews often show that failings in partnership working were a key factor in what went wrong", "is_correct": true },
+        { "label": "Partnership working is optional and only needed when there are problems", "is_correct": false },
+        { "label": "It is only necessary when working with other health professionals", "is_correct": false },
+        { "label": "Partnership working means doing everything yourself to avoid confusion", "is_correct": false }
+      ],
+      "explanation": "Partnership working is essential — serious case reviews frequently identify failings in partnership working as a key factor when a vulnerable adult dies or comes to significant harm. Good communication, trust, and respect between everyone involved help provide better, safer care."
+    },
+    {
+      "id": "cc1-q13",
+      "source_criterion": "1.4d Demonstrate how and when to access support and advice about partnership working and resolving conflicts",
+      "prompt": "Where should you go for advice if a disagreement arises between workers from different agencies involved in an individual's care?",
+      "options": [
+        { "label": "Speak to your manager or other experienced workers who have the skills and knowledge to advise you", "is_correct": true },
+        { "label": "Try to resolve it yourself without telling anyone", "is_correct": false },
+        { "label": "Stop working with the other agency altogether", "is_correct": false },
+        { "label": "Ignore the disagreement — it will resolve itself", "is_correct": false }
+      ],
+      "explanation": "Unresolved conflict can affect the quality of care. You should ask for advice whenever you face a problem with partnership working. Your manager and other experienced workers are the right people to go to for guidance."
+    },
+    {
+      "id": "cc1-q14",
+      "source_criterion": "1.1 (new 2025) Identify different opportunities for career and professional development",
+      "prompt": "Which of the following is an example of a professional development opportunity for a care worker?",
+      "options": [
+        { "label": "Undertaking a formal qualification such as an NVQ or apprenticeship", "is_correct": true },
+        { "label": "Only doing the minimum training required", "is_correct": false },
+        { "label": "Avoiding any additional training to focus on day-to-day tasks", "is_correct": false },
+        { "label": "Waiting for your manager to tell you what career to pursue", "is_correct": false }
+      ],
+      "explanation": "Professional development includes qualifications, specialist training, apprenticeships, and other learning opportunities that help you grow in your role. Employers should invest in their workers' learning and development beyond the initial induction period."
+    },
+    {
+      "id": "cc1-q15",
+      "source_criterion": "1.1c Demonstrate that you are working in accordance with the agreed ways of working with your employer",
+      "prompt": "Where would you find the agreed ways of working for supporting a specific individual?",
+      "options": [
+        { "label": "In the individual's care plan, which details how their care and support should be provided", "is_correct": true },
+        { "label": "By asking another individual you support what they think", "is_correct": false },
+        { "label": "They are not written down — you just use your best judgement", "is_correct": false },
+        { "label": "From a general internet search about care procedures", "is_correct": false }
+      ],
+      "explanation": "Agreed ways of working with each individual are detailed in their care plan. These ensure you are working within the law and providing care that meets that person's specific needs. If you are unsure, you should always ask your manager."
+    }
+  ]
+}

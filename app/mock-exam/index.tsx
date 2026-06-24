@@ -64,7 +64,7 @@ export default function MockExamScreen(): ReactElement {
   const hasRevealed = useMockExamStore((s) => s.hasRevealed);
   const selectAnswer = useMockExamStore((s) => s.selectAnswer);
   const revealAnswer = useMockExamStore((s) => s.revealAnswer);
-  const nextQuestion = useMockExamStore((s) => s.nextQuestion);
+  const advanceQuestion = useMockExamStore((s) => s.advanceQuestion);
   const questions = useMockExamStore((s) => s.questions);
   const currentIndex = useMockExamStore((s) => s.currentIndex);
   const answers = useMockExamStore((s) => s.answers);
@@ -179,7 +179,7 @@ export default function MockExamScreen(): ReactElement {
 
       <ScrollView
         className="flex-1"
-        contentContainerStyle={{ padding: 24, paddingBottom: 48 }}
+        contentContainerClassName="p-lg pb-xl"
       >
         <Text className="text-caption text-text-secondary mb-sm">
           Question {currentIndex + 1} of {questions.length}
@@ -212,11 +212,7 @@ export default function MockExamScreen(): ReactElement {
           return (
             <Pressable
               key={option.id}
-              onPress={() => {
-                if (!hasRevealed) {
-                  selectAnswer(question.id, option.id);
-                }
-              }}
+              onPress={hasRevealed ? undefined : (): void => { selectAnswer(question.id, option.id); }}
               disabled={hasRevealed}
               className={`border-2 ${borderClass} ${bgClass} rounded-card p-md mb-3 min-h-[48px] justify-center`}
             >
@@ -253,7 +249,7 @@ export default function MockExamScreen(): ReactElement {
 
         {hasRevealed && (
           <Pressable
-            onPress={() => nextQuestion()}
+            onPress={() => advanceQuestion()}
             className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center"
           >
             <Text className="text-button text-white">

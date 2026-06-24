@@ -151,10 +151,19 @@ export default function HomeScreen(): ReactElement {
 
   return (
     <ScrollView className="flex-1 bg-background">
-      <View className="p-lg">
+      <View className="p-lg relative">
         <Text className="text-title text-text-primary mb-lg">
           Care Certificate Practice
         </Text>
+
+        <Pressable
+          onPress={(): void => router.push('/settings')}
+          className="absolute top-lg right-lg py-2 px-3 min-h-[44px] justify-center"
+        >
+          <Text className="text-caption font-semibold text-primary">
+            Settings
+          </Text>
+        </Pressable>
 
         <Pressable
           onPress={handleMockExam}

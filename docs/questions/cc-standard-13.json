@@ -1,0 +1,192 @@
+{
+  "topic": {
+    "id": "cc-standard-13",
+    "qualification_id": "care-certificate",
+    "title": "Standard 13: Health and Safety",
+    "summary": "Understanding health and safety legislation, managing risk, moving and handling, fire safety, security measures, managing stress, and responding to emergencies.",
+    "sort_order": 13,
+    "is_free": 1
+  },
+  "questions": [
+    {
+      "id": "cc13-q01",
+      "source_criterion": "13.1a Identify legislation relating to health and safety in care",
+      "prompt": "Which is the main piece of legislation covering health and safety in UK workplaces?",
+      "options": [
+        { "label": "The Health and Safety at Work etc. Act 1974", "is_correct": true },
+        { "label": "The Care Act 2014", "is_correct": false },
+        { "label": "The Equality Act 2010", "is_correct": false },
+        { "label": "The Mental Health Act 1983", "is_correct": false }
+      ],
+      "explanation": "The Health and Safety at Work etc. Act 1974 is the main legislation covering occupational health and safety in the UK. It places a duty on both employers and employees to ensure the health, safety, and welfare of everyone in the workplace."
+    },
+    {
+      "id": "cc13-q02",
+      "source_criterion": "13.1b Understand your employer's health and safety policies",
+      "prompt": "Under health and safety law, what is your responsibility as an employee?",
+      "options": [
+        { "label": "To take reasonable care of your own safety and that of others, and to follow your employer's health and safety procedures", "is_correct": true },
+        { "label": "To leave all health and safety matters to your manager", "is_correct": false },
+        { "label": "To write your own risk assessments", "is_correct": false },
+        { "label": "To work in whatever way feels safest to you personally", "is_correct": false }
+      ],
+      "explanation": "As an employee, you must take reasonable care of your own health and safety and that of others who may be affected by your actions. You must also cooperate with your employer on health and safety matters and follow their procedures."
+    },
+    {
+      "id": "cc13-q03",
+      "source_criterion": "13.1c Outline the main health and safety responsibilities of employers",
+      "prompt": "What is your employer's main responsibility under health and safety law?",
+      "options": [
+        { "label": "To ensure, as far as reasonably practicable, the health, safety and welfare of all employees", "is_correct": true },
+        { "label": "To provide a bonus to staff who never have accidents", "is_correct": false },
+        { "label": "To ensure no accidents ever happen in the workplace", "is_correct": false },
+        { "label": "To make staff sign a waiver accepting all safety risks", "is_correct": false }
+      ],
+      "explanation": "Employers must ensure, as far as reasonably practicable, the health, safety, and welfare of their employees. This includes risk assessments, providing safe equipment and training, and maintaining a safe working environment."
+    },
+    {
+      "id": "cc13-q04",
+      "source_criterion": "13.1d List health and safety tasks that you should do",
+      "prompt": "What should you do if you notice a health and safety hazard in the workplace?",
+      "options": [
+        { "label": "Report it to your manager immediately and, if possible, make the area safe", "is_correct": true },
+        { "label": "Ignore it — someone else will deal with it", "is_correct": false },
+        { "label": "Post about it on social media to warn others", "is_correct": false },
+        { "label": "Wait until your next supervision meeting to mention it", "is_correct": false }
+      ],
+      "explanation": "If you spot a hazard, you should report it to your manager immediately. If you can safely make the area safer (e.g. put up a warning sign, clean a spill), do so. Never ignore a hazard — it could cause harm to someone."
+    },
+    {
+      "id": "cc13-q05",
+      "source_criterion": "13.1e Identify types of support you could use for health and safety",
+      "prompt": "Where can you get information and support about health and safety in your workplace?",
+      "options": [
+        { "label": "Your manager, your organisation's health and safety policy, and external sources like the Health and Safety Executive (HSE)", "is_correct": true },
+        { "label": "Nowhere — you are expected to know all health and safety already", "is_correct": false },
+        { "label": "Only from external health and safety consultants", "is_correct": false },
+        { "label": "Health and safety advice is only for managers", "is_correct": false }
+      ],
+      "explanation": "You can get health and safety information from your manager, your organisation's policies and procedures, your induction training, trade unions, and external bodies like the Health and Safety Executive (HSE) and Skills for Care."
+    },
+    {
+      "id": "cc13-q06",
+      "source_criterion": "13.2a & b Understand risk assessment",
+      "prompt": "What is the purpose of a risk assessment?",
+      "options": [
+        { "label": "To identify potential hazards, assess who might be harmed, and decide what measures are needed to reduce the risk", "is_correct": true },
+        { "label": "To list every possible danger so that no activity can ever take place", "is_correct": false },
+        { "label": "To blame someone if something goes wrong", "is_correct": false },
+        { "label": "To create paperwork that is filed and never looked at again", "is_correct": false }
+      ],
+      "explanation": "A risk assessment helps identify hazards, assess the likelihood and severity of harm, and put measures in place to reduce risk to an acceptable level. It is about enabling safe activities, not preventing them."
+    },
+    {
+      "id": "cc13-q07",
+      "source_criterion": "13.3a Understand moving and handling legislation",
+      "prompt": "What legislation governs moving and handling in the workplace?",
+      "options": [
+        { "label": "The Manual Handling Operations Regulations 1992", "is_correct": true },
+        { "label": "The Health and Safety at Work Act 1974", "is_correct": false },
+        { "label": "The Control of Substances Hazardous to Health Regulations (COSHH) 2002", "is_correct": false },
+        { "label": "The Reporting of Injuries, Diseases and Dangerous Occurrences Regulations (RIDDOR) 2013", "is_correct": false }
+      ],
+      "explanation": "The Manual Handling Operations Regulations 1992 require employers to avoid hazardous manual handling where possible, assess any remaining risks, and reduce them. They also require employees to follow safe systems of work."
+    },
+    {
+      "id": "cc13-q08",
+      "source_criterion": "13.3b List principles of safe moving and handling",
+      "prompt": "What is the first principle of safe moving and handling?",
+      "options": [
+        { "label": "Avoid the need for hazardous manual handling if possible — use equipment instead", "is_correct": true },
+        { "label": "Always lift with your back bent", "is_correct": false },
+        { "label": "Always lift alone to avoid coordination issues", "is_correct": false },
+        { "label": "Never use equipment — it takes too long", "is_correct": false }
+      ],
+      "explanation": "The first principle is to avoid hazardous manual handling where reasonably practicable. If you cannot avoid it, you should assess the risk and use equipment where needed to make the task safer. Never lift more than you can safely manage."
+    },
+    {
+      "id": "cc13-q09",
+      "source_criterion": "13.4c Understand your role in medication and healthcare tasks",
+      "prompt": "What should you do if an individual refuses their medication?",
+      "options": [
+        { "label": "Record the refusal, report it to your manager, and follow your organisation's procedures for missed medication", "is_correct": true },
+        { "label": "Force them to take it — it is for their own good", "is_correct": false },
+        { "label": "Crush it and hide it in their food", "is_correct": false },
+        { "label": "Ignore the refusal and try again later without documenting it", "is_correct": false }
+      ],
+      "explanation": "If someone refuses medication, never force it or hide it in food or drink. Record the refusal, report it to your manager, and follow the organisation's procedures. Hidden medication could be considered deception and is unlawful."
+    },
+    {
+      "id": "cc13-q10",
+      "source_criterion": "13.5a & b Understand fire safety",
+      "prompt": "What should you do if you discover a fire in a care setting?",
+      "options": [
+        { "label": "Follow the organisation's fire procedure: raise the alarm, evacuate people, and call the fire service — do not put yourself at risk", "is_correct": true },
+        { "label": "Try to put the fire out yourself first", "is_correct": false },
+        { "label": "Finish your current task before evacuating", "is_correct": false },
+        { "label": "Open all windows to let the smoke out", "is_correct": false }
+      ],
+      "explanation": "If you discover a fire, you should immediately raise the alarm and follow your organisation's fire procedure. Your priority is to evacuate people safely. Only tackle a fire with an extinguisher if you are trained to do so and it is safe."
+    },
+    {
+      "id": "cc13-q11",
+      "source_criterion": "13.6a List common hazards in care settings",
+      "prompt": "Which of the following is a common hazard in a care setting?",
+      "options": [
+        { "label": "Wet floors, trailing cables, clutter in walkways, and poorly stored equipment", "is_correct": true },
+        { "label": "Well-organised storage areas", "is_correct": false },
+        { "label": "A clean and tidy kitchen", "is_correct": false },
+        { "label": "Clearly marked fire exits", "is_correct": false }
+      ],
+      "explanation": "Common hazards in care settings include wet or slippery floors, trailing cables, cluttered walkways, poorly maintained equipment, and incorrectly stored cleaning products. Regular checks and reporting help keep the environment safe."
+    },
+    {
+      "id": "cc13-q12",
+      "source_criterion": "13.7a & b Understand fire prevention",
+      "prompt": "How can you help prevent fires in a care setting?",
+      "options": [
+        { "label": "Avoid overloading electrical sockets, know the fire procedure, keep fire exits clear, and report any fire safety concerns", "is_correct": true },
+        { "label": "Leave flammable materials near heat sources", "is_correct": false },
+        { "label": "Prop open fire doors for convenience", "is_correct": false },
+        { "label": "Store waste in corridors", "is_correct": false }
+      ],
+      "explanation": "Fire prevention measures include not overloading sockets, keeping fire doors closed, maintaining clear fire exits, proper waste disposal, and reporting any damaged fire safety equipment. Everyone has a responsibility to prevent fires."
+    },
+    {
+      "id": "cc13-q13",
+      "source_criterion": "13.8a & b Understand security measures",
+      "prompt": "Why is it important to follow security procedures in a care setting?",
+      "options": [
+        { "label": "To protect individuals, staff, and visitors from harm, and to safeguard property and confidential information", "is_correct": true },
+        { "label": "Security is not as important as providing care", "is_correct": false },
+        { "label": "Security is only needed in hospitals, not care homes", "is_correct": false },
+        { "label": "Security procedures only apply at night", "is_correct": false }
+      ],
+      "explanation": "Security measures protect everyone in the care setting — individuals, staff, and visitors — from harm, theft, or intrusion. They also safeguard confidential information and property. Following procedures like signing in visitors and locking doors is everyone's responsibility."
+    },
+    {
+      "id": "cc13-q14",
+      "source_criterion": "13.9a, b & c Understand stress management",
+      "prompt": "What is a healthy way to manage work-related stress?",
+      "options": [
+        { "label": "Talk to your manager, take your breaks, use support from colleagues, and seek help if stress is affecting your work", "is_correct": true },
+        { "label": "Ignore it and carry on — stress is just part of the job", "is_correct": false },
+        { "label": "Keep it to yourself — admitting stress shows weakness", "is_correct": false },
+        { "label": "Work longer hours to get ahead of the workload", "is_correct": false }
+      ],
+      "explanation": "Stress is a recognised workplace hazard. Healthy ways to manage it include talking to your manager, taking regular breaks, using your support network, prioritising tasks, and seeking professional help if needed. Your employer has a duty to address workplace stress."
+    },
+    {
+      "id": "cc13-q15",
+      "source_criterion": "13.1f Understand how to report health and safety incidents",
+      "prompt": "What types of incidents must be reported under RIDDOR?",
+      "options": [
+        { "label": "Work-related accidents that cause death, serious injury, or certain dangerous occurrences — even if no one was injured", "is_correct": true },
+        { "label": "Every minor bump and scrape, no matter how small", "is_correct": false },
+        { "label": "Only incidents that require a hospital visit", "is_correct": false },
+        { "label": "RIDDOR reports are only for construction sites, not care settings", "is_correct": false }
+      ],
+      "explanation": "RIDDOR requires employers to report specific incidents: work-related deaths, serious injuries (fractures, amputations, etc.), occupational diseases, and dangerous occurrences (near misses that could have caused serious harm). Your organisation will have a process for this."
+    }
+  ]
+}

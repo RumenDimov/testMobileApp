@@ -1,0 +1,192 @@
+{
+  "topic": {
+    "id": "cc-standard-3",
+    "qualification_id": "care-certificate",
+    "title": "Standard 3: Duty of Care",
+    "summary": "Understanding your duty of care, managing dilemmas between safety and independence, handling comments and complaints, recognising incidents and errors, and managing difficult situations.",
+    "sort_order": 3,
+    "is_free": 1
+  },
+  "questions": [
+    {
+      "id": "cc3-q01",
+      "source_criterion": "3.1a Define 'duty of care'",
+      "prompt": "What does 'duty of care' mean in health and social care?",
+      "options": [
+        { "label": "A legal obligation to promote wellbeing and keep people safe from harm, abuse, and injury", "is_correct": true },
+        { "label": "An optional guideline that care workers can choose to follow", "is_correct": false },
+        { "label": "A rule that only applies to managers and supervisors", "is_correct": false },
+        { "label": "A policy about keeping the workplace tidy and organised", "is_correct": false }
+      ],
+      "explanation": "Duty of care is a legal requirement — you cannot choose whether to accept it. It means you have a responsibility to promote wellbeing and keep people safe from harm, abuse and injury. Breaking this duty through negligence could result in legal action."
+    },
+    {
+      "id": "cc3-q02",
+      "source_criterion": "3.1b Describe how duty of care affects your work practice",
+      "prompt": "Who does your duty of care apply to in your day-to-day work?",
+      "options": [
+        { "label": "The individuals you support, your colleagues, and other workers you come into contact with", "is_correct": true },
+        { "label": "Only the individuals you are paid to support", "is_correct": false },
+        { "label": "Only your manager and employer", "is_correct": false },
+        { "label": "Only other healthcare professionals like doctors and nurses", "is_correct": false }
+      ],
+      "explanation": "Your duty of care applies to all individuals you support AND to other workers — colleagues, and anyone else you come into contact with in the community. It is part of the Code of Conduct and should be in your job description."
+    },
+    {
+      "id": "cc3-q03",
+      "source_criterion": "3.2a Describe dilemmas between safeguarding wellbeing and promoting the right to take risks",
+      "prompt": "An individual you support wants to make a choice that you think is unwise. What should you do?",
+      "options": [
+        { "label": "Make sure they have all the information about their choices and what could happen, then support their decision where possible", "is_correct": true },
+        { "label": "Stop them immediately — your duty is to keep them safe at all times", "is_correct": false },
+        { "label": "Ignore their choice and do what you think is best", "is_correct": false },
+        { "label": "Tell them they are not allowed to make that decision", "is_correct": false }
+      ],
+      "explanation": "This is a common dilemma in care work. The Code of Conduct says you must respect an individual's right to make their own choices and take risks. You should ensure they have full information about the risks, and consider a risk assessment to find ways to reduce harm while still respecting their choice."
+    },
+    {
+      "id": "cc3-q04",
+      "source_criterion": "3.2b & c Explain what to do and not do in dilemmas and where to get support",
+      "prompt": "Where can you get additional support and advice when facing a dilemma between keeping someone safe and respecting their choices?",
+      "options": [
+        { "label": "Your manager, the individual's friends or family, an advocate, or other experienced care workers", "is_correct": true },
+        { "label": "Nowhere — you have to handle dilemmas completely on your own", "is_correct": false },
+        { "label": "Only from a doctor or nurse", "is_correct": false },
+        { "label": "By looking up the answer on social media", "is_correct": false }
+      ],
+      "explanation": "You have several sources of support: your manager (who should always be your first point of contact), the individual's friends or family, an advocate, their GP, or other experienced care workers. Your employer will also have guidance on risk assessments and risk enablement."
+    },
+    {
+      "id": "cc3-q05",
+      "source_criterion": "3.2b & c Explain what to do and not do in dilemmas",
+      "prompt": "If an individual has the mental capacity to make a decision, what must you not do?",
+      "options": [
+        { "label": "Take away their right to make that decision, even if you think it is unwise", "is_correct": true },
+        { "label": "Provide them with information about the risks involved", "is_correct": false },
+        { "label": "Complete a risk assessment to identify ways to reduce harm", "is_correct": false },
+        { "label": "Seek advice from your manager", "is_correct": false }
+      ],
+      "explanation": "An individual's right to make decisions they are legally capable of making must not be taken away from them. You can provide information, do a risk assessment, and advise — but ultimately, if they have capacity, the choice is theirs."
+    },
+    {
+      "id": "cc3-q06",
+      "source_criterion": "3.3b Describe who to ask for advice and support in handling comments, concerns and complaints",
+      "prompt": "An individual tells you they want to make a complaint about their care. What should you do first?",
+      "options": [
+        { "label": "Listen calmly, take them seriously, explain what will happen next, and tell your manager", "is_correct": true },
+        { "label": "Tell them complaints are not your responsibility", "is_correct": false },
+        { "label": "Try to handle the complaint yourself without telling anyone", "is_correct": false },
+        { "label": "Ignore them if they have complained before", "is_correct": false }
+      ],
+      "explanation": "When someone wants to complain, you should listen calmly and actively, take them seriously, explain what will happen next, and tell your manager. You should also make a record as soon as possible. Your organisation will have an agreed way of working for handling complaints."
+    },
+    {
+      "id": "cc3-q07",
+      "source_criterion": "3.3c Explain the importance of learning from comments and complaints",
+      "prompt": "Why is it important to learn from comments, concerns and complaints?",
+      "options": [
+        { "label": "They provide valuable information that can be used to improve the quality of service and care provided", "is_correct": true },
+        { "label": "Complaints are just a formality and rarely lead to any changes", "is_correct": false },
+        { "label": "Only positive comments are useful — complaints should be ignored", "is_correct": false },
+        { "label": "Learning from complaints is the responsibility of the CQC, not care workers", "is_correct": false }
+      ],
+      "explanation": "Comments and complaints are valuable — they help identify what is working well and what needs to improve. Positive comments can encourage good practice, and complaints highlight areas where changes are needed to improve care."
+    },
+    {
+      "id": "cc3-q08",
+      "source_criterion": "3.4a & b Recognise adverse events, incidents, errors and near misses",
+      "prompt": "What is the difference between an 'adverse event' and a 'near miss'?",
+      "options": [
+        { "label": "An adverse event causes harm to an individual; a near miss could have caused harm but was prevented", "is_correct": true },
+        { "label": "They mean exactly the same thing", "is_correct": false },
+        { "label": "An adverse event is intentional and a near miss is accidental", "is_correct": false },
+        { "label": "A near miss is more serious than an adverse event", "is_correct": false }
+      ],
+      "explanation": "An adverse event is action or lack of action that leads to unexpected, unintended, and preventable harm. A near miss is a situation where an action could have harmed the individual but, either by chance or by design, was prevented. Both need to be reported."
+    },
+    {
+      "id": "cc3-q09",
+      "source_criterion": "3.4a & b Recognise adverse events, incidents, errors and near misses",
+      "prompt": "You arrive at an individual's home to support them with their shopping, only to find a colleague has already been sent to do the same task. What type of event is this?",
+      "options": [
+        { "label": "An error — the task was not done as it should have been due to poor planning", "is_correct": true },
+        { "label": "An adverse event", "is_correct": false },
+        { "label": "A near miss", "is_correct": false },
+        { "label": "A serious incident requiring police involvement", "is_correct": false }
+      ],
+      "explanation": "This is an error — something that was not done as it should have been, in this case due to poor communication or planning. It did not cause harm, but it could have led to confusion or a wasted visit."
+    },
+    {
+      "id": "cc3-q10",
+      "source_criterion": "3.4a & b Recognise adverse events, incidents, errors and near misses",
+      "prompt": "What should you do first after something has gone wrong and an individual has been harmed?",
+      "options": [
+        { "label": "Do what you can to improve the wellbeing and meet the immediate needs of the individual involved", "is_correct": true },
+        { "label": "Fill in the incident form before checking on the individual", "is_correct": false },
+        { "label": "Blame whoever caused the incident", "is_correct": false },
+        { "label": "Wait and see if the individual notices what happened", "is_correct": false }
+      ],
+      "explanation": "The first priority is always the individual — do what you can to improve their wellbeing and meet their immediate needs. After that, you should record the date, time and facts on the appropriate form, and make your manager aware straightaway."
+    },
+    {
+      "id": "cc3-q11",
+      "source_criterion": "3.4c List legislation and agreed ways of working for reporting adverse events, incidents, errors and near misses",
+      "prompt": "Which legislation requires employers to report specific workplace accidents, occupational diseases and dangerous occurrences?",
+      "options": [
+        { "label": "The Reporting of Injuries, Diseases and Dangerous Occurrences Regulations 2013 (RIDDOR)", "is_correct": true },
+        { "label": "The Health and Safety at Work etc. Act 1974", "is_correct": false },
+        { "label": "The Data Protection Act 2018", "is_correct": false },
+        { "label": "The Equality Act 2010", "is_correct": false }
+      ],
+      "explanation": "RIDDOR places a duty on responsible persons to report specific workplace accidents, occupational diseases, and dangerous occurrences (near misses) to the Health and Safety Executive (HSE)."
+    },
+    {
+      "id": "cc3-q12",
+      "source_criterion": "3.5a List factors that may cause confrontation or difficult situations",
+      "prompt": "Which of the following is a common factor that can cause confrontation or difficult situations in care?",
+      "options": [
+        { "label": "An individual feeling misunderstood, in pain, or frustrated because their needs are not being met", "is_correct": true },
+        { "label": "Individuals always agreeing with everything", "is_correct": false },
+        { "label": "Having too many staff on shift", "is_correct": false },
+        { "label": "Quiet and calm environments", "is_correct": false }
+      ],
+      "explanation": "Confrontation or challenging behaviour often happens as a result of distress or unmet needs. This could be biological (pain, medication side effects), social (boredom, wanting control, inability to communicate), environmental (loud noise, poor lighting), or psychological (feeling left out)."
+    },
+    {
+      "id": "cc3-q13",
+      "source_criterion": "3.5b, c & e How communication can reduce confrontation and how to assess risks",
+      "prompt": "How can good communication help reduce the likelihood of confrontation?",
+      "options": [
+        { "label": "By listening carefully, taking the person's feelings seriously, and trying to find a way forward they understand and agree to", "is_correct": true },
+        { "label": "By telling the individual firmly that their behaviour is unacceptable", "is_correct": false },
+        { "label": "By ignoring the situation and hoping it resolves itself", "is_correct": false },
+        { "label": "By raising your voice so the individual knows you are in charge", "is_correct": false }
+      ],
+      "explanation": "Good communication involves taking the person to a quiet place if possible, asking questions and listening carefully, taking their feelings seriously, and working together to find a solution. Getting to know the individuals you support helps you recognise what might trigger their distress."
+    },
+    {
+      "id": "cc3-q14",
+      "source_criterion": "3.4a & b What you must not do when reporting incidents",
+      "prompt": "When recording an incident or error, what should you avoid doing?",
+      "options": [
+        { "label": "Blaming other workers or suggesting why the incident happened if you are not completely sure", "is_correct": true },
+        { "label": "Recording the date, time, and facts of what happened", "is_correct": false },
+        { "label": "Making your manager aware straightaway", "is_correct": false },
+        { "label": "Completing the workplace incident form", "is_correct": false }
+      ],
+      "explanation": "When recording an incident, you should record the date, time and facts. Do not blame other workers or suggest to those involved why the incident might have happened — if your thoughts turned out to be wrong, you could lose trust and respect."
+    },
+    {
+      "id": "cc3-q15",
+      "source_criterion": "3.1b How duty of care affects your work practice",
+      "prompt": "If you are unsure about how to handle a situation involving your duty of care, what should you do?",
+      "options": [
+        { "label": "Ask your manager for guidance — they are responsible for helping you understand your duty of care", "is_correct": true },
+        { "label": "Make your best guess and hope it works out", "is_correct": false },
+        { "label": "Ignore the situation unless someone gets hurt", "is_correct": false },
+        { "label": "Ask another individual you support what they think you should do", "is_correct": false }
+      ],
+      "explanation": "If you do not know what to do in any situation, ask your manager. Your employer has agreed ways of working to respond to possible harmful situations, and part of their duty is to provide you with the guidance and support you need."
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "topic": {
+    "id": "cc-standard-5",
+    "qualification_id": "care-certificate",
+    "title": "Standard 5: Person-Centred Approaches",
+    "summary": "Understanding person-centred care, promoting individual rights and choices, and supporting individuals to maintain their independence and wellbeing.",
+    "sort_order": 5,
+    "is_free": 1
+  },
+  "questions": [
+    {
+      "id": "cc5-q01",
+      "source_criterion": "5.1a Describe person-centred approaches in health and social care",
+      "prompt": "What does a person-centred approach to care mean?",
+      "options": [
+        { "label": "Putting the individual at the centre of their care and involving them in decisions about their own support", "is_correct": true },
+        { "label": "Following the same routine for every person regardless of their preferences", "is_correct": false },
+        { "label": "Letting staff decide what is best for each individual without asking them", "is_correct": false },
+        { "label": "Focusing only on the medical needs of the individual", "is_correct": false }
+      ],
+      "explanation": "Person-centred care means putting the individual at the centre of everything you do. It involves treating them as a partner in their own care, respecting their preferences, values, and beliefs, and supporting them to make their own decisions."
+    },
+    {
+      "id": "cc5-q02",
+      "source_criterion": "5.1b Understand how to implement person-centred approaches",
+      "prompt": "Which of the following is an example of person-centred working?",
+      "options": [
+        { "label": "Asking an individual what time they would like to get up and how they prefer to be supported with washing and dressing", "is_correct": true },
+        { "label": "Waking everyone up at the same time because it is easier for the rota", "is_correct": false },
+        { "label": "Deciding what the individual will eat without asking them", "is_correct": false },
+        { "label": "Telling the individual what activities are available rather than asking what they enjoy", "is_correct": false }
+      ],
+      "explanation": "Person-centred working means asking the individual about their preferences and involving them in everyday decisions about their care. Small choices — like what time to get up, what to wear, or what to eat — make a big difference to an individual's wellbeing and sense of independence."
+    },
+    {
+      "id": "cc5-q03",
+      "source_criterion": "5.1c Describe how to promote person-centred values",
+      "prompt": "Which of the following are person-centred values?",
+      "options": [
+        { "label": "Choice, dignity, respect, independence, and individuality", "is_correct": true },
+        { "label": "Efficiency, speed, cost-saving, and routine", "is_correct": false },
+        { "label": "Rules, policies, discipline, and conformity", "is_correct": false },
+        { "label": "Uniformity, compliance, standardisation, and control", "is_correct": false }
+      ],
+      "explanation": "Person-centred values include choice, dignity, respect, independence, individuality, rights, privacy, and partnership. These values should guide every interaction and decision in care work."
+    },
+    {
+      "id": "cc5-q04",
+      "source_criterion": "5.2a Understand how to find out the individual's history, preferences, needs, wishes and feelings",
+      "prompt": "How can you best find out about an individual's history, preferences and wishes?",
+      "options": [
+        { "label": "By speaking directly with the individual, reading their care plan, and involving their family or advocate with their permission", "is_correct": true },
+        { "label": "By guessing based on their age and appearance", "is_correct": false },
+        { "label": "By asking other residents or service users", "is_correct": false },
+        { "label": "By reading their medical records without their knowledge", "is_correct": false }
+      ],
+      "explanation": "The best source of information is the individual themselves. You should also read their care plan and, with the individual's permission, speak to their family, friends or advocate. This helps you provide care that truly meets their needs and preferences."
+    },
+    {
+      "id": "cc5-q05",
+      "source_criterion": "5.2b Explain why it is important to understand an individual's needs and preferences",
+      "prompt": "Why is it important to understand an individual's needs and preferences?",
+      "options": [
+        { "label": "It helps you provide care that is tailored to them, which improves their wellbeing and quality of life", "is_correct": true },
+        { "label": "It is only important during the initial assessment, not ongoing care", "is_correct": false },
+        { "label": "Understanding preferences is a luxury, not a necessity", "is_correct": false },
+        { "label": "It only matters if the individual is able to communicate clearly", "is_correct": false }
+      ],
+      "explanation": "Understanding each individual's needs and preferences is essential to providing care that is truly person-centred. It improves their wellbeing, quality of life, and helps maintain their dignity and independence."
+    },
+    {
+      "id": "cc5-q06",
+      "source_criterion": "5.2c Understand person-centred planning",
+      "prompt": "What is a care plan in person-centred care?",
+      "options": [
+        { "label": "A document created with the individual that outlines how their care and support should be delivered", "is_correct": true },
+        { "label": "A fixed set of instructions that never changes", "is_correct": false },
+        { "label": "A document written by the manager that the individual must follow", "is_correct": false },
+        { "label": "A form that is only used when the individual is admitted to a care home", "is_correct": false }
+      ],
+      "explanation": "A care plan is created with the individual and sets out how their care and support should be delivered. It should be reviewed regularly and updated as the individual's needs, wishes and circumstances change."
+    },
+    {
+      "id": "cc5-q07",
+      "source_criterion": "5.6a Promote the individual's independence",
+      "prompt": "How can you promote independence while still providing support?",
+      "options": [
+        { "label": "Encourage the individual to do as much as they can for themselves, offering support only where needed", "is_correct": true },
+        { "label": "Do everything for the individual to save time and avoid mistakes", "is_correct": false },
+        { "label": "Leave the individual to manage completely on their own without any support", "is_correct": false },
+        { "label": "Only encourage independence for tasks you enjoy helping with", "is_correct": false }
+      ],
+      "explanation": "Promoting independence means finding the right balance — encouraging and enabling individuals to do as much as they can for themselves, while providing support only where it is genuinely needed. This helps maintain their skills, confidence and dignity."
+    },
+    {
+      "id": "cc5-q08",
+      "source_criterion": "5.6a Promote the individual's independence",
+      "prompt": "An individual wants to make a cup of tea themselves but you are worried they might spill hot water. What should you do?",
+      "options": [
+        { "label": "Do a risk assessment and find a safe way to support them to make the tea themselves", "is_correct": true },
+        { "label": "Make the tea for them — it is not worth the risk", "is_correct": false },
+        { "label": "Tell them they are not allowed to do it", "is_correct": false },
+        { "label": "Let them do it alone without any support or supervision", "is_correct": false }
+      ],
+      "explanation": "Promoting independence does not mean leaving people to manage unassisted. A risk assessment can identify ways to reduce the risk — for example, using a kettle with an automatic shut-off, or using a mug with a cool grip. This way the individual can still do the task safely."
+    },
+    {
+      "id": "cc5-q09",
+      "source_criterion": "5.1b Understand how to implement person-centred approaches",
+      "prompt": "An individual refuses the breakfast you have prepared for them. What should you do?",
+      "options": [
+        { "label": "Ask them what they would like instead and offer alternatives that meet their dietary needs", "is_correct": true },
+        { "label": "Insist they eat it because it is what is on the menu", "is_correct": false },
+        { "label": "Remove the food and offer nothing else until the next meal", "is_correct": false },
+        { "label": "Tell them they are being difficult", "is_correct": false }
+      ],
+      "explanation": "Person-centred care means respecting an individual's choices, including about food. You should offer alternatives and find out what they would prefer, while still meeting their dietary requirements. Choice and respect are fundamental to person-centred care."
+    },
+    {
+      "id": "cc5-q10",
+      "source_criterion": "5.2b Understand the importance of consent",
+      "prompt": "What does 'informed consent' mean?",
+      "options": [
+        { "label": "An individual agrees to something after being given all the information they need to make a decision", "is_correct": true },
+        { "label": "A manager gives permission on behalf of the individual", "is_correct": false },
+        { "label": "Consent that is assumed because the individual did not say no", "is_correct": false },
+        { "label": "A family member agrees to care on the individual's behalf", "is_correct": false }
+      ],
+      "explanation": "Informed consent means the individual has been given all the relevant information they need to make a decision, in a way they can understand, and has agreed voluntarily. Consent must be given freely and can be withdrawn at any time."
+    },
+    {
+      "id": "cc5-q11",
+      "source_criterion": "5.1c Promote person-centred values",
+      "prompt": "When supporting someone with personal care, how can you uphold their dignity?",
+      "options": [
+        { "label": "Close the door or curtain, keep them covered where possible, and involve them in how they want to be supported", "is_correct": true },
+        { "label": "Leave the door open so you can hear if someone needs you", "is_correct": false },
+        { "label": "Rush through the task as quickly as possible", "is_correct": false },
+        { "label": "Talk about the individual with other staff while providing care", "is_correct": false }
+      ],
+      "explanation": "Upholding dignity means respecting an individual's privacy during personal care — closing doors, keeping them covered, and involving them in how they want to be supported. Small actions make a big difference to how a person feels about their care."
+    },
+    {
+      "id": "cc5-q12",
+      "source_criterion": "5.6a Promote independence",
+      "prompt": "An individual who is usually independent has become unwell and needs more support. What is the best approach?",
+      "options": [
+        { "label": "Provide the additional support they need now, while encouraging them to return to their usual level of independence as they recover", "is_correct": true },
+        { "label": "Do everything for them even after they recover, in case they are still weak", "is_correct": false },
+        { "label": "Insist they maintain their usual routine without any extra support", "is_correct": false },
+        { "label": "Only provide support if they specifically ask for it", "is_correct": false }
+      ],
+      "explanation": "When someone is unwell, they may need more support temporarily. You should provide that support while encouraging them to do what they can, and gradually stepping back as they recover. This balances their immediate needs with their longer-term independence."
+    },
+    {
+      "id": "cc5-q13",
+      "source_criterion": "5.2a Understand how to find out the individual's history and preferences",
+      "prompt": "A new resident has dementia and cannot clearly tell you about their preferences. How can you still provide person-centred care?",
+      "options": [
+        { "label": "Speak with their family, read their care plan and history, and observe their reactions to different situations", "is_correct": true },
+        { "label": "Make decisions based on what you think is best", "is_correct": false },
+        { "label": "Wait until they can communicate clearly before trying to learn about them", "is_correct": false },
+        { "label": "Treat them the same as every other resident", "is_correct": false }
+      ],
+      "explanation": "Even when someone cannot communicate verbally, you can still learn about them through their family, their care plan, their history, and by observing their reactions. This helps you provide care that is tailored to them as an individual."
+    }
+  ]
+}
