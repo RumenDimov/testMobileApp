@@ -148,7 +148,7 @@ export default function MockExamScreen(): ReactElement {
         </Text>
         <Pressable
           onPress={() => router.back()}
-          className="mt-md py-3 px-lg rounded-button border-2 border-primary"
+          className="mt-md py-3 px-lg rounded-button border border-primary"
         >
           <Text className="text-button text-primary">
             Go Back
@@ -210,11 +210,11 @@ export default function MockExamScreen(): ReactElement {
           if (hasRevealed) {
             if (option.is_correct === 1) {
               borderClass = 'border-correct';
-              bgClass = 'bg-[#F0FDF4]';
+              bgClass = 'bg-correct-light';
               textColorClass = 'text-correct';
             } else if (option.id === selectedOptionId && option.is_correct === 0) {
               borderClass = 'border-incorrect';
-              bgClass = 'bg-[#FEF2F2]';
+              bgClass = 'bg-incorrect-light';
               textColorClass = 'text-incorrect';
             }
           } else if (option.id === selectedOptionId) {
@@ -237,7 +237,7 @@ export default function MockExamScreen(): ReactElement {
         })}
 
         {hasRevealed && (
-          <View className="bg-[#F5F3FA] rounded-card p-md mt-sm">
+          <View className="bg-explanation-bg rounded-card p-md mt-sm">
             <Text className="text-caption font-semibold text-primary mb-sm">
               Explanation
             </Text>
@@ -252,7 +252,7 @@ export default function MockExamScreen(): ReactElement {
         {!hasRevealed && selectedOptionId && (
           <Pressable
             onPress={() => revealAnswer()}
-            className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center"
+            className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center w-full"
           >
             <Text className="text-button text-white">
               Check Answer
@@ -263,7 +263,7 @@ export default function MockExamScreen(): ReactElement {
         {hasRevealed && (
           <Pressable
             onPress={() => advanceQuestion()}
-            className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center"
+            className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center w-full"
           >
             <Text className="text-button text-white">
               {currentIndex >= questions.length - 1

@@ -71,6 +71,7 @@ export default function QuizSessionScreen(): ReactElement {
   const initialized = usePurchaseStore((s) => s.initialized);
   const [accessChecked, setAccessChecked] = useState(false);
   const quizTrackedRef = useRef(false);
+  const isFreeRef = useRef(false);
 
   useEffect(() => {
     if (!topicId || accessChecked) return;
@@ -87,6 +88,7 @@ export default function QuizSessionScreen(): ReactElement {
           router.replace('/paywall');
           return;
         }
+        isFreeRef.current = topic.is_free === 1;
         setAccessChecked(true);
         loadQuestions(topicId);
       } catch {
@@ -104,6 +106,18 @@ export default function QuizSessionScreen(): ReactElement {
         score_correct: useQuizStore.getState().getScoreCorrect(),
         score_total: useQuizStore.getState().getScoreTotal(),
       });
+      trackEvent('topic_completion', {
+        topic_id: topicId,
+        score_correct: useQuizStore.getState().getScoreCorrect(),
+        score_total: useQuizStore.getState().getScoreTotal(),
+      });
+      if (isFreeRef.current) {
+        trackEvent('free_tier_completion', {
+          topic_id: topicId,
+          score_correct: useQuizStore.getState().getScoreCorrect(),
+          score_total: useQuizStore.getState().getScoreTotal(),
+        });
+      }
       router.replace(`/topic/${topicId}/results`);
     }
   }, [isComplete, topicId]);
@@ -117,7 +131,7 @@ export default function QuizSessionScreen(): ReactElement {
 
   if (isLoading) {
     return (
-      <View className="flex-1 justify-center items-center">
+      <View className="flex-1 justify-center items-center bg-background">
         <ActivityIndicator size="large" color="#7C3AED" />
       </View>
     );
@@ -125,13 +139,13 @@ export default function QuizSessionScreen(): ReactElement {
 
   if (error) {
     return (
-      <View className="flex-1 justify-center items-center p-lg">
+      <View className="flex-1 justify-center items-center p-lg bg-background">
         <Text className="text-body text-incorrect text-center">
           {error}
         </Text>
         <Pressable
           onPress={() => router.back()}
-          className="mt-md py-3 px-lg rounded-button border-2 border-primary"
+          className="mt-md py-3 px-lg rounded-button border border-primary"
         >
           <Text className="text-button text-primary">
             Go Back
@@ -144,7 +158,7 @@ export default function QuizSessionScreen(): ReactElement {
   const question = getCurrentQuestion();
   if (!question) {
     return (
-      <View className="flex-1 justify-center items-center">
+      <View className="flex-1 justify-center items-center bg-background">
         <Text className="text-body text-text-secondary">No question to display.</Text>
       </View>
     );
@@ -181,11 +195,11 @@ export default function QuizSessionScreen(): ReactElement {
           if (hasRevealed) {
             if (option.is_correct === 1) {
               borderClass = 'border-correct';
-              bgClass = 'bg-[#F0FDF4]';
+              bgClass = 'bg-correct-light';
               textColorClass = 'text-correct';
             } else if (option.id === selectedOptionId && option.is_correct === 0) {
               borderClass = 'border-incorrect';
-              bgClass = 'bg-[#FEF2F2]';
+              bgClass = 'bg-incorrect-light';
               textColorClass = 'text-incorrect';
             }
           } else if (option.id === selectedOptionId) {
@@ -208,7 +222,7 @@ export default function QuizSessionScreen(): ReactElement {
         })}
 
         {hasRevealed && (
-          <View className="bg-[#F5F3FA] rounded-card p-md mt-sm">
+          <View className="bg-explanation-bg rounded-card p-md mt-sm">
             <Text className="text-caption font-semibold text-primary mb-sm">
               Explanation
             </Text>
@@ -223,7 +237,7 @@ export default function QuizSessionScreen(): ReactElement {
         {!hasRevealed && selectedOptionId && (
           <Pressable
             onPress={() => revealAnswer()}
-            className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center"
+            className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center w-full"
           >
             <Text className="text-button text-white">
               Check Answer
@@ -234,7 +248,7 @@ export default function QuizSessionScreen(): ReactElement {
         {hasRevealed && (
           <Pressable
             onPress={() => advanceQuestion()}
-            className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center"
+            className="bg-primary py-3.5 rounded-button items-center min-h-[52px] justify-center w-full"
           >
             <Text className="text-button text-white">
               {currentIndex >= questions.length - 1

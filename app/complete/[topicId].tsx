@@ -114,7 +114,7 @@ export default function CompletionScreen(): ReactElement {
           {topicTitle}
         </Text>
 
-        <View className="bg-surface rounded-2xl p-xl items-center mb-lg border border-divider w-full max-w-[320px]">
+        <View className="bg-surface rounded-card p-md items-center mb-lg border border-divider w-full max-w-[320px]">
           <Text className={`text-5xl font-bold ${scoreColorClass} mb-sm`}>
             {scoreCorrect}/{scoreTotal}
           </Text>
@@ -133,7 +133,7 @@ export default function CompletionScreen(): ReactElement {
           ))}
         </View>
 
-        <View className="bg-primary-light rounded-card p-lg mb-lg w-full max-w-[320px]">
+        <View className="bg-primary-light rounded-card p-md mb-lg border border-divider w-full max-w-[320px]">
           <Text className="text-heading text-primary text-center mb-sm">
             Enjoying the app?
           </Text>
@@ -143,7 +143,7 @@ export default function CompletionScreen(): ReactElement {
 
           <Pressable
             onPress={handleShare}
-            className="bg-primary py-3.5 px-xl rounded-button items-center min-h-[52px] justify-center mb-sm"
+            className="bg-primary py-3.5 px-xl rounded-button items-center min-h-[52px] justify-center w-full mb-sm"
           >
             <Text className="text-button text-white">Share</Text>
           </Pressable>
@@ -151,7 +151,7 @@ export default function CompletionScreen(): ReactElement {
 
         <Pressable
           onPress={handleHome}
-          className="py-3.5 px-xl rounded-button items-center min-h-[52px] justify-center w-full max-w-[320px] border-2 border-primary mb-xl"
+          className="py-3.5 px-xl rounded-button items-center min-h-[52px] justify-center w-full max-w-[320px] border border-primary mb-xl"
         >
           <Text className="text-button text-primary">Back to Home</Text>
         </Pressable>

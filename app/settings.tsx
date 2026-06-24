@@ -1,4 +1,4 @@
-import { useState, type ReactElement } from 'react';
+import { useEffect, useState, type ReactElement } from 'react';
 import { router } from 'expo-router';
 import {
   ActivityIndicator,
@@ -38,6 +38,10 @@ export default function SettingsScreen(): ReactElement {
   const restorePurchases = usePurchaseStore((s) => s.restorePurchases);
   const [localError, setLocalError] = useState<string | undefined>(undefined);
 
+  useEffect(() => {
+    trackEvent('settings_viewed');
+  }, []);
+
   const handleRestore = async (): Promise<void> => {
     setLocalError(undefined);
     trackEvent('restore_purchase_initiated');
@@ -68,7 +72,7 @@ export default function SettingsScreen(): ReactElement {
           </Text>
 
           {(error ?? localError) && (
-            <View className="bg-[#FEF2F2] rounded-card p-md mb-md border border-incorrect">
+            <View className="bg-incorrect-light rounded-card p-md mb-md border border-incorrect">
               <Text className="text-body text-incorrect">
                 {error ?? localError}
               </Text>
