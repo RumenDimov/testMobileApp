@@ -197,15 +197,16 @@ export default function PaywallScreen(): ReactElement {
     });
   }, [initialize, loadProducts]);
 
-  const purchaseSourceRef = useRef<'purchase' | 'restore'>('purchase');
+  const purchaseSourceRef = useRef<'purchase' | 'restore' | undefined>(undefined);
 
   useEffect(() => {
     trackEvent('paywall_viewed');
   }, []);
 
   useEffect(() => {
-    if (isPurchased) {
+    if (isPurchased && purchaseSourceRef.current) {
       router.replace(`/paywall/confirmation?source=${purchaseSourceRef.current}`);
+      purchaseSourceRef.current = undefined;
     }
   }, [isPurchased]);
 
