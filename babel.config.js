@@ -3,12 +3,7 @@ module.exports = function (api) {
 
   const isJest = Boolean(process.env.JEST_WORKER_ID);
 
-  const presets = [
-    [
-      'babel-preset-expo',
-      isJest ? {} : { jsxImportSource: 'nativewind' },
-    ],
-  ];
+  const presets = ['babel-preset-expo'];
 
   if (!isJest) {
     presets.push('nativewind/babel');
