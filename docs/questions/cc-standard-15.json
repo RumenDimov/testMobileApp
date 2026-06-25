@@ -1,0 +1,156 @@
+{
+  "topic": {
+    "id": "cc-standard-15",
+    "qualification_id": "care-certificate",
+    "title": "Standard 15: Infection Prevention and Control",
+    "summary": "Understanding the chain of infection, the importance of hand hygiene, using personal protective equipment (PPE) correctly, and handling waste safely.",
+    "sort_order": 15,
+    "is_free": 0
+  },
+  "questions": [
+    {
+      "id": "cc15-q01",
+      "source_criterion": "15.1a Understand how to prevent the spread of infection",
+      "prompt": "What is the single most important way to prevent the spread of infection in a care setting?",
+      "options": [
+        { "label": "Effective hand hygiene — washing your hands properly and at the right times", "is_correct": true },
+        { "label": "Wearing gloves at all times", "is_correct": false },
+        { "label": "Taking antibiotics regularly", "is_correct": false },
+        { "label": "Keeping windows open all the time", "is_correct": false }
+      ],
+      "explanation": "Hand hygiene is the single most important way to prevent the spread of infection. You should wash your hands before and after every care activity, after using the toilet, after handling waste, and before handling food."
+    },
+    {
+      "id": "cc15-q02",
+      "source_criterion": "15.1a Prevent the spread of infection",
+      "prompt": "What is the chain of infection?",
+      "options": [
+        { "label": "A model showing how infections spread: infectious agent, reservoir, portal of exit, mode of transmission, portal of entry, and susceptible host", "is_correct": true },
+        { "label": "A set of chains used to secure infected patients", "is_correct": false },
+        { "label": "A sequence of medications to treat an infection", "is_correct": false },
+        { "label": "The order in which staff should be vaccinated", "is_correct": false }
+      ],
+      "explanation": "The chain of infection describes the six elements needed for an infection to spread: the infectious agent (germ), a reservoir where it lives, a way to leave the reservoir, a mode of transmission, a way to enter a new person, and a susceptible host. Breaking any link prevents infection."
+    },
+    {
+      "id": "cc15-q03",
+      "source_criterion": "15.1a Prevent the spread of infection",
+      "prompt": "How long should you wash your hands with soap and water for effective hand hygiene?",
+      "options": [
+        { "label": "At least 20 seconds (or the time it takes to sing 'Happy Birthday' twice)", "is_correct": true },
+        { "label": "5 seconds — a quick rinse is enough", "is_correct": false },
+        { "label": "At least 2 minutes", "is_correct": false },
+        { "label": "Hand washing time does not matter", "is_correct": false }
+      ],
+      "explanation": "For effective hand hygiene, wash with soap and water for at least 20 seconds, making sure to clean all parts of your hands — palms, backs of hands, between fingers, thumbs, fingertips, and wrists."
+    },
+    {
+      "id": "cc15-q04",
+      "source_criterion": "15.1a Understand when to use hand washing vs. alcohol hand rub",
+      "prompt": "When should you wash your hands with soap and water rather than using an alcohol hand rub?",
+      "options": [
+        { "label": "When hands are visibly dirty or after using the toilet — alcohol rub does not clean physical dirt", "is_correct": true },
+        { "label": "Alcohol hand rub is always better than soap and water", "is_correct": false },
+        { "label": "Only before meals", "is_correct": false },
+        { "label": "Never — alcohol hand rub is always sufficient", "is_correct": false }
+      ],
+      "explanation": "Alcohol hand rub is effective against most germs, but it does not remove physical dirt or certain types of germs like norovirus or C. difficile spores. Always wash with soap and water when hands are visibly dirty, after using the toilet, or during outbreaks of diarrhoea and vomiting."
+    },
+    {
+      "id": "cc15-q05",
+      "source_criterion": "15.1c Understand your role in preventing the spread of infection",
+      "prompt": "When should you wear gloves when providing care?",
+      "options": [
+        { "label": "When there is a risk of contact with blood, bodily fluids, non-intact skin, or mucous membranes", "is_correct": true },
+        { "label": "At all times during every interaction with every individual", "is_correct": false },
+        { "label": "Only when dealing with known infections", "is_correct": false },
+        { "label": "Gloves are optional — they are just for your own comfort", "is_correct": false }
+      ],
+      "explanation": "Gloves should be worn when you risk exposure to blood, bodily fluids, non-intact skin, or mucous membranes. They should be single-use — put on just before the task and removed and disposed of immediately after. Always wash your hands after removing gloves."
+    },
+    {
+      "id": "cc15-q06",
+      "source_criterion": "15.1c Use PPE correctly",
+      "prompt": "In what order should you remove personal protective equipment (PPE) to minimise contamination risk?",
+      "options": [
+        { "label": "Gloves first (outside contaminated), then apron (inside out), then face protection, then wash hands", "is_correct": true },
+        { "label": "Apron first, then gloves, then face protection", "is_correct": false },
+        { "label": "Face protection first, then apron, then gloves", "is_correct": false },
+        { "label": "Remove everything at the same time to save time", "is_correct": false }
+      ],
+      "explanation": "The correct order for removing PPE is: gloves first (taking care not to touch the outside), then the apron (breaking the ties and rolling it inside out), then face protection (by the straps or sides), followed by immediate hand hygiene."
+    },
+    {
+      "id": "cc15-q07",
+      "source_criterion": "15.1d Understand the use of materials and equipment",
+      "prompt": "How should used needles and sharps be disposed of?",
+      "options": [
+        { "label": "Immediately into a designated sharps bin at the point of use — never re-sheath needles", "is_correct": true },
+        { "label": "Wrap them in paper and put them in the general waste", "is_correct": false },
+        { "label": "Put them in a plastic bag and tie it securely", "is_correct": false },
+        { "label": "Place them in a glass jar with a lid", "is_correct": false }
+      ],
+      "explanation": "Used sharps must be disposed of immediately into a designated sharps bin that meets British Standards. Never re-sheath needles after use. The sharps bin should be closed when it is three-quarters full."
+    },
+    {
+      "id": "cc15-q08",
+      "source_criterion": "15.1e Understand how to handle waste safely",
+      "prompt": "How should clinical waste be segregated from general waste?",
+      "options": [
+        { "label": "Clinical waste goes in specific colour-coded bags — usually orange or yellow — and is disposed of separately", "is_correct": true },
+        { "label": "All waste can go in the same bin — it is all treated the same way", "is_correct": false },
+        { "label": "Clinical waste goes in black bags like general rubbish", "is_correct": false },
+        { "label": "Clinical waste is not dealt with by care workers — only specialist contractors handle it", "is_correct": false }
+      ],
+      "explanation": "Clinical waste (used PPE, dressings, contaminated items) must be segregated from general waste using colour-coded bags — orange for infectious clinical waste, yellow for offensive/hygiene waste. Your organisation will have a specific waste management policy."
+    },
+    {
+      "id": "cc15-q09",
+      "source_criterion": "15.1e Handle waste safely",
+      "prompt": "What should you do if you have a needlestick injury?",
+      "options": [
+        { "label": "Encourage the wound to bleed, wash it with soap and water, cover it, and report it immediately following your organisation's procedure", "is_correct": true },
+        { "label": "Ignore it if it does not hurt much", "is_correct": false },
+        { "label": "Suck the blood out of the wound", "is_correct": false },
+        { "label": "Put a plaster on it and carry on", "is_correct": false }
+      ],
+      "explanation": "If you have a needlestick injury, you should immediately encourage the wound to bleed, wash it thoroughly with soap and running water, cover it with a waterproof dressing, and report the injury to your manager as an emergency — you may need blood tests and follow-up care."
+    },
+    {
+      "id": "cc15-q10",
+      "source_criterion": "15.1a Understand how to prevent infection",
+      "prompt": "What is the 'bare below the elbows' policy in healthcare settings?",
+      "options": [
+        { "label": "Removing wristwatches, jewellery, and rolling up sleeves to allow effective hand washing and prevent germ spread", "is_correct": true },
+        { "label": "Never wearing a uniform at work", "is_correct": false },
+        { "label": "Only wearing short-sleeved uniforms regardless of weather", "is_correct": false },
+        { "label": "A policy that only applies to doctors, not care workers", "is_correct": false }
+      ],
+      "explanation": "'Bare below the elbows' means removing wristwatches and jewellery and rolling up long sleeves. This allows thorough hand washing and drying, and prevents germs from being transferred via watches, jewellery, or cuffs."
+    },
+    {
+      "id": "cc15-q11",
+      "source_criterion": "15.1a Prevent spread of infection",
+      "prompt": "What is the correct way to use disposable gloves?",
+      "options": [
+        { "label": "Put them on immediately before the task, remove immediately after, and wash hands — never re-use disposable gloves", "is_correct": true },
+        { "label": "They can be washed and re-used to save money", "is_correct": false },
+        { "label": "Wear the same pair for different tasks with the same individual", "is_correct": false },
+        { "label": "Leave them on between tasks to save time", "is_correct": false }
+      ],
+      "explanation": "Disposable gloves are single-use items. They should be put on immediately before a care task and removed and disposed of immediately after. Wearing the same gloves for different tasks or between individuals spreads germs."
+    },
+    {
+      "id": "cc15-q12",
+      "source_criterion": "15.1d Use of materials and equipment",
+      "prompt": "What should you do if you notice a spillage of blood or bodily fluids?",
+      "options": [
+        { "label": "Follow your organisation's spillage procedure — cordon off the area, use PPE, and clean with the correct disinfectant", "is_correct": true },
+        { "label": "Wipe it up quickly with paper towels", "is_correct": false },
+        { "label": "Leave it for the cleaning staff to deal with", "is_correct": false },
+        { "label": "Pour water on it to dilute it", "is_correct": false }
+      ],
+      "explanation": "Spillages of blood or bodily fluids must be dealt with following your organisation's specific procedure. This usually involves cordoning off the area, wearing PPE, using a spill kit if available, and cleaning with the correct disinfectant."
+    }
+  ]
+}

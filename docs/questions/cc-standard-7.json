@@ -1,0 +1,168 @@
+{
+  "topic": {
+    "id": "cc-standard-7",
+    "qualification_id": "care-certificate",
+    "title": "Standard 7: Privacy and Dignity",
+    "summary": "Understanding the principles of privacy and dignity, supporting individuals to maintain their privacy and dignity, and promoting individuals' rights and choices.",
+    "sort_order": 7,
+    "is_free": 0
+  },
+  "questions": [
+    {
+      "id": "cc7-q01",
+      "source_criterion": "7.1a Describe what is meant by privacy and dignity",
+      "prompt": "What does 'dignity' mean in health and social care?",
+      "options": [
+        { "label": "Supporting an individual's self-respect and value, and treating them in a way that makes them feel respected", "is_correct": true },
+        { "label": "Always keeping the individual in a private room", "is_correct": false },
+        { "label": "Only using formal language when speaking to the individual", "is_correct": false },
+        { "label": "Making sure the individual is never left alone", "is_correct": false }
+      ],
+      "explanation": "Dignity means treating the individual in a way that maintains their self-respect and worth. It involves respecting their privacy, listening to them, and ensuring they feel valued as a person."
+    },
+    {
+      "id": "cc7-q02",
+      "source_criterion": "7.1b Understand how a care environment can support or undermine privacy and dignity",
+      "prompt": "Which of the following practices undermines an individual's dignity?",
+      "options": [
+        { "label": "Discussing an individual's personal care needs within earshot of other people", "is_correct": true },
+        { "label": "Closing the curtain when providing personal care", "is_correct": false },
+        { "label": "Knocking before entering an individual's room", "is_correct": false },
+        { "label": "Addressing the individual by their preferred name", "is_correct": false }
+      ],
+      "explanation": "Discussing personal care needs where others can hear undermines dignity. Care environments should promote privacy and dignity by ensuring personal conversations are held discreetly and care is provided respectfully."
+    },
+    {
+      "id": "cc7-q03",
+      "source_criterion": "7.2c Understand the importance of not disclosing information",
+      "prompt": "A colleague asks you about an individual you both support — what information about them can you share?",
+      "options": [
+        { "label": "Only information they need to know to do their job, following your organisation's confidentiality policy", "is_correct": true },
+        { "label": "Any information because you both work in the same team", "is_correct": false },
+        { "label": "All the information you have so they can be fully informed", "is_correct": false },
+        { "label": "No information at all — confidentiality is absolute", "is_correct": false }
+      ],
+      "explanation": "Information should only be shared on a 'need-to-know' basis, even between colleagues. The colleague should only have access to the information they need to provide safe care. Your organisation's confidentiality policy will guide this."
+    },
+    {
+      "id": "cc7-q04",
+      "source_criterion": "7.3a Support individuals to make informed choices",
+      "prompt": "How can you best support an individual to make an informed choice?",
+      "options": [
+        { "label": "Provide them with the information they need in a way they can understand, and give them time to decide", "is_correct": true },
+        { "label": "Decide for them based on what you think is best", "is_correct": false },
+        { "label": "Tell them what most people in their situation choose", "is_correct": false },
+        { "label": "Only give them positive information so they make the 'right' choice", "is_correct": false }
+      ],
+      "explanation": "To support informed choice, you must give the individual all relevant information in a format they can understand (using pictures, translation, or large print if needed), explain the risks and benefits, and give them time to decide without pressure."
+    },
+    {
+      "id": "cc7-q05",
+      "source_criterion": "7.3b & c Understand risk taking, risk assessment and risk enablement",
+      "prompt": "What is 'risk enablement'?",
+      "options": [
+        { "label": "Supporting individuals to understand risks and make their own choices, rather than removing all risk from their lives", "is_correct": true },
+        { "label": "Removing all possible risks to keep individuals completely safe", "is_correct": false },
+        { "label": "Ignoring risks to promote independence", "is_correct": false },
+        { "label": "A process that only applies to individuals with mental capacity issues", "is_correct": false }
+      ],
+      "explanation": "Risk enablement means supporting individuals to understand and manage risks themselves, rather than removing their choices. It is about finding a balance between keeping someone safe and respecting their right to make their own decisions."
+    },
+    {
+      "id": "cc7-q06",
+      "source_criterion": "7.3d Understand the importance of consent",
+      "prompt": "An individual with dementia refuses to have a bath. What should you do?",
+      "options": [
+        { "label": "Respect their refusal, document it, and try again later — unless there is an urgent health reason", "is_correct": true },
+        { "label": "Insist and get help from other staff to complete the bath", "is_correct": false },
+        { "label": "Wait until they are asleep and do it then", "is_correct": false },
+        { "label": "Bypass their consent and ask their family to decide", "is_correct": false }
+      ],
+      "explanation": "Even if someone has dementia, they still have the right to refuse care. You should respect their refusal, document it, and try again later. Forcing care against someone's will could be a form of abuse or unlawful restraint."
+    },
+    {
+      "id": "cc7-q07",
+      "source_criterion": "7.4d Understand your responsibility to support individuals' rights",
+      "prompt": "An individual tells you they feel their rights are not being respected. What should you do?",
+      "options": [
+        { "label": "Listen to their concerns, take them seriously, and support them to raise the issue through the proper channels", "is_correct": true },
+        { "label": "Tell them they are probably mistaken", "is_correct": false },
+        { "label": "Ignore it — they complain about everything", "is_correct": false },
+        { "label": "Decide what to do without involving the individual", "is_correct": false }
+      ],
+      "explanation": "If an individual feels their rights are not being respected, you should listen, take their concerns seriously, and support them to raise the issue. This could involve supporting them to make a complaint, speaking to their advocate, or raising the concern yourself."
+    },
+    {
+      "id": "cc7-q08",
+      "source_criterion": "7.5a, b & d Understand the importance of valuing individuals",
+      "prompt": "What is the best way to show an individual that you value them?",
+      "options": [
+        { "label": "Listen to them, involve them in decisions, and treat them as an individual with unique needs and preferences", "is_correct": true },
+        { "label": "Complete all care tasks as quickly as possible", "is_correct": false },
+        { "label": "Only speak to them when providing direct care", "is_correct": false },
+        { "label": "Treat all individuals the same way regardless of their preferences", "is_correct": false }
+      ],
+      "explanation": "Valuing an individual means treating them as a unique person — listening to them, involving them in decisions, respecting their preferences, and treating them with kindness and respect. It is about recognising their worth as a person."
+    },
+    {
+      "id": "cc7-q09",
+      "source_criterion": "7.5c List ways to support individuals' dignity",
+      "prompt": "Which of the following is a way to support an individual's dignity during personal care?",
+      "options": [
+        { "label": "Allowing them to choose what time they get up and how they want to be supported with washing and dressing", "is_correct": true },
+        { "label": "Washing and dressing them as quickly as possible without involving them", "is_correct": false },
+        { "label": "Talking to other staff members over the individual while providing care", "is_correct": false },
+        { "label": "Leaving them exposed while you prepare their clothes", "is_correct": false }
+      ],
+      "explanation": "Supporting dignity means giving individuals choice and control over their personal care — involving them in decisions about when and how care is provided, and ensuring they are covered and comfortable throughout."
+    },
+    {
+      "id": "cc7-q10",
+      "source_criterion": "7.6b Understand self-care and its importance",
+      "prompt": "Why is it important for a care worker to look after their own wellbeing?",
+      "options": [
+        { "label": "So they can provide safe, compassionate care and be a positive role model for the individuals they support", "is_correct": true },
+        { "label": "Self-care is not important in care work", "is_correct": false },
+        { "label": "Care workers should prioritise others' needs above their own at all times", "is_correct": false },
+        { "label": "Self-care only matters outside of work hours", "is_correct": false }
+      ],
+      "explanation": "Looking after your own physical and mental wellbeing is essential to providing good care. If you are exhausted, stressed, or unwell, you cannot give the best care to others. Taking breaks, managing stress, and seeking support when needed all contribute to better care."
+    },
+    {
+      "id": "cc7-q11",
+      "source_criterion": "7.1a Privacy and dignity explained",
+      "prompt": "What does 'privacy' mean in a care setting?",
+      "options": [
+        { "label": "Respecting an individual's personal space, and ensuring their personal information and body are not seen or discussed without their permission", "is_correct": true },
+        { "label": "Never entering an individual's room", "is_correct": false },
+        { "label": "Keeping all information secret from everyone including other care staff", "is_correct": false },
+        { "label": "Leaving the individual alone at all times", "is_correct": false }
+      ],
+      "explanation": "Privacy means respecting an individual's personal space and boundaries. It involves ensuring their body is not unnecessarily exposed, their personal information is protected, and their private moments (like using the toilet or bathing) are not intruded upon."
+    },
+    {
+      "id": "cc7-q12",
+      "source_criterion": "7.2c Importance of not disclosing information",
+      "prompt": "You overhear a colleague talking about an individual's medical history in the staff room where others can hear. What should you do?",
+      "options": [
+        { "label": "Remind your colleague that this is a breach of confidentiality and report it if necessary", "is_correct": true },
+        { "label": "Join the conversation since everyone in the staff room works there", "is_correct": false },
+        { "label": "Ignore it — it is not your responsibility", "is_correct": false },
+        { "label": "Tell the individual's family about the conversation", "is_correct": false }
+      ],
+      "explanation": "Discussing personal information where others can overhear is a breach of confidentiality. You have a responsibility to challenge this politely but firmly, and report it to your manager if it continues."
+    },
+    {
+      "id": "cc7-q13",
+      "source_criterion": "7.3a Support individuals to make informed choices",
+      "prompt": "An individual wants to spend their own money on something you think is unnecessary. What should you do?",
+      "options": [
+        { "label": "Support their decision as long as they have capacity and understand the implications", "is_correct": true },
+        { "label": "Refuse to help them buy it", "is_correct": false },
+        { "label": "Tell them they are wasting their money", "is_correct": false },
+        { "label": "Ask their family to decide what is best", "is_correct": false }
+      ],
+      "explanation": "If an individual has mental capacity and understands the implications of their decision, they have the right to spend their money as they wish — even if you think it is unwise. Your role is to support their choice, not to judge it."
+    }
+  ]
+}

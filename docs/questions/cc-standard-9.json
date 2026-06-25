@@ -1,0 +1,180 @@
+{
+  "topic": {
+    "id": "cc-standard-9",
+    "qualification_id": "care-certificate",
+    "title": "Standard 9: Mental Health, Dementia and Learning Disability",
+    "summary": "Understanding mental health conditions, dementia and learning disabilities, and knowing how to provide appropriate, person-centred support to individuals with these conditions.",
+    "sort_order": 9,
+    "is_free": 0
+  },
+  "questions": [
+    {
+      "id": "cc9-q01",
+      "source_criterion": "9.1a, b & c Understand the needs and experiences of individuals with mental health conditions, dementia or learning disabilities",
+      "prompt": "What is one common experience shared by people with mental health conditions, dementia, and learning disabilities?",
+      "options": [
+        { "label": "They may face stigma, discrimination, and barriers to accessing the same opportunities as others", "is_correct": true },
+        { "label": "They all have the same care needs", "is_correct": false },
+        { "label": "They are all unable to live independently", "is_correct": false },
+        { "label": "They all require medication", "is_correct": false }
+      ],
+      "explanation": "People with mental health conditions, dementia, and learning disabilities often face stigma and discrimination. They may be treated unfairly, have fewer opportunities, and face barriers in accessing services. Person-centred care means recognising each individual's unique needs."
+    },
+    {
+      "id": "cc9-q02",
+      "source_criterion": "9.1a, b & c Understand the needs and experiences",
+      "prompt": "Why is it important not to make assumptions about what someone with a learning disability can or cannot do?",
+      "options": [
+        { "label": "Because every person is an individual with their own abilities and potential — assumptions limit their opportunities", "is_correct": true },
+        { "label": "Because people with learning disabilities have the same abilities as everyone else", "is_correct": false },
+        { "label": "Because making assumptions is illegal", "is_correct": false },
+        { "label": "Because it is easier to treat everyone the same", "is_correct": false }
+      ],
+      "explanation": "People with learning disabilities have a wide range of abilities. Making assumptions about what someone can or cannot do can limit their opportunities and deny them the chance to develop skills and independence. You should always focus on the individual's strengths."
+    },
+    {
+      "id": "cc9-q03",
+      "source_criterion": "9.2a Understand the meaning of mental health conditions, dementia and learning disability",
+      "prompt": "What is dementia?",
+      "options": [
+        { "label": "A progressive condition that affects memory, thinking, behaviour and the ability to perform everyday tasks", "is_correct": true },
+        { "label": "A temporary state of confusion", "is_correct": false },
+        { "label": "A type of learning disability", "is_correct": false },
+        { "label": "A mental health condition that can be cured with medication", "is_correct": false }
+      ],
+      "explanation": "Dementia is not a single disease but a group of symptoms affecting memory, thinking, and social abilities. It is progressive, meaning symptoms worsen over time. Alzheimer's disease is the most common cause of dementia."
+    },
+    {
+      "id": "cc9-q04",
+      "source_criterion": "9.2b Describe what is meant by the social model of disability",
+      "prompt": "What does the social model of disability say?",
+      "options": [
+        { "label": "People are disabled by barriers in society (like lack of ramps or accessible information), not by their condition alone", "is_correct": true },
+        { "label": "Disability is caused entirely by a person's medical condition", "is_correct": false },
+        { "label": "Society has no role in creating disability", "is_correct": false },
+        { "label": "The medical model and social model mean the same thing", "is_correct": false }
+      ],
+      "explanation": "The social model of disability says that people are disabled by the barriers society creates — such as inaccessible buildings, lack of information in accessible formats, and negative attitudes — rather than by their impairment or condition alone."
+    },
+    {
+      "id": "cc9-q05",
+      "source_criterion": "9.3a Understand how to support individuals with these conditions",
+      "prompt": "How can you best support someone with dementia who is feeling anxious or agitated?",
+      "options": [
+        { "label": "Stay calm, use a gentle tone, reassure them, and try to understand what might be causing their distress", "is_correct": true },
+        { "label": "Raise your voice to get their attention", "is_correct": false },
+        { "label": "Tell them firmly to calm down", "is_correct": false },
+        { "label": "Leave them alone until they stop", "is_correct": false }
+      ],
+      "explanation": "Agitation in dementia is often a response to unmet needs — pain, hunger, thirst, boredom, or feeling overwhelmed. Stay calm, be reassuring, and try to identify and address the underlying cause rather than focusing on the behaviour itself."
+    },
+    {
+      "id": "cc9-q06",
+      "source_criterion": "9.3b Understand reporting concerns",
+      "prompt": "If you notice a change in an individual's mental state, such as increased confusion or withdrawal, what should you do?",
+      "options": [
+        { "label": "Record your observations and report them to your manager as soon as possible", "is_correct": true },
+        { "label": "Wait to see if it gets worse before telling anyone", "is_correct": false },
+        { "label": "Assume it is part of their normal condition and do nothing", "is_correct": false },
+        { "label": "Discuss it with other residents first", "is_correct": false }
+      ],
+      "explanation": "Changes in an individual's mental state could indicate a health problem, such as an infection, medication side effect, or pain. You should always record and report changes promptly — early intervention can make a significant difference."
+    },
+    {
+      "id": "cc9-q07",
+      "source_criterion": "9.4a Understand the importance of early detection",
+      "prompt": "Why is early detection of dementia, mental health conditions, and learning disabilities important?",
+      "options": [
+        { "label": "Early diagnosis means earlier support, better outcomes, and more time for the individual to plan their care", "is_correct": true },
+        { "label": "Early detection does not make any difference to outcomes", "is_correct": false },
+        { "label": "It is only important for legal reasons", "is_correct": false },
+        { "label": "Conditions like these cannot be detected early", "is_correct": false }
+      ],
+      "explanation": "Early detection means individuals can access the right support sooner, plan for their future, and receive treatments that may slow the progression of some conditions. It also helps families and carers prepare and get support."
+    },
+    {
+      "id": "cc9-q08",
+      "source_criterion": "9.4b Understand how care and support may need to be adjusted",
+      "prompt": "How might you need to adjust your communication for someone with a learning disability?",
+      "options": [
+        { "label": "Use simple, clear language, give them time to respond, and use pictures or other visual aids if needed", "is_correct": true },
+        { "label": "Speak loudly and use complex words", "is_correct": false },
+        { "label": "Avoid speaking to them directly", "is_correct": false },
+        { "label": "Speak to their support worker instead", "is_correct": false }
+      ],
+      "explanation": "Adjustments for people with learning disabilities include using clear, simple language, breaking information into small chunks, allowing extra time for processing and response, and using pictures, symbols, or Easy Read formats."
+    },
+    {
+      "id": "cc9-q09",
+      "source_criterion": "9.5a & b Understand legislation and policies",
+      "prompt": "Which piece of legislation protects the rights of people with mental health conditions in England?",
+      "options": [
+        { "label": "The Mental Health Act 1983 (amended 2007)", "is_correct": true },
+        { "label": "The Health and Safety at Work Act 1974", "is_correct": false },
+        { "label": "The Equality Act 2010 — this covers all protected characteristics including disability", "is_correct": false },
+        { "label": "The Care Act 2014", "is_correct": false }
+      ],
+      "explanation": "The Mental Health Act 1983 (amended 2007) is the main legislation covering the assessment, treatment, and rights of people with mental health disorders. The Equality Act 2010 also provides important protections against discrimination."
+    },
+    {
+      "id": "cc9-q10",
+      "source_criterion": "9.6a Explain what is meant by 'capacity'",
+      "prompt": "What does 'mental capacity' mean?",
+      "options": [
+        { "label": "The ability to understand, retain, and use information to make a decision, and to communicate that decision", "is_correct": true },
+        { "label": "How intelligent someone is", "is_correct": false },
+        { "label": "Whether someone has a diagnosed mental health condition", "is_correct": false },
+        { "label": "The ability to speak and write fluently", "is_correct": false }
+      ],
+      "explanation": "Mental capacity is the ability to make a specific decision at a specific time. It involves understanding the information relevant to the decision, retaining it, weighing it up, and communicating the decision. Capacity is decision-specific and can change over time."
+    },
+    {
+      "id": "cc9-q11",
+      "source_criterion": "9.6b Understand when you might be unsure about an individual's capacity",
+      "prompt": "If you are unsure whether an individual has the capacity to make a particular decision, what should you do?",
+      "options": [
+        { "label": "Seek advice from your manager or a healthcare professional — do not assume they lack capacity", "is_correct": true },
+        { "label": "Assume they lack capacity and make the decision for them", "is_correct": false },
+        { "label": "Ignore the issue and let them make the decision regardless", "is_correct": false },
+        { "label": "Ask a family member to decide for them", "is_correct": false }
+      ],
+      "explanation": "Under the Mental Capacity Act 2005, you must always assume a person has capacity unless it is proven otherwise. If you are unsure, you should seek advice from your manager or a relevant professional. Never assume a lack of capacity based on age, appearance, or diagnosis."
+    },
+    {
+      "id": "cc9-q12",
+      "source_criterion": "9.6c Understand consent",
+      "prompt": "What is 'informed consent' in the context of care?",
+      "options": [
+        { "label": "Agreement given freely by an individual with capacity, based on full information they understand", "is_correct": true },
+        { "label": "A form signed by a family member", "is_correct": false },
+        { "label": "Agreement assumed because the individual did not say no", "is_correct": false },
+        { "label": "Consent that, once given, cannot be withdrawn", "is_correct": false }
+      ],
+      "explanation": "Informed consent means the individual has capacity, has been given all relevant information in a way they can understand, and agrees freely without pressure. Consent can be withdrawn at any time, and you must respect this."
+    },
+    {
+      "id": "cc9-q13",
+      "source_criterion": "9.6d Describe where an assessment of capacity takes place",
+      "prompt": "Who can carry out a formal assessment of capacity?",
+      "options": [
+        { "label": "A healthcare professional trained to assess capacity, such as a doctor, nurse, or psychologist", "is_correct": true },
+        { "label": "Any care worker who knows the individual well", "is_correct": false },
+        { "label": "The individual's family member", "is_correct": false },
+        { "label": "The individual themselves", "is_correct": false }
+      ],
+      "explanation": "Formal capacity assessments should be carried out by appropriately trained healthcare professionals such as doctors, psychiatrists, or psychologists. However, care workers play an important role in raising concerns when they suspect someone may lack capacity."
+    },
+    {
+      "id": "cc9-q14",
+      "source_criterion": "9.3a Support for individuals with mental health conditions",
+      "prompt": "What is a person-centred way to support someone experiencing depression?",
+      "options": [
+        { "label": "Listen without judgement, encourage them to engage in activities they usually enjoy, and support them to seek professional help", "is_correct": true },
+        { "label": "Tell them to cheer up and think positively", "is_correct": false },
+        { "label": "Leave them alone until they feel better", "is_correct": false },
+        { "label": "Make decisions for them because depression affects their judgement", "is_correct": false }
+      ],
+      "explanation": "Depression is not something someone can just 'snap out of'. Person-centred support means listening without judgement, offering gentle encouragement to engage in meaningful activities, and helping them access appropriate professional support."
+    }
+  ]
+}

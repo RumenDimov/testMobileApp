@@ -1,0 +1,14 @@
+diff --git a/node_modules/react-native-css-interop/dist/metro/transformer.js b/node_modules/react-native-css-interop/dist/metro/transformer.js
+index 2f475cd..dcd957e 100644
+--- a/node_modules/react-native-css-interop/dist/metro/transformer.js
++++ b/node_modules/react-native-css-interop/dist/metro/transformer.js
+@@ -10,7 +10,8 @@ async function transform(config, projectRoot, filename, data, options) {
+     const transform = config.cssInterop_transformerPath
+         ? require(config.cssInterop_transformerPath).transform
+         : metro_transform_worker_1.default.transform;
+-    if (path_1.default.dirname(filename) !== config.cssInterop_outputDirectory ||
++    const _normalize = (p) => path_1.default.resolve(p || '').replace(/\\/g, '/').toLowerCase();
++    if (_normalize(path_1.default.dirname(filename)) !== _normalize(config.cssInterop_outputDirectory) ||
+         filename.endsWith(".css")) {
+         return transform(config, projectRoot, filename, data, options);
+     }

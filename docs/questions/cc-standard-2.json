@@ -1,0 +1,180 @@
+{
+  "topic": {
+    "id": "cc-standard-2",
+    "qualification_id": "care-certificate",
+    "title": "Standard 2: Your Personal Development",
+    "summary": "Developing a personal development plan, using feedback and reflection to improve your practice, and understanding the importance of continuing professional development.",
+    "sort_order": 2,
+    "is_free": 0
+  },
+  "questions": [
+    {
+      "id": "cc2-q01",
+      "source_criterion": "2.1a Identify sources of support for your learning and development",
+      "prompt": "Which of the following is a valid source of support for your learning and development in a care role?",
+      "options": [
+        { "label": "Your manager, supervisor, and other experienced colleagues", "is_correct": true },
+        { "label": "Only formal training courses — nothing else counts", "is_correct": false },
+        { "label": "Social media influencers who give care advice", "is_correct": false },
+        { "label": "You should manage your own development without help from anyone", "is_correct": false }
+      ],
+      "explanation": "Your manager, supervisor, and experienced colleagues are key sources of support for your learning and development. Other sources include training departments, the Care Quality Commission (CQC), Skills for Care, and professional networks."
+    },
+    {
+      "id": "cc2-q02",
+      "source_criterion": "2.1b Describe the process for agreeing a personal development plan (PDP)",
+      "prompt": "What is a personal development plan (PDP)?",
+      "options": [
+        { "label": "An action plan that helps you get organised, identify learning needs, and track your progress", "is_correct": true },
+        { "label": "A list of tasks your manager wants you to complete in one week", "is_correct": false },
+        { "label": "A document that only your manager fills in without your input", "is_correct": false },
+        { "label": "A one-time document created during your induction that never changes", "is_correct": false }
+      ],
+      "explanation": "A personal development plan is an action plan that helps you get organised, identifies your learning and development needs, and tracks your progress. It is created with you, not for you, and is usually reviewed and updated each year."
+    },
+    {
+      "id": "cc2-q03",
+      "source_criterion": "2.1b Describe the process for agreeing a personal development plan (PDP)",
+      "prompt": "What does 'SMART' stand for when setting objectives in a personal development plan?",
+      "options": [
+        { "label": "Specific, Measurable, Achievable, Relevant, Time-based", "is_correct": true },
+        { "label": "Simple, Managed, Assessed, Reviewed, Tested", "is_correct": false },
+        { "label": "Structured, Meaningful, Active, Reliable, Thorough", "is_correct": false },
+        { "label": "Standard, Measured, Agreed, Recorded, Tracked", "is_correct": false }
+      ],
+      "explanation": "SMART stands for Specific, Measurable, Achievable, Relevant, and Time-based. Setting SMART objectives helps break down your goals into manageable action points that you can track and achieve."
+    },
+    {
+      "id": "cc2-q04",
+      "source_criterion": "2.1c Explain why feedback from others is important for learning",
+      "prompt": "Why is constructive feedback important for your development as a care worker?",
+      "options": [
+        { "label": "It helps you develop awareness of your strengths and areas for improvement", "is_correct": true },
+        { "label": "It is only needed when you have done something wrong", "is_correct": false },
+        { "label": "Feedback from colleagues does not matter — only feedback from your manager counts", "is_correct": false },
+        { "label": "Receiving no feedback is better than receiving any feedback", "is_correct": false }
+      ],
+      "explanation": "Constructive feedback helps you develop confidence and problem-solving abilities. It gives you awareness of both your strengths and areas for improvement. Not receiving feedback can lead to a false assessment of your own abilities."
+    },
+    {
+      "id": "cc2-q05",
+      "source_criterion": "2.1c Explain why feedback from others is important for learning",
+      "prompt": "What is the difference between formal and informal feedback?",
+      "options": [
+        { "label": "Formal feedback is usually written (e.g. appraisal notes), while informal feedback happens in day-to-day discussion", "is_correct": true },
+        { "label": "Formal feedback is always negative and informal feedback is always positive", "is_correct": false },
+        { "label": "Formal feedback only comes from colleagues and informal feedback only from managers", "is_correct": false },
+        { "label": "There is no real difference between them", "is_correct": false }
+      ],
+      "explanation": "Formal feedback is usually given in writing, such as during an appraisal or assessment. Informal feedback happens in day-to-day discussions with colleagues, managers, or the individuals you support. Both are valuable for your development."
+    },
+    {
+      "id": "cc2-q06",
+      "source_criterion": "2.2a Describe how you will use your literacy, numeracy and communication skills in practice",
+      "prompt": "Why do care workers need good literacy skills?",
+      "options": [
+        { "label": "To read and contribute to care plans, fill out forms, and keep clear records", "is_correct": true },
+        { "label": "Literacy skills are not important in care work", "is_correct": false },
+        { "label": "Only managers need literacy skills", "is_correct": false },
+        { "label": "Literacy only matters for written exams, not day-to-day work", "is_correct": false }
+      ],
+      "explanation": "Care workers need literacy skills for reading and contributing to care plans, filling out forms clearly, writing emails, taking notes, and understanding instructions about ways of working. These are essential for providing safe, person-centred care."
+    },
+    {
+      "id": "cc2-q07",
+      "source_criterion": "2.2a Describe how you will use your literacy, numeracy and communication skills in practice",
+      "prompt": "In which of these situations would a care worker need to use numeracy skills?",
+      "options": [
+        { "label": "Taking and recording an individual's temperature or weight and tracking changes over time", "is_correct": true },
+        { "label": "Choosing what colour uniform to wear", "is_correct": false },
+        { "label": "Deciding which room to clean first", "is_correct": false },
+        { "label": "Numeracy skills are not needed in care work", "is_correct": false }
+      ],
+      "explanation": "Care workers often need numeracy skills for tasks such as recording vital signs (temperature, blood pressure), monitoring weight, calculating fluid intake, or understanding measurements like grams and milligrams for medication."
+    },
+    {
+      "id": "cc2-q08",
+      "source_criterion": "2.2b Explain how you would check your current levels of literacy, numeracy and communication skills",
+      "prompt": "How can you check your current level of literacy, numeracy and communication skills?",
+      "options": [
+        { "label": "Use self-assessment tools, ask your manager for support, or access online resources to check your skills", "is_correct": true },
+        { "label": "There is no way to check these skills", "is_correct": false },
+        { "label": "Only through formal exams at a college", "is_correct": false },
+        { "label": "You should already know everything you need to know before starting the job", "is_correct": false }
+      ],
+      "explanation": "There are various ways to check your skills, including online resources, self-assessment tools, and asking your manager about opportunities or support available. Your employer may expect you to have skills at a specific level and can help you improve them if needed."
+    },
+    {
+      "id": "cc2-q09",
+      "source_criterion": "2.2c, d & e Describe how development activities improve knowledge, skills and understanding",
+      "prompt": "What is 'reflective practice' in the context of learning and development?",
+      "options": [
+        { "label": "Thinking back on a situation or activity and considering what you could do differently", "is_correct": true },
+        { "label": "Copying what other workers do without thinking about it", "is_correct": false },
+        { "label": "Only reflecting when something goes seriously wrong", "is_correct": false },
+        { "label": "Writing a diary about your personal life", "is_correct": false }
+      ],
+      "explanation": "Reflection is a learning tool that uses past experiences to help you develop. You look back on a situation, consider how it was handled, and think about what you could do differently or better. It helps you improve the quality of your work."
+    },
+    {
+      "id": "cc2-q10",
+      "source_criterion": "2.2g Identify formal and informal learning opportunities",
+      "prompt": "Which of the following is an example of informal learning?",
+      "options": [
+        { "label": "A breaktime discussion with colleagues about a care situation", "is_correct": true },
+        { "label": "An annual appraisal with your manager", "is_correct": false },
+        { "label": "A formal e-learning course on safeguarding", "is_correct": false },
+        { "label": "A certified first aid training course", "is_correct": false }
+      ],
+      "explanation": "Informal learning happens through day-to-day activities like discussions with colleagues, watching a documentary, or reading a magazine. Formal learning includes structured activities like appraisals, e-learning courses, and certified training."
+    },
+    {
+      "id": "cc2-q11",
+      "source_criterion": "2.2g Identify formal and informal learning opportunities",
+      "prompt": "What is 'blended learning'?",
+      "options": [
+        { "label": "Mixing different learning methods such as reading, e-learning, shadowing, and formal courses to suit how you learn best", "is_correct": true },
+        { "label": "Only using one type of learning method", "is_correct": false },
+        { "label": "Learning while doing another activity at the same time", "is_correct": false },
+        { "label": "A method that only works for online courses", "is_correct": false }
+      ],
+      "explanation": "Blended learning means mixing and matching different learning methods — such as reading materials, e-learning, work shadowing, formal courses, and reflection — to suit your personal learning style and needs."
+    },
+    {
+      "id": "cc2-q12",
+      "source_criterion": "2.2i Explain why continuing professional development (CPD) is important",
+      "prompt": "Why is continuing professional development (CPD) important in health and social care?",
+      "options": [
+        { "label": "Because legislation, ways of working, and best practice change regularly, and workers need to keep their knowledge and skills up to date", "is_correct": true },
+        { "label": "It is only needed if you want to change careers", "is_correct": false },
+        { "label": "CPD is optional and not really necessary once you have your qualification", "is_correct": false },
+        { "label": "CPD only matters for nurses, not care workers", "is_correct": false }
+      ],
+      "explanation": "Continuing professional development is essential because health and social care is always changing — legislation may change, ways of working develop, and documentation improves. Your CPD record shows what you have done to keep your knowledge and skills current."
+    },
+    {
+      "id": "cc2-q13",
+      "source_criterion": "2.1b Describe the process for agreeing a personal development plan (PDP)",
+      "prompt": "Who is the most important person involved in creating your personal development plan?",
+      "options": [
+        { "label": "You — your manager and others support you, but you are the main driver of your own development", "is_correct": true },
+        { "label": "Your manager — they decide everything in your PDP", "is_correct": false },
+        { "label": "The individual you support — they decide what you need to learn", "is_correct": false },
+        { "label": "Your assessor — the PDP is only for assessment purposes", "is_correct": false }
+      ],
+      "explanation": "You are the most important person in your personal development plan. However, your manager, other workers, and the people you provide care and support for will all play a part in helping you identify your learning needs and achieve your goals."
+    },
+    {
+      "id": "cc2-q14",
+      "source_criterion": "2.1a Identify sources of support for your learning and development",
+      "prompt": "Who can provide supervision to help with your learning and development?",
+      "options": [
+        { "label": "A more senior or experienced worker who oversees your work and meets with you regularly to discuss your performance", "is_correct": true },
+        { "label": "Only the most senior manager in the organisation", "is_correct": false },
+        { "label": "Any colleague at the same level as you", "is_correct": false },
+        { "label": "Supervision only happens once a year during appraisal", "is_correct": false }
+      ],
+      "explanation": "Supervision can mean working under the sight of a more experienced worker, or regular one-to-one meetings with your manager or supervisor to discuss your performance and development. Both help ensure you have the support you need."
+    }
+  ]
+}

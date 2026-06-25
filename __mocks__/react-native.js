@@ -113,6 +113,11 @@ module.exports = {
   Alert: {
     alert: jest.fn(),
   },
+  Appearance: {
+    getColorScheme: jest.fn(() => 'light'),
+    addChangeListener: jest.fn(() => ({ remove: jest.fn() })),
+    setColorScheme: jest.fn(),
+  },
   AppState: {
     currentState: 'active',
     addEventListener: jest.fn(() => ({ remove: jest.fn() })),
