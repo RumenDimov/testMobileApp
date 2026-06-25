@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import type { SQLiteDatabase } from 'expo-sqlite';
 import type { QuestionWithOptions, TopicSummary, TopicBestScore } from '../db/queries/questions';
 import type { OverallStats, TopicProgressSummary, MockExamStats } from '../db/queries/progress';
@@ -117,6 +118,6 @@ export function createMockDb(): SQLiteDatabase {
     getAllAsync: jest.fn(),
     runAsync: jest.fn(),
     execAsync: jest.fn(),
-    withTransactionAsync: jest.fn((fn) => fn()),
+    withTransactionAsync: jest.fn((fn: () => void) => fn()) as unknown as jest.Mock,
   } as unknown as SQLiteDatabase;
 }

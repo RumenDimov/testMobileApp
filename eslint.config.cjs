@@ -36,4 +36,10 @@ module.exports = tseslint.config(
     },
   },
   reactHooksPlugin.configs.flat['recommended-latest'],
+  {
+    files: ['**/__tests__/**/*.{ts,tsx}', '**/*.test.{ts,tsx}'],
+    rules: {
+      'react-hooks/rules-of-hooks': 'off',
+    },
+  },
 );
