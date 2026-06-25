@@ -1,0 +1,168 @@
+{
+  "topic": {
+    "id": "cc-standard-4",
+    "qualification_id": "care-certificate",
+    "title": "Standard 4: Equality and Diversity",
+    "summary": "Understanding equality, diversity and inclusion, recognising discrimination, and knowing how to promote inclusive practice in health and social care.",
+    "sort_order": 4,
+    "is_free": 0
+  },
+  "questions": [
+    {
+      "id": "cc4-q01",
+      "source_criterion": "4.1a Explain the key terminology: equality, diversity, inclusion, and discrimination",
+      "prompt": "What does 'diversity' mean in a health and social care context?",
+      "options": [
+        { "label": "Recognising and valuing that every person is different and unique", "is_correct": true },
+        { "label": "Treating everyone exactly the same regardless of their needs", "is_correct": false },
+        { "label": "Only focusing on cultural and ethnic differences", "is_correct": false },
+        { "label": "Ignoring differences to avoid causing offence", "is_correct": false }
+      ],
+      "explanation": "Diversity is about recognising and valuing that every person is different and unique. It means understanding that each individual has their own background, beliefs, needs and preferences, and that these differences should be respected."
+    },
+    {
+      "id": "cc4-q02",
+      "source_criterion": "4.1a Explain the key terminology: equality, diversity, inclusion, and discrimination",
+      "prompt": "What does 'inclusion' mean in practice?",
+      "options": [
+        { "label": "Ensuring everyone has the opportunity to take part in activities and be involved in decisions about their care", "is_correct": true },
+        { "label": "Keeping people separate based on their needs", "is_correct": false },
+        { "label": "Only including people who can communicate in English", "is_correct": false },
+        { "label": "Making decisions for people to save them the trouble", "is_correct": false }
+      ],
+      "explanation": "Inclusion means making sure everyone feels valued and has the opportunity to participate fully, regardless of their background, ability, or circumstances. It is about removing barriers and actively involving people in decisions about their own care."
+    },
+    {
+      "id": "cc4-q03",
+      "source_criterion": "4.1b Describe how discrimination can happen deliberately or by mistake",
+      "prompt": "Which of the following is an example of unintentional discrimination?",
+      "options": [
+        { "label": "A care home serving only British food because they have not considered the diverse dietary needs of residents", "is_correct": true },
+        { "label": "A worker deliberately refusing to help someone because of their religion", "is_correct": false },
+        { "label": "Physically assaulting someone because of their disability", "is_correct": false },
+        { "label": "Using racist language towards an individual", "is_correct": false }
+      ],
+      "explanation": "Unintentional discrimination happens when a person or organisation does not mean to discriminate, but their actions or policies still create barriers. For example, assuming everyone eats the same food, or scheduling activities that exclude certain people, without realising the impact."
+    },
+    {
+      "id": "cc4-q04",
+      "source_criterion": "4.1c Describe how to reduce the likelihood of discrimination",
+      "prompt": "How can you reduce the likelihood of discrimination happening in a care setting?",
+      "options": [
+        { "label": "By working in a person-centred way, valuing diversity, and challenging discrimination when you see it", "is_correct": true },
+        { "label": "By treating everyone exactly the same regardless of their individual needs", "is_correct": false },
+        { "label": "By avoiding any discussion of differences between people", "is_correct": false },
+        { "label": "By only following policies and never using your own judgement", "is_correct": false }
+      ],
+      "explanation": "Person-centred working, actively valuing diversity, and challenging discrimination are key to reducing it. You should also be aware of your own attitudes and beliefs, follow your employer's equality policies, and speak up if you witness discrimination."
+    },
+    {
+      "id": "cc4-q05",
+      "source_criterion": "4.2a Identify legislation and codes of practice relating to equality and diversity",
+      "prompt": "Which key piece of legislation protects people from discrimination in the UK?",
+      "options": [
+        { "label": "The Equality Act 2010", "is_correct": true },
+        { "label": "The Health and Safety at Work Act 1974", "is_correct": false },
+        { "label": "The Data Protection Act 2018", "is_correct": false },
+        { "label": "The Mental Capacity Act 2005", "is_correct": false }
+      ],
+      "explanation": "The Equality Act 2010 legally protects people from discrimination in the workplace and in wider society. It sets out nine protected characteristics: age, disability, gender reassignment, marriage and civil partnership, pregnancy and maternity, race, religion or belief, sex, and sexual orientation."
+    },
+    {
+      "id": "cc4-q06",
+      "source_criterion": "4.2a Identify legislation and codes of practice relating to equality and diversity",
+      "prompt": "Under the Equality Act 2010, which of the following is a 'protected characteristic'?",
+      "options": [
+        { "label": "Disability", "is_correct": true },
+        { "label": "Job title", "is_correct": false },
+        { "label": "Length of employment", "is_correct": false },
+        { "label": "Salary level", "is_correct": false }
+      ],
+      "explanation": "Disability is one of the nine protected characteristics under the Equality Act 2010. Others include age, gender reassignment, marriage and civil partnership, pregnancy and maternity, race, religion or belief, sex, and sexual orientation."
+    },
+    {
+      "id": "cc4-q07",
+      "source_criterion": "4.2c Describe examples of discriminatory practice",
+      "prompt": "Which of the following is an example of direct discrimination?",
+      "options": [
+        { "label": "A care worker refuses to support someone because of their sexual orientation", "is_correct": true },
+        { "label": "A building has no ramp, making it difficult for wheelchair users to enter", "is_correct": false },
+        { "label": "Information is only provided in English in a multilingual community", "is_correct": false },
+        { "label": "Activities are only scheduled during daytime hours", "is_correct": false }
+      ],
+      "explanation": "Direct discrimination happens when someone is treated less favourably because of a protected characteristic. The other examples are forms of indirect discrimination or lack of reasonable adjustment, where policies or environments create barriers without deliberately targeting anyone."
+    },
+    {
+      "id": "cc4-q08",
+      "source_criterion": "4.3a Identify sources of information about equality and diversity",
+      "prompt": "Where can you find information about your organisation's approach to equality and diversity?",
+      "options": [
+        { "label": "Your employer's equality and diversity policy, your manager, and your induction training", "is_correct": true },
+        { "label": "Equality and diversity information is confidential and not shared with staff", "is_correct": false },
+        { "label": "Only from external organisations like the CQC", "is_correct": false },
+        { "label": "You do not need this information — it is common sense", "is_correct": false }
+      ],
+      "explanation": "Your employer should have an equality and diversity policy that you can access. You will also learn about it during your induction, and your manager can provide guidance. External sources include the Care Quality Commission (CQC) and the Equality and Human Rights Commission."
+    },
+    {
+      "id": "cc4-q09",
+      "source_criterion": "4.3b and c Identify when to get additional information about equality and diversity",
+      "prompt": "When might you need to seek additional information or support about equality and diversity?",
+      "options": [
+        { "label": "When you are unsure how to meet an individual's specific needs related to their background or beliefs", "is_correct": true },
+        { "label": "Equality and diversity issues only need to be considered during induction training", "is_correct": false },
+        { "label": "You should never need additional support because all policies cover everything", "is_correct": false },
+        { "label": "Only when a complaint has been made", "is_correct": false }
+      ],
+      "explanation": "You may need additional information when you are unsure about how to meet someone's specific needs — for example, dietary requirements related to religion, or communication needs related to disability. Your manager and your organisation's policies are good starting points."
+    },
+    {
+      "id": "cc4-q10",
+      "source_criterion": "4.1a Explain the key terminology: equality",
+      "prompt": "What does 'equality' mean in health and social care?",
+      "options": [
+        { "label": "Everyone having the same opportunities and being treated fairly according to their individual needs", "is_correct": true },
+        { "label": "Treating everyone in exactly the same way all the time", "is_correct": false },
+        { "label": "Only giving opportunities to people who can pay for them", "is_correct": false },
+        { "label": "Making sure nobody gets any extra help or support", "is_correct": false }
+      ],
+      "explanation": "Equality means everyone has the same opportunities and is treated fairly, but fairness does not always mean treating everyone the same — it means giving each person what they need to have the same opportunities. This is different from treating everyone identically."
+    },
+    {
+      "id": "cc4-q11",
+      "source_criterion": "4.2c Recognize discriminatory practice",
+      "prompt": "An individual who uses a wheelchair cannot access a social event because it is held in a room upstairs with no lift. What type of discrimination is this?",
+      "options": [
+        { "label": "Indirect discrimination — the policy or environment creates a barrier without meaning to", "is_correct": true },
+        { "label": "Direct discrimination — someone deliberately excluded them", "is_correct": false },
+        { "label": "Harassment", "is_correct": false },
+        { "label": "Victimisation", "is_correct": false }
+      ],
+      "explanation": "This is indirect discrimination. The organisers may not have intended to exclude wheelchair users, but the lack of a lift creates a barrier that prevents equal access. Under the Equality Act, employers and service providers must make 'reasonable adjustments' to avoid this."
+    },
+    {
+      "id": "cc4-q12",
+      "source_criterion": "4.1b Describe how discrimination can happen",
+      "prompt": "A care worker always addresses the family member of an individual with dementia rather than speaking directly to the individual themselves. What might this be an example of?",
+      "options": [
+        { "label": "Discrimination based on disability — making assumptions about what the individual can understand", "is_correct": true },
+        { "label": "Good practice — families should always be involved", "is_correct": false },
+        { "label": "A time-saving technique that is perfectly acceptable", "is_correct": false },
+        { "label": "Nothing wrong — the worker is being helpful", "is_correct": false }
+      ],
+      "explanation": "Assuming someone cannot understand or participate because of their condition is a form of discrimination. Everyone should be treated as an individual and involved in their own care as much as possible, regardless of any disability or condition."
+    },
+    {
+      "id": "cc4-q13",
+      "source_criterion": "4.1c Ways to reduce discrimination",
+      "prompt": "What is the best way to respond if you witness a colleague making a discriminatory comment about an individual?",
+      "options": [
+        { "label": "Calmly challenge the comment and report it to your manager following your organisation's policy", "is_correct": true },
+        { "label": "Ignore it — it is not your responsibility to challenge colleagues", "is_correct": false },
+        { "label": "Join in to avoid conflict with your colleague", "is_correct": false },
+        { "label": "Only report it if the individual complains", "is_correct": false }
+      ],
+      "explanation": "You have a duty to challenge discrimination and report it. Ignoring it or joining in makes the problem worse. Following your organisation's policy and reporting to your manager ensures the issue is properly addressed."
+    }
+  ]
+}

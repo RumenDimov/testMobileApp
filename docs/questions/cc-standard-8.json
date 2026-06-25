@@ -1,0 +1,156 @@
+{
+  "topic": {
+    "id": "cc-standard-8",
+    "qualification_id": "care-certificate",
+    "title": "Standard 8: Fluids and Nutrition",
+    "summary": "Understanding the importance of hydration and nutrition, supporting individuals to eat and drink well, and identifying and responding to changes in nutritional needs.",
+    "sort_order": 8,
+    "is_free": 0
+  },
+  "questions": [
+    {
+      "id": "cc8-q01",
+      "source_criterion": "8.1a Understand the importance of hydration",
+      "prompt": "Why is it important for individuals to stay well hydrated?",
+      "options": [
+        { "label": "Because dehydration can cause serious health problems including confusion, urinary tract infections, and kidney damage", "is_correct": true },
+        { "label": "Drinking fluids is optional — food provides enough water", "is_correct": false },
+        { "label": "Hydration is only important in hot weather", "is_correct": false },
+        { "label": "Only elderly individuals need to worry about hydration", "is_correct": false }
+      ],
+      "explanation": "Staying hydrated is essential for health. Dehydration can lead to confusion, UTIs, constipation, kidney problems, and even hospitalisation. Individuals who have difficulty communicating their thirst or have memory problems are particularly at risk."
+    },
+    {
+      "id": "cc8-q02",
+      "source_criterion": "8.1a Understand the importance of hydration",
+      "prompt": "How much fluid should an adult typically consume each day?",
+      "options": [
+        { "label": "Around 6 to 8 glasses (about 1.5 to 2 litres) of fluid per day", "is_correct": true },
+        { "label": "1 glass per day is sufficient", "is_correct": false },
+        { "label": "At least 5 litres per day", "is_correct": false },
+        { "label": "Fluid intake does not matter — only solid food matters", "is_correct": false }
+      ],
+      "explanation": "Adults should aim for around 6 to 8 glasses (1.5 to 2 litres) of fluid per day. This includes water, tea, coffee, juice, soup, and other drinks. Some individuals may need more or less depending on their health and circumstances."
+    },
+    {
+      "id": "cc8-q03",
+      "source_criterion": "8.1b Understand the importance of nutrition",
+      "prompt": "What is a balanced diet important for?",
+      "options": [
+        { "label": "Providing the energy and nutrients needed for growth, repair, and maintaining overall health and wellbeing", "is_correct": true },
+        { "label": "It is not that important — any food will do", "is_correct": false },
+        { "label": "Only important for weight loss", "is_correct": false },
+        { "label": "Only important for children and young people", "is_correct": false }
+      ],
+      "explanation": "A balanced diet provides the nutrients and energy the body needs to function properly — for growth, repair, fighting infection, and maintaining physical and mental health. Poor nutrition can lead to weight loss, weakness, and increased risk of illness."
+    },
+    {
+      "id": "cc8-q04",
+      "source_criterion": "8.1c Understand signs and symptoms of poor hydration and nutrition",
+      "prompt": "Which of the following is a sign of dehydration?",
+      "options": [
+        { "label": "Dark-coloured urine, dry mouth, and confusion", "is_correct": true },
+        { "label": "Clear urine and moist lips", "is_correct": false },
+        { "label": "Increased appetite and thirst", "is_correct": false },
+        { "label": "Reduced need for sleep", "is_correct": false }
+      ],
+      "explanation": "Signs of dehydration include dark urine, dry mouth and lips, sunken eyes, confusion or disorientation, headache, constipation, and reduced urine output. Anyone showing these signs should be encouraged to drink and possibly reviewed by a healthcare professional."
+    },
+    {
+      "id": "cc8-q05",
+      "source_criterion": "8.1c Understand signs and symptoms of poor hydration and nutrition",
+      "prompt": "Which of the following is a sign of poor nutrition?",
+      "options": [
+        { "label": "Unintentional weight loss, feeling tired, and slow wound healing", "is_correct": true },
+        { "label": "Gaining weight steadily", "is_correct": false },
+        { "label": "Having a good appetite", "is_correct": false },
+        { "label": "Healthy skin and hair", "is_correct": false }
+      ],
+      "explanation": "Signs of malnutrition include unintentional weight loss, lack of energy, poor wound healing, frequent infections, and changes in mood or behaviour. Individuals who are malnourished are more vulnerable to illness and recover more slowly."
+    },
+    {
+      "id": "cc8-q06",
+      "source_criterion": "8.1d Understand how to support individuals to eat and drink",
+      "prompt": "How can you support an individual who has difficulty swallowing (dysphagia) to eat safely?",
+      "options": [
+        { "label": "Follow their care plan and speech and language therapy recommendations — this may include modified textures and thickened drinks", "is_correct": true },
+        { "label": "Give them normal food and drink but cut it into smaller pieces", "is_correct": false },
+        { "label": "Encourage them to eat faster to get it over with", "is_correct": false },
+        { "label": "Only give them liquids", "is_correct": false }
+      ],
+      "explanation": "Individuals with swallowing difficulties need a specific care plan, often from a speech and language therapist. This may involve modified food textures (pureed, soft) and thickened drinks to reduce the risk of choking and aspiration."
+    },
+    {
+      "id": "cc8-q07",
+      "source_criterion": "8.1d Support individuals to eat and drink",
+      "prompt": "An individual refuses to eat the meal that has been served. What should you do?",
+      "options": [
+        { "label": "Ask about their food preferences and offer suitable alternatives", "is_correct": true },
+        { "label": "Leave the food and clear it away without offering anything else", "is_correct": false },
+        { "label": "Insist they eat it because it is good for them", "is_correct": false },
+        { "label": "Feed them whether they want it or not", "is_correct": false }
+      ],
+      "explanation": "If someone refuses food, you should explore why — they may not like the food, have trouble chewing or swallowing, be in pain, or have other issues. Offering alternatives and involving them in choosing what they eat is part of person-centred care."
+    },
+    {
+      "id": "cc8-q08",
+      "source_criterion": "8.1d Support individuals to eat and drink",
+      "prompt": "How can you make mealtimes more enjoyable for individuals in a care setting?",
+      "options": [
+        { "label": "Create a pleasant environment, give them choice, and allow enough time for them to eat at their own pace", "is_correct": true },
+        { "label": "Serve all meals at the same time every day with no choices", "is_correct": false },
+        { "label": "Rush them so the kitchen can close on time", "is_correct": false },
+        { "label": "Feed everyone in their rooms separately", "is_correct": false }
+      ],
+      "explanation": "Pleasant mealtimes improve nutrition. You can help by creating a calm, social atmosphere, giving individuals choice about what and where to eat, allowing plenty of time, and offering support discreetly when needed."
+    },
+    {
+      "id": "cc8-q09",
+      "source_criterion": "8.1a Importance of hydration",
+      "prompt": "What is a simple way to check if an individual is well hydrated?",
+      "options": [
+        { "label": "Check the colour of their urine — pale straw colour usually means good hydration", "is_correct": true },
+        { "label": "Ask them once at the start of the day", "is_correct": false },
+        { "label": "Dark urine means they are well hydrated", "is_correct": false },
+        { "label": "Check their skin colour for changes", "is_correct": false }
+      ],
+      "explanation": "Urine colour is a reliable indicator of hydration. Pale straw or clear urine usually means good hydration, while dark yellow or amber urine suggests dehydration. Monitoring this can help identify hydration issues early."
+    },
+    {
+      "id": "cc8-q10",
+      "source_criterion": "8.1b Understand the importance of nutrition",
+      "prompt": "What are the main food groups in a balanced diet?",
+      "options": [
+        { "label": "Fruit and vegetables, carbohydrates, proteins, dairy, and healthy fats — with plenty of water", "is_correct": true },
+        { "label": "Only fruit and vegetables", "is_correct": false },
+        { "label": "Only proteins and carbohydrates", "is_correct": false },
+        { "label": "Processed and packaged foods", "is_correct": false }
+      ],
+      "explanation": "A balanced diet includes a variety from all food groups: fruit and vegetables, starchy carbohydrates (bread, rice, potatoes), proteins (meat, fish, eggs, beans), dairy or alternatives, and healthy fats, along with plenty of fluids."
+    },
+    {
+      "id": "cc8-q11",
+      "source_criterion": "8.1d Support individuals to eat and drink",
+      "prompt": "What should you record after supporting an individual with eating and drinking?",
+      "options": [
+        { "label": "What and how much they ate and drank, and any concerns about their intake", "is_correct": true },
+        { "label": "Nothing — eating and drinking is a private activity", "is_correct": false },
+        { "label": "Only if they refused the meal entirely", "is_correct": false },
+        { "label": "Only what they drank, not what they ate", "is_correct": false }
+      ],
+      "explanation": "Recording food and fluid intake is important, especially if there are concerns about nutrition or hydration. It helps track trends and identify when someone may need additional support or a review by a healthcare professional."
+    },
+    {
+      "id": "cc8-q12",
+      "source_criterion": "8.1c Signs and symptoms of poor nutrition and hydration",
+      "prompt": "An individual with dementia is refusing to drink. What might help encourage them?",
+      "options": [
+        { "label": "Offer small amounts regularly, use a favourite cup, and try different temperatures and types of drinks", "is_correct": true },
+        { "label": "Force them to drink by tipping the cup to their mouth", "is_correct": false },
+        { "label": "Only offer drinks at mealtimes", "is_correct": false },
+        { "label": "Give up after the first refusal", "is_correct": false }
+      ],
+      "explanation": "People with dementia may forget to drink or not recognise thirst. Offer small amounts of fluid regularly throughout the day, in their preferred cup, at their preferred temperature. Patience and creativity are key."
+    }
+  ]
+}

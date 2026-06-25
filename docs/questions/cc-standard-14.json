@@ -1,0 +1,156 @@
+{
+  "topic": {
+    "id": "cc-standard-14",
+    "qualification_id": "care-certificate",
+    "title": "Standard 14: Handling Information",
+    "summary": "Understanding the importance of secure handling of information, following good record-keeping practices, and knowing how to access and use information correctly.",
+    "sort_order": 14,
+    "is_free": 0
+  },
+  "questions": [
+    {
+      "id": "cc14-q01",
+      "source_criterion": "14.1a Understand the agreed ways of working for handling information",
+      "prompt": "What are 'agreed ways of working' for handling information?",
+      "options": [
+        { "label": "The policies and procedures set by your employer for recording, storing, and sharing information securely", "is_correct": true },
+        { "label": "A suggestion from your manager that you can choose to follow or ignore", "is_correct": false },
+        { "label": "Rules that only apply to electronic records, not paper ones", "is_correct": false },
+        { "label": "The same for every care organisation in the country", "is_correct": false }
+      ],
+      "explanation": "Agreed ways of working for handling information are the policies and procedures your employer sets out. These cover how to record information, how to store it securely, and when and how to share it. You must follow these as part of your role."
+    },
+    {
+      "id": "cc14-q02",
+      "source_criterion": "14.1b Understand why it is important to have secure systems for recording and storing information",
+      "prompt": "Why is it important to store information securely?",
+      "options": [
+        { "label": "To protect individuals' privacy, comply with the law (GDPR), and prevent unauthorised access to sensitive data", "is_correct": true },
+        { "label": "It is not that important — information is just paperwork", "is_correct": false },
+        { "label": "To make it harder for staff to access the information they need", "is_correct": false },
+        { "label": "Only financial information needs to be stored securely", "is_correct": false }
+      ],
+      "explanation": "Secure storage protects individuals' privacy and ensures you comply with data protection legislation. It prevents unauthorised access, loss, or theft of sensitive personal information. This includes locked cabinets for paper records and password protection for electronic files."
+    },
+    {
+      "id": "cc14-q03",
+      "source_criterion": "14.1b Secure systems for recording and storing information",
+      "prompt": "Which of the following is an example of good information handling?",
+      "options": [
+        { "label": "Returning paper records to a locked filing cabinet after use and logging out of electronic systems when away from your computer", "is_correct": true },
+        { "label": "Leaving paper records on the desk for the next shift to read", "is_correct": false },
+        { "label": "Sharing your computer password with colleagues so they can access information quickly", "is_correct": false },
+        { "label": "Taking paper records home to update them in your own time", "is_correct": false }
+      ],
+      "explanation": "Good information handling means returning paper records to secure storage after use, logging out of systems when away, never sharing passwords, and not removing records from the workplace without authorisation."
+    },
+    {
+      "id": "cc14-q04",
+      "source_criterion": "14.1b Understand why secure systems are important",
+      "prompt": "Under the UK GDPR, what rights do individuals have over their personal data?",
+      "options": [
+        { "label": "The right to access their data, have inaccuracies corrected, and in some cases have their data deleted", "is_correct": true },
+        { "label": "They have no rights over their data once it is in the care system", "is_correct": false },
+        { "label": "Only the right to see their medical records", "is_correct": false },
+        { "label": "Only the right to be told their data is being stored", "is_correct": false }
+      ],
+      "explanation": "Under UK GDPR, individuals have several rights, including the right to access their personal data, the right to have incorrect data corrected, the right to restrict processing, and in certain circumstances, the right to have their data erased."
+    },
+    {
+      "id": "cc14-q05",
+      "source_criterion": "14.1d Understand how to keep records that are up to date and accurate",
+      "prompt": "What makes a good record in care?",
+      "options": [
+        { "label": "Factual, accurate, up to date, clear, and written as soon as possible after the event", "is_correct": true },
+        { "label": "Short and vague to save time", "is_correct": false },
+        { "label": "Written at the end of the week from memory", "is_correct": false },
+        { "label": "Full of opinions and assumptions about the individual", "is_correct": false }
+      ],
+      "explanation": "Good records should be factual, accurate, clear, and completed promptly. They should include what happened, when, where, and who was involved — but not your personal opinions or assumptions. They should also be dated and signed."
+    },
+    {
+      "id": "cc14-q06",
+      "source_criterion": "14.1d Keep records up to date and accurate",
+      "prompt": "What should you do if you make an error when writing a paper record?",
+      "options": [
+        { "label": "Draw a single line through the error so it is still readable, initial it, and write the correct information", "is_correct": true },
+        { "label": "Use correction fluid to cover it up completely", "is_correct": false },
+        { "label": "Tear out the page and start again", "is_correct": false },
+        { "label": "Leave the error and write the correct information on a new page", "is_correct": false }
+      ],
+      "explanation": "If you make an error in a paper record, draw a single line through it so the original entry is still readable, initial and date it, and write the correction. Never use correction fluid or erase mistakes, as this could look suspicious."
+    },
+    {
+      "id": "cc14-q07",
+      "source_criterion": "14.1b Secure systems for storing information",
+      "prompt": "What is the best practice for passwords on care information systems?",
+      "options": [
+        { "label": "Use a strong, unique password that you do not share with anyone, and log out when finished", "is_correct": true },
+        { "label": "Use the same simple password for all systems so you can remember it", "is_correct": false },
+        { "label": "Write your password on a sticky note attached to your computer screen", "is_correct": false },
+        { "label": "Share your password with your team so anyone can update records when needed", "is_correct": false }
+      ],
+      "explanation": "Passwords should be strong, unique, and never shared. Always log out of systems when you leave your workstation. Shared passwords and weak passwords compromise the security of individuals' information."
+    },
+    {
+      "id": "cc14-q08",
+      "source_criterion": "14.1a Agreed ways of working for handling information",
+      "prompt": "Who can you ask if you are unsure about how to handle information correctly?",
+      "options": [
+        { "label": "Your manager or your organisation's data protection officer", "is_correct": true },
+        { "label": "Anyone on social media", "is_correct": false },
+        { "label": "The individual's family", "is_correct": false },
+        { "label": "Another individual receiving care", "is_correct": false }
+      ],
+      "explanation": "If you are unsure about how to handle information, ask your manager or your organisation's data protection officer. They can advise you on the correct procedures and data protection requirements."
+    },
+    {
+      "id": "cc14-q09",
+      "source_criterion": "14.1d Keep records accurate",
+      "prompt": "When would you need to update a care plan?",
+      "options": [
+        { "label": "Whenever the individual's needs, preferences or circumstances change — and after any significant event or incident", "is_correct": true },
+        { "label": "Never — care plans are fixed documents", "is_correct": false },
+        { "label": "Once a year during the annual review", "is_correct": false },
+        { "label": "Only when the individual is discharged", "is_correct": false }
+      ],
+      "explanation": "Care plans should be reviewed and updated whenever an individual's needs, preferences, or circumstances change. They are living documents that should reflect the individual's current situation. Significant incidents should always be recorded promptly."
+    },
+    {
+      "id": "cc14-q10",
+      "source_criterion": "14.1d Keep records accurate and up to date",
+      "prompt": "Why must records be written in a way that is clear and understandable to others?",
+      "options": [
+        { "label": "Because other workers, managers, and regulators may need to read and understand them to provide consistent care", "is_correct": true },
+        { "label": "Records are only for your own reference", "is_correct": false },
+        { "label": "Clarity does not matter as long as the information is there somewhere", "is_correct": false },
+        { "label": "Only managers need to understand care records", "is_correct": false }
+      ],
+      "explanation": "Care records are shared documents. Other care workers, managers, and regulators like the CQC may need to read them. They must be clear and understandable to ensure consistent, safe care."
+    },
+    {
+      "id": "cc14-q11",
+      "source_criterion": "14.1a Describe the agreed ways of working and legislation regarding accessing, recording, storing and sharing information",
+      "prompt": "What should you do if you suspect there has been a data breach?",
+      "options": [
+        { "label": "Report it immediately to your manager or data protection officer following your organisation's data breach procedure", "is_correct": true },
+        { "label": "Keep quiet about it to avoid getting into trouble", "is_correct": false },
+        { "label": "Try to fix it yourself without telling anyone", "is_correct": false },
+        { "label": "Only report it if personal data has definitely been lost", "is_correct": false }
+      ],
+      "explanation": "Any suspected data breach must be reported immediately to your manager or data protection officer. Your organisation has a duty to investigate and, in some cases, report the breach to the Information Commissioner's Office (ICO) within 72 hours."
+    },
+    {
+      "id": "cc14-q12",
+      "source_criterion": "14.1c Demonstrate how to keep records that are up to date, complete, accurate and legible",
+      "prompt": "When recording information about an individual, what should you avoid?",
+      "options": [
+        { "label": "Including your personal opinions, assumptions, or unnecessary comments", "is_correct": true },
+        { "label": "Recording the date and time of the event", "is_correct": false },
+        { "label": "Using the individual's preferred name", "is_correct": false },
+        { "label": "Recording facts about what happened", "is_correct": false }
+      ],
+      "explanation": "Records should be factual and objective — including what you saw, heard, and did, not your personal opinions or assumptions. For example, instead of writing 'the resident was aggressive', you would write 'the resident raised their voice and said...'"
+    }
+  ]
+}

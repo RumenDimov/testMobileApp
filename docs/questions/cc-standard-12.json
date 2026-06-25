@@ -1,0 +1,156 @@
+{
+  "topic": {
+    "id": "cc-standard-12",
+    "qualification_id": "care-certificate",
+    "title": "Standard 12: Basic Life Support",
+    "summary": "Understanding the principles of basic life support (BLS), including how to respond to an emergency, perform CPR, and use an automated external defibrillator (AED).",
+    "sort_order": 12,
+    "is_free": 0
+  },
+  "questions": [
+    {
+      "id": "cc12-q01",
+      "source_criterion": "12.1a Understand basic life support procedures",
+      "prompt": "What is the first step when you find someone who appears to be unresponsive?",
+      "options": [
+        { "label": "Check for danger to yourself, the casualty, and others before approaching", "is_correct": true },
+        { "label": "Start CPR immediately", "is_correct": false },
+        { "label": "Roll them onto their side", "is_correct": false },
+        { "label": "Call for an ambulance immediately", "is_correct": false }
+      ],
+      "explanation": "The first step in any emergency is to check for danger. You must make sure the area is safe for you, the casualty, and others before you approach. Only then should you check if the person is responsive and call for help."
+    },
+    {
+      "id": "cc12-q02",
+      "source_criterion": "12.1a Understand basic life support procedures",
+      "prompt": "How should you check if an adult is responsive?",
+      "options": [
+        { "label": "Gently shake their shoulders and ask loudly 'Are you alright?'", "is_correct": true },
+        { "label": "Pour cold water on their face", "is_correct": false },
+        { "label": "Slap their face firmly", "is_correct": false },
+        { "label": "Shout at them from across the room", "is_correct": false }
+      ],
+      "explanation": "To check responsiveness, gently shake the person's shoulders and ask loudly 'Are you alright?' Never shake an infant or a person with a suspected neck injury. If there is no response, the person is unresponsive."
+    },
+    {
+      "id": "cc12-q03",
+      "source_criterion": "12.2 Understand the chain of survival",
+      "prompt": "What are the four links in the 'chain of survival' for a person in cardiac arrest?",
+      "options": [
+        { "label": "Early recognition and call for help, early CPR, early defibrillation, and post-resuscitation care", "is_correct": true },
+        { "label": "Call an ambulance, wait for help, transport to hospital, and follow-up care", "is_correct": false },
+        { "label": "CPR, medication, surgery, and rehabilitation", "is_correct": false },
+        { "label": "Check breathing, give water, monitor vital signs, and call family", "is_correct": false }
+      ],
+      "explanation": "The chain of survival has four steps: 1) Recognising the emergency and calling for help early, 2) Performing early CPR to keep blood flowing, 3) Early defibrillation with an AED to restore a normal heart rhythm, and 4) Post-resuscitation care by medical professionals."
+    },
+    {
+      "id": "cc12-q04",
+      "source_criterion": "12.3 Understand how to perform CPR on an adult",
+      "prompt": "What is the recommended chest compression depth when performing CPR on an adult?",
+      "options": [
+        { "label": "At least 5 to 6 centimetres deep", "is_correct": true },
+        { "label": "1 to 2 centimetres deep", "is_correct": false },
+        { "label": "As deep as you can push", "is_correct": false },
+        { "label": "Just pressing gently on the chest", "is_correct": false }
+      ],
+      "explanation": "For adult CPR, chest compressions should be at least 5-6 cm deep, at a rate of 100-120 compressions per minute. After every 30 compressions, give 2 rescue breaths, and continue until help arrives or the person shows signs of life."
+    },
+    {
+      "id": "cc12-q05",
+      "source_criterion": "12.3 Understand how to perform CPR",
+      "prompt": "What is the correct hand position for chest compressions on an adult?",
+      "options": [
+        { "label": "Place the heel of one hand on the centre of the chest (the sternum), with the other hand on top, and keep your arms straight", "is_correct": true },
+        { "label": "Place both hands on the left side of the chest where the heart is", "is_correct": false },
+        { "label": "Place one hand on the upper chest and one on the abdomen", "is_correct": false },
+        { "label": "Use only two fingers in the centre of the chest", "is_correct": false }
+      ],
+      "explanation": "For adult CPR, place the heel of one hand on the centre of the person's chest (the lower half of the breastbone), place your other hand on top, interlock your fingers, and keep your arms straight. Compress to a depth of 5-6 cm."
+    },
+    {
+      "id": "cc12-q06",
+      "source_criterion": "12.4 Understand how to use an automated external defibrillator (AED)",
+      "prompt": "When should you use an AED (automated external defibrillator)?",
+      "options": [
+        { "label": "As soon as it is available, while continuing CPR — the AED will analyse the heart rhythm and advise if a shock is needed", "is_correct": true },
+        { "label": "Only after 10 minutes of CPR", "is_correct": false },
+        { "label": "Only if the person is breathing but unconscious", "is_correct": false },
+        { "label": "Only if you have been specifically trained to use one", "is_correct": false }
+      ],
+      "explanation": "An AED should be used as soon as it is available — it is designed to be used by anyone, even without training, as it gives clear voice instructions. It analyses the heart rhythm and will only deliver a shock if needed. Early defibrillation significantly improves survival chances."
+    },
+    {
+      "id": "cc12-q07",
+      "source_criterion": "12.4 Understand how to use an AED",
+      "prompt": "Before using an AED, what should you check?",
+      "options": [
+        { "label": "That no one is touching the casualty and the chest is bare and dry", "is_correct": true },
+        { "label": "That the casualty has a pulse", "is_correct": false },
+        { "label": "That the casualty is breathing normally", "is_correct": false },
+        { "label": "That a doctor is present", "is_correct": false }
+      ],
+      "explanation": "Before using an AED, ensure no one is touching the casualty (so the analysis is accurate), and the chest is bare and dry (remove any clothing and dry the chest if wet). The AED pads should be placed as shown on the pads."
+    },
+    {
+      "id": "cc12-q08",
+      "source_criterion": "12.5 Understand how to help a choking casualty",
+      "prompt": "What is the first action to take if an adult is choking?",
+      "options": [
+        { "label": "Encourage them to cough — if they are coughing, the airway is only partly blocked and they may clear it themselves", "is_correct": true },
+        { "label": "Start CPR immediately", "is_correct": false },
+        { "label": "Give them a drink of water to wash the obstruction down", "is_correct": false },
+        { "label": "Put your fingers into their mouth to feel for the obstruction", "is_correct": false }
+      ],
+      "explanation": "If someone is choking and can cough, speak, or breathe, their airway is only partly blocked. Encourage them to keep coughing. If the airway is fully blocked (they cannot speak, breathe, or cough), you need to give back blows and abdominal thrusts."
+    },
+    {
+      "id": "cc12-q09",
+      "source_criterion": "12.5 Help a choking casualty",
+      "prompt": "If an adult is choking and cannot cough or breathe, what should you do?",
+      "options": [
+        { "label": "Give up to 5 back blows between the shoulder blades, then up to 5 abdominal thrusts, alternating", "is_correct": true },
+        { "label": "Start CPR immediately", "is_correct": false },
+        { "label": "Roll them into the recovery position", "is_correct": false },
+        { "label": "Call an ambulance and wait for help", "is_correct": false }
+      ],
+      "explanation": "For a choking adult who cannot cough or breathe, stand behind them, give up to 5 sharp back blows between the shoulder blades with the heel of your hand. If the blockage is not cleared, give up to 5 abdominal thrusts. Call an ambulance if the obstruction does not clear."
+    },
+    {
+      "id": "cc12-q10",
+      "source_criterion": "12.1a Basic life support procedures",
+      "prompt": "After performing CPR for two minutes, what should you do if an AED still has not arrived?",
+      "options": [
+        { "label": "Continue CPR — aim for a ratio of 30 compressions to 2 rescue breaths, checking for signs of life periodically", "is_correct": true },
+        { "label": "Stop CPR and wait for the ambulance", "is_correct": false },
+        { "label": "Only give breaths and stop compressions", "is_correct": false },
+        { "label": "Only give compressions and stop breaths", "is_correct": false }
+      ],
+      "explanation": "Continue CPR at a ratio of 30 compressions to 2 rescue breaths, pausing every 2 minutes to check for signs of life. Do not stop unless the person shows signs of life, help arrives and takes over, or you are physically unable to continue."
+    },
+    {
+      "id": "cc12-q11",
+      "source_criterion": "12.1a Basic life support procedures",
+      "prompt": "When would you place an unresponsive person who is breathing normally into the recovery position?",
+      "options": [
+        { "label": "If they are unresponsive but breathing normally, to keep their airway open and allow fluids to drain from the mouth", "is_correct": true },
+        { "label": "Only if they have a suspected spinal injury", "is_correct": false },
+        { "label": "Only if they are elderly", "is_correct": false },
+        { "label": "The recovery position is no longer recommended", "is_correct": false }
+      ],
+      "explanation": "The recovery position is used when a person is unresponsive but breathing normally. It helps keep their airway clear and allows fluids to drain from the mouth, reducing the risk of choking. If a spinal injury is suspected, minimise movement."
+    },
+    {
+      "id": "cc12-q12",
+      "source_criterion": "12.1a Basic life support procedures",
+      "prompt": "You find a person who is unresponsive and not breathing normally. What should you do after sending someone to call for an ambulance?",
+      "options": [
+        { "label": "Start chest compressions immediately at a rate of 100-120 per minute", "is_correct": true },
+        { "label": "Wait for the ambulance to arrive", "is_correct": false },
+        { "label": "Check for a pulse before starting any action", "is_correct": false },
+        { "label": "Roll them into the recovery position", "is_correct": false }
+      ],
+      "explanation": "If a person is unresponsive and not breathing normally, start CPR immediately. Push hard and fast in the centre of the chest at a rate of 100-120 compressions per minute. Do not waste time checking for a pulse — if they are not breathing normally, start compressions."
+    }
+  ]
+}

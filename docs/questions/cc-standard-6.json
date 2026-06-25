@@ -1,0 +1,180 @@
+{
+  "topic": {
+    "id": "cc-standard-6",
+    "qualification_id": "care-certificate",
+    "title": "Standard 6: Communication",
+    "summary": "Understanding different types of communication, overcoming barriers, and handling confidentiality and information sharing in care settings.",
+    "sort_order": 6,
+    "is_free": 0
+  },
+  "questions": [
+    {
+      "id": "cc6-q01",
+      "source_criterion": "6.1a Describe different types of communication",
+      "prompt": "Which of the following is an example of non-verbal communication?",
+      "options": [
+        { "label": "Facial expressions, eye contact, and body language", "is_correct": true },
+        { "label": "Writing a care plan entry", "is_correct": false },
+        { "label": "Speaking on the telephone", "is_correct": false },
+        { "label": "Sending an email to a colleague", "is_correct": false }
+      ],
+      "explanation": "Non-verbal communication includes facial expressions, eye contact, body language, posture, touch, and gestures. These can often tell you more about how someone is feeling than their words alone."
+    },
+    {
+      "id": "cc6-q02",
+      "source_criterion": "6.1b Describe how good and poor communication affects care",
+      "prompt": "What is a likely consequence of poor communication in a care setting?",
+      "options": [
+        { "label": "Mistakes can be made which can result in care that is not person-centred or even unsafe", "is_correct": true },
+        { "label": "Care will be more efficient because there is less talking", "is_correct": false },
+        { "label": "Individuals will feel more independent", "is_correct": false },
+        { "label": "Staff will have more time for other tasks", "is_correct": false }
+      ],
+      "explanation": "Poor communication can lead to misunderstandings, mistakes, and care that does not meet the individual's needs. If information is inaccurate or misleading, people can be given the wrong care or treatment."
+    },
+    {
+      "id": "cc6-q03",
+      "source_criterion": "6.1c Understand how to adapt communication to meet different needs",
+      "prompt": "How should you adapt your communication when speaking with an individual who has hearing loss?",
+      "options": [
+        { "label": "Face them directly, speak clearly, reduce background noise, and check they have understood", "is_correct": true },
+        { "label": "Shout loudly so they can hear you", "is_correct": false },
+        { "label": "Speak quickly so you do not take up too much of their time", "is_correct": false },
+        { "label": "Cover your mouth so you do not distract them", "is_correct": false }
+      ],
+      "explanation": "For someone with hearing loss, you should face them directly, speak clearly (not shout), reduce background noise, and check their understanding. You might also use written communication or sign language if appropriate."
+    },
+    {
+      "id": "cc6-q04",
+      "source_criterion": "6.2a Understand the individual's communication needs, wishes and preferences",
+      "prompt": "How can you find out an individual's preferred way of communicating?",
+      "options": [
+        { "label": "Ask the individual directly, check their care plan, and observe how they respond to different approaches", "is_correct": true },
+        { "label": "Assume everyone prefers the same method of communication", "is_correct": false },
+        { "label": "Only use verbal communication regardless of their needs", "is_correct": false },
+        { "label": "Ask other staff members what they think without involving the individual", "is_correct": false }
+      ],
+      "explanation": "Everyone communicates differently. The best way to find out someone's preferences is to ask them, check their care plan, and observe their responses. This is part of person-centred care."
+    },
+    {
+      "id": "cc6-q05",
+      "source_criterion": "6.3a & b Identify barriers to communication",
+      "prompt": "Which of the following is a common barrier to effective communication?",
+      "options": [
+        { "label": "Background noise, poor lighting, or the person being in distress", "is_correct": true },
+        { "label": "A quiet and private room", "is_correct": false },
+        { "label": "Speaking at the individual's eye level", "is_correct": false },
+        { "label": "Using simple, clear language", "is_correct": false }
+      ],
+      "explanation": "Barriers to communication include environmental factors like noise or poor lighting, physical factors like hearing loss or speech difficulties, emotional factors like distress or anxiety, and language differences. Good communication means identifying and reducing these barriers."
+    },
+    {
+      "id": "cc6-q06",
+      "source_criterion": "6.3c Describe how to check that communication has been understood",
+      "prompt": "How can you best check that an individual has understood what you have said?",
+      "options": [
+        { "label": "Ask them to repeat the information back in their own words, or observe their response", "is_correct": true },
+        { "label": "Assume they have understood if they nod their head", "is_correct": false },
+        { "label": "Ask 'do you understand?' and accept 'yes' as confirmation", "is_correct": false },
+        { "label": "Repeat the same information louder", "is_correct": false }
+      ],
+      "explanation": "To check understanding, ask the person to explain the information back to you in their own words. This is more reliable than asking 'do you understand?', as many people will say yes even if they are unsure."
+    },
+    {
+      "id": "cc6-q07",
+      "source_criterion": "6.3d Describe how to support individuals with communication needs",
+      "prompt": "What might you use to support communication with someone who has limited verbal communication?",
+      "options": [
+        { "label": "Picture cards, communication boards, sign language, or simple gestures", "is_correct": true },
+        { "label": "Only speaking slowly and loudly", "is_correct": false },
+        { "label": "Asking someone else to speak for them at all times", "is_correct": false },
+        { "label": "Avoiding communication altogether to prevent confusion", "is_correct": false }
+      ],
+      "explanation": "There are many ways to support communication with someone who has limited verbal skills — picture cards, communication boards, Makaton sign language, gestures, or technology-based communication aids. You should find what works best for the individual."
+    },
+    {
+      "id": "cc6-q08",
+      "source_criterion": "6.4a Describe the meaning of confidentiality in care",
+      "prompt": "What does confidentiality mean in a care setting?",
+      "options": [
+        { "label": "Keeping an individual's personal information private and only sharing it with those who need to know", "is_correct": true },
+        { "label": "Never sharing any information about an individual with anyone for any reason", "is_correct": false },
+        { "label": "Sharing information with all staff regardless of their role", "is_correct": false },
+        { "label": "Only keeping medical information confidential, not personal preferences", "is_correct": false }
+      ],
+      "explanation": "Confidentiality means keeping personal information private and only sharing it on a 'need-to-know' basis with those who need the information to provide care. However, confidentiality is not absolute — you must share information if there is a safeguarding concern."
+    },
+    {
+      "id": "cc6-q09",
+      "source_criterion": "6.4b Understand your workplace's confidentiality policies",
+      "prompt": "Which legislation governs how personal data must be handled in health and social care?",
+      "options": [
+        { "label": "The General Data Protection Regulation (GDPR) and the Data Protection Act 2018", "is_correct": true },
+        { "label": "The Health and Safety at Work Act 1974", "is_correct": false },
+        { "label": "The Equality Act 2010", "is_correct": false },
+        { "label": "The Mental Capacity Act 2005", "is_correct": false }
+      ],
+      "explanation": "GDPR and the Data Protection Act 2018 control how personal and sensitive information can be used, stored and shared. They give individuals rights over their data and require care workers to handle information responsibly."
+    },
+    {
+      "id": "cc6-q10",
+      "source_criterion": "6.4c Know when to share information with other agencies",
+      "prompt": "When might you need to break confidentiality and share information without the individual's consent?",
+      "options": [
+        { "label": "If there is a risk of harm to the individual or others, or if required by law", "is_correct": true },
+        { "label": "Whenever a colleague asks for the information", "is_correct": false },
+        { "label": "Only if the individual's family requests it", "is_correct": false },
+        { "label": "Confidentiality should never be broken under any circumstances", "is_correct": false }
+      ],
+      "explanation": "There are times when confidentiality can — and must — be breached: to protect the individual or others from harm, to prevent a crime, or when required by law (such as for safeguarding). Your employer's policy will guide you on when and how to share information."
+    },
+    {
+      "id": "cc6-q11",
+      "source_criterion": "6.4d Understand how to handle situations where you need to share confidential information",
+      "prompt": "If you need to share confidential information about an individual, what is the correct approach?",
+      "options": [
+        { "label": "Share only the information that is necessary, with only the people who need to know, following your organisation's policy", "is_correct": true },
+        { "label": "Share all the information you have to be thorough", "is_correct": false },
+        { "label": "Email the information to everyone in the organisation", "is_correct": false },
+        { "label": "Discuss it with other service users to get their opinion", "is_correct": false }
+      ],
+      "explanation": "Information should be shared on a 'need-to-know' basis — only the right people, with the right information, at the right time. Your organisation will have a policy on information sharing that you should follow."
+    },
+    {
+      "id": "cc6-q12",
+      "source_criterion": "6.1a Describe different types of communication",
+      "prompt": "Which type of communication includes tone of voice and the pace at which you speak?",
+      "options": [
+        { "label": "Paralanguage — the way you say words, not the words themselves", "is_correct": true },
+        { "label": "Written communication", "is_correct": false },
+        { "label": "Formal communication", "is_correct": false },
+        { "label": "Visual communication", "is_correct": false }
+      ],
+      "explanation": "Paralanguage refers to how you say something — your tone of voice, pitch, pace, and volume. A gentle, calm tone can be reassuring, while a harsh or rushed tone can cause anxiety, regardless of the actual words used."
+    },
+    {
+      "id": "cc6-q13",
+      "source_criterion": "6.1b How good and poor communication affects care",
+      "prompt": "What is 'active listening'?",
+      "options": [
+        { "label": "Fully concentrating on what the speaker is saying, showing interest, and responding appropriately", "is_correct": true },
+        { "label": "Listening while doing other tasks at the same time", "is_correct": false },
+        { "label": "Nodding and saying 'yes' without really paying attention", "is_correct": false },
+        { "label": "Interrupting to show you understand", "is_correct": false }
+      ],
+      "explanation": "Active listening means giving the speaker your full attention, making eye contact, using encouraging gestures, and responding in a way that shows you have understood. It helps build trust and ensures information is accurately received."
+    },
+    {
+      "id": "cc6-q14",
+      "source_criterion": "6.3a & b Identify barriers to communication",
+      "prompt": "An individual speaks limited English. What is the best way to communicate effectively with them?",
+      "options": [
+        { "label": "Use an interpreter, translation aid, or picture cards, and speak clearly using simple language", "is_correct": true },
+        { "label": "Shout slowly in English — they will eventually understand", "is_correct": false },
+        { "label": "Avoid speaking to them altogether", "is_correct": false },
+        { "label": "Only communicate through written notes in English", "is_correct": false }
+      ],
+      "explanation": "When language is a barrier, you should find a way to communicate that works — this could be using an interpreter (in person or by phone), translation apps, picture cards, or simple words with gestures. The key is to find what helps the individual understand and be understood."
+    }
+  ]
+}

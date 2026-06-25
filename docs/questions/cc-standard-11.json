@@ -1,0 +1,156 @@
+{
+  "topic": {
+    "id": "cc-standard-11",
+    "qualification_id": "care-certificate",
+    "title": "Standard 11: Safeguarding Children",
+    "summary": "Understanding how to recognise signs of abuse or neglect in children and young people, knowing your responsibilities, and knowing how to report concerns.",
+    "sort_order": 11,
+    "is_free": 0
+  },
+  "questions": [
+    {
+      "id": "cc11-q01",
+      "source_criterion": "11.1a List signs and symptoms of abuse and neglect in children and young people",
+      "prompt": "Which of the following could be a sign of physical abuse in a child?",
+      "options": [
+        { "label": "Unexplained bruises, burns, or fractures that do not match the explanation given", "is_correct": true },
+        { "label": "The child always has clean clothes", "is_correct": false },
+        { "label": "The child is quiet and well-behaved", "is_correct": false },
+        { "label": "The child eats well at mealtimes", "is_correct": false }
+      ],
+      "explanation": "Unexplained injuries, especially when the explanation does not match the injury, can be a sign of physical abuse. Other signs include frequent injuries, injuries in patterns (like handprint marks), or injuries in various stages of healing."
+    },
+    {
+      "id": "cc11-q02",
+      "source_criterion": "11.1a Signs and symptoms of abuse",
+      "prompt": "Which of the following is a potential sign of neglect in a child?",
+      "options": [
+        { "label": "Being consistently dirty, hungry, or inappropriately dressed for the weather", "is_correct": true },
+        { "label": "Arriving at school on time every day", "is_correct": false },
+        { "label": "Having friends at school", "is_correct": false },
+        { "label": "Talking happily about their weekend", "is_correct": false }
+      ],
+      "explanation": "Neglect is the persistent failure to meet a child's basic needs. Signs include poor hygiene, being consistently hungry, wearing clothes that are too small or unsuitable for the weather, and missing medical appointments."
+    },
+    {
+      "id": "cc11-q03",
+      "source_criterion": "11.1a List signs and symptoms of abuse",
+      "prompt": "What might indicate that a child is experiencing emotional abuse?",
+      "options": [
+        { "label": "The child seems overly anxious, withdrawn, or shows extreme behaviour like being very aggressive or very compliant", "is_correct": true },
+        { "label": "The child sometimes argues with their siblings", "is_correct": false },
+        { "label": "The child is occasionally moody", "is_correct": false },
+        { "label": "The child has a small group of close friends", "is_correct": false }
+      ],
+      "explanation": "Emotional abuse can cause children to become anxious, withdrawn, depressed, or to display extreme behaviours. They may seem overly affectionate to strangers or, conversely, have difficulty forming relationships. It can be harder to spot than physical signs."
+    },
+    {
+      "id": "cc11-q04",
+      "source_criterion": "11.2 Understand your responsibilities in relation to safeguarding children",
+      "prompt": "If you suspect a child is being abused or neglected, what should you do first?",
+      "options": [
+        { "label": "Report your concerns to your manager or the designated safeguarding lead immediately", "is_correct": true },
+        { "label": "Investigate the situation yourself before reporting anything", "is_correct": false },
+        { "label": "Wait until you have more evidence before saying anything", "is_correct": false },
+        { "label": "Speak directly to the child's parents about your concerns", "is_correct": false }
+      ],
+      "explanation": "Your responsibility is to report concerns, not to investigate them. You should report immediately to your manager or the designated safeguarding lead. Investigating yourself could make the situation worse and is not part of your role."
+    },
+    {
+      "id": "cc11-q05",
+      "source_criterion": "11.2 Understand your responsibilities in relation to safeguarding children",
+      "prompt": "What does 'working together to safeguard children' mean in practice?",
+      "options": [
+        { "label": "All organisations and individuals involved with children sharing information and working collaboratively to protect them from harm", "is_correct": true },
+        { "label": "Each organisation working separately on child protection", "is_correct": false },
+        { "label": "Only social services being responsible for child protection", "is_correct": false },
+        { "label": "Keeping information about concerns completely confidential within your organisation", "is_correct": false }
+      ],
+      "explanation": "'Working Together to Safeguard Children' is the statutory guidance that sets out how organisations and individuals must work together to protect children. It emphasises the importance of information sharing and multi-agency collaboration."
+    },
+    {
+      "id": "cc11-q06",
+      "source_criterion": "11.3 Understand the rights of children and young people",
+      "prompt": "What document sets out the rights of all children and young people?",
+      "options": [
+        { "label": "The United Nations Convention on the Rights of the Child (UNCRC)", "is_correct": true },
+        { "label": "The Children Act 1989", "is_correct": false },
+        { "label": "The Equality Act 2010", "is_correct": false },
+        { "label": "The Human Rights Act 1998", "is_correct": false }
+      ],
+      "explanation": "The UNCRC is an international treaty that sets out the civil, political, economic, social, and cultural rights of every child, regardless of their background. It includes the right to be safe, to be heard, to have an education, and to have their views taken seriously."
+    },
+    {
+      "id": "cc11-q07",
+      "source_criterion": "11.3 Understand the rights of children and young people",
+      "prompt": "What does 'the right to be heard' mean for a child in a safeguarding situation?",
+      "options": [
+        { "label": "The child has the right to express their views and have them taken seriously in decisions that affect them", "is_correct": true },
+        { "label": "The child can say whatever they want without any consequences", "is_correct": false },
+        { "label": "Only adults can speak in safeguarding meetings", "is_correct": false },
+        { "label": "The child's views are not important because adults know best", "is_correct": false }
+      ],
+      "explanation": "The right to be heard (Article 12 of the UNCRC) means children have the right to express their views freely and have those views considered in all matters affecting them. This includes safeguarding situations."
+    },
+    {
+      "id": "cc11-q08",
+      "source_criterion": "11.4 Understand your organisation's safeguarding procedures",
+      "prompt": "Where would you find your organisation's procedures for safeguarding children?",
+      "options": [
+        { "label": "In your organisation's safeguarding policy, which should be accessible to all staff", "is_correct": true },
+        { "label": "Safeguarding procedures are confidential and only shared with managers", "is_correct": false },
+        { "label": "You do not need to read them — your manager will tell you if something changes", "is_correct": false },
+        { "label": "From the local authority's website only", "is_correct": false }
+      ],
+      "explanation": "Your organisation should have a safeguarding policy that is available to all staff. You should be familiar with it as part of your induction and training. It will outline your responsibilities and the procedures to follow if you have concerns."
+    },
+    {
+      "id": "cc11-q09",
+      "source_criterion": "11.5 Understand how to respond to a disclosure",
+      "prompt": "A child tells you they are being hurt at home. What should you do?",
+      "options": [
+        { "label": "Listen calmly, do not promise to keep it secret, tell them you need to tell someone who can help, and report it immediately", "is_correct": true },
+        { "label": "Promise not to tell anyone so they trust you", "is_correct": false },
+        { "label": "Ask lots of detailed questions to get the full story", "is_correct": false },
+        { "label": "Tell them it is probably not that bad", "is_correct": false }
+      ],
+      "explanation": "If a child discloses abuse, stay calm, listen without interrupting, do not promise secrecy (explain you must tell someone who can help), do not ask leading questions, and report immediately to your safeguarding lead. Your response can significantly affect the child's wellbeing."
+    },
+    {
+      "id": "cc11-q10",
+      "source_criterion": "11.2 Understand your responsibilities",
+      "prompt": "Do safeguarding responsibilities for children apply to all health and social care workers, even if they primarily work with adults?",
+      "options": [
+        { "label": "Yes — all workers have a responsibility to safeguard children, regardless of their main role", "is_correct": true },
+        { "label": "No — only workers in children's services need to know about safeguarding children", "is_correct": false },
+        { "label": "Only if children visit the care setting regularly", "is_correct": false },
+        { "label": "Only managers have safeguarding responsibilities for children", "is_correct": false }
+      ],
+      "explanation": "All health and social care workers have a responsibility to safeguard children and young people, regardless of their main role. You may encounter children as visitors, or become aware of concerns through an adult you support who has children."
+    },
+    {
+      "id": "cc11-q11",
+      "source_criterion": "11.6 Summarise key legislation relating to safeguarding children",
+      "prompt": "Which key piece of UK legislation sets out the legal framework for safeguarding children?",
+      "options": [
+        { "label": "The Children Act 1989 (and 2004 amendments)", "is_correct": true },
+        { "label": "The Mental Capacity Act 2005", "is_correct": false },
+        { "label": "The Health and Social Care Act 2012", "is_correct": false },
+        { "label": "The Data Protection Act 2018", "is_correct": false }
+      ],
+      "explanation": "The Children Act 1989 (amended by the Children Act 2004) is the key legislation for safeguarding children in England. It sets out the duties of local authorities, courts, and other agencies to protect children's welfare."
+    },
+    {
+      "id": "cc11-q12",
+      "source_criterion": "11.1a Signs of abuse",
+      "prompt": "A child frequently arrives at school tired, hungry, and in the same dirty clothes. What type of abuse or neglect is this most likely to indicate?",
+      "options": [
+        { "label": "Neglect — the persistent failure to meet the child's basic physical and psychological needs", "is_correct": true },
+        { "label": "Physical abuse", "is_correct": false },
+        { "label": "Sexual abuse", "is_correct": false },
+        { "label": "Emotional abuse", "is_correct": false }
+      ],
+      "explanation": "This pattern strongly suggests neglect, which is the most common form of child maltreatment. Neglect involves the ongoing failure to meet a child's basic needs for food, clothing, shelter, supervision, and medical care."
+    }
+  ]
+}

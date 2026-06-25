@@ -1,0 +1,156 @@
+{
+  "topic": {
+    "id": "cc-standard-16",
+    "qualification_id": "care-certificate",
+    "title": "Standard 16: Awareness of Learning Disability and Autism",
+    "summary": "Understanding the needs of people with learning disabilities and autistic people, knowing how to interact appropriately, and understanding the legal requirements for training and support.",
+    "sort_order": 16,
+    "is_free": 0
+  },
+  "questions": [
+    {
+      "id": "cc16-q01",
+      "source_criterion": "16.1 Demonstrate awareness of learning disability and autism",
+      "prompt": "Why is it important for health and social care workers to have training on learning disability and autism awareness?",
+      "options": [
+        { "label": "It is a legal requirement and helps ensure appropriate, safe, and respectful support for autistic people and people with a learning disability", "is_correct": true },
+        { "label": "It is optional training that only specialists need", "is_correct": false },
+        { "label": "Learning disability and autism are the same condition", "is_correct": false },
+        { "label": "Training is only needed for staff who work with children", "is_correct": false }
+      ],
+      "explanation": "Under CQC Regulation 18, all staff in regulated services must undertake training in how to interact appropriately with people with a learning disability and autistic people. This is known as the Oliver McGowan Mandatory Training."
+    },
+    {
+      "id": "cc16-q02",
+      "source_criterion": "16.1 Demonstrate awareness of learning disability and autism",
+      "prompt": "What is the key difference between a learning disability and autism?",
+      "options": [
+        { "label": "A learning disability affects intellectual ability and adaptive skills; autism is a neurodevelopmental condition that affects communication and social interaction", "is_correct": true },
+        { "label": "They are the same thing", "is_correct": false },
+        { "label": "Autism can be cured but a learning disability cannot", "is_correct": false },
+        { "label": "A learning disability only affects children", "is_correct": false }
+      ],
+      "explanation": "A learning disability affects a person's ability to learn, understand information, and develop everyday skills. Autism is a neurodevelopmental condition that affects how a person communicates, interacts with others, and experiences the world. Some people have both."
+    },
+    {
+      "id": "cc16-q03",
+      "source_criterion": "16.1 Demonstrate awareness of learning disability and autism",
+      "prompt": "How can you communicate effectively with an autistic person?",
+      "options": [
+        { "label": "Use clear, literal language, avoid metaphors or sarcasm, and give them time to process and respond", "is_correct": true },
+        { "label": "Speak loudly and quickly to get your point across", "is_correct": false },
+        { "label": "Use lots of hand gestures and facial expressions", "is_correct": false },
+        { "label": "Avoid making eye contact and speak to their support worker instead", "is_correct": false }
+      ],
+      "explanation": "Many autistic people process information differently and may find figurative language, sarcasm, or metaphors confusing. Clear, literal language and giving extra time to process and respond helps make communication effective."
+    },
+    {
+      "id": "cc16-q04",
+      "source_criterion": "16.1 Demonstrate awareness of learning disability and autism",
+      "prompt": "What is a reasonable adjustment for someone with a learning disability accessing healthcare?",
+      "options": [
+        { "label": "Providing information in Easy Read format, longer appointment times, and a quiet waiting area", "is_correct": true },
+        { "label": "Treating them the same as everyone else to avoid being patronising", "is_correct": false },
+        { "label": "Refusing treatment if they cannot understand the information", "is_correct": false },
+        { "label": "Only letting them attend appointments with a family member", "is_correct": false }
+      ],
+      "explanation": "Under the Equality Act 2010, service providers must make reasonable adjustments for disabled people, including those with learning disabilities. These can include Easy Read information, longer appointments, quiet environments, and involving a supporter if the person wishes."
+    },
+    {
+      "id": "cc16-q05",
+      "source_criterion": "16.1 Demonstrate awareness of learning disability and autism",
+      "prompt": "What does the term 'stereotyping' mean in relation to people with learning disabilities?",
+      "options": [
+        { "label": "Making generalised assumptions about what someone can or cannot do based on their diagnosis rather than their individual abilities", "is_correct": true },
+        { "label": "Treating everyone with a learning disability exactly the same way", "is_correct": false },
+        { "label": "Using specialist equipment to support communication", "is_correct": false },
+        { "label": "A type of therapy used to support people with learning disabilities", "is_correct": false }
+      ],
+      "explanation": "Stereotyping means assuming all people with a learning disability have the same abilities and needs. Every person is an individual — the level of support needed varies greatly from person to person. Always focus on the individual's strengths and needs."
+    },
+    {
+      "id": "cc16-q06",
+      "source_criterion": "16.1 Demonstrate awareness of learning disability and autism",
+      "prompt": "An autistic person you support is becoming distressed by a noisy environment. What should you do?",
+      "options": [
+        { "label": "Reduce sensory overload where possible — move to a quieter space, dim lights, or reduce noise levels", "is_correct": true },
+        { "label": "Tell them to get used to it as they cannot avoid noise forever", "is_correct": false },
+        { "label": "Turn the noise up so they learn to tolerate it", "is_correct": false },
+        { "label": "Ignore it — they will calm down eventually", "is_correct": false }
+      ],
+      "explanation": "Many autistic people experience sensory sensitivities — noises, lights, or smells that others barely notice can be overwhelming. Reducing sensory input, offering a quiet space, and being flexible with the environment can help prevent or reduce distress."
+    },
+    {
+      "id": "cc16-q07",
+      "source_criterion": "16.1 Demonstrate awareness of learning disability and autism",
+      "prompt": "What action should you take if you are concerned that an autistic person or a person with a learning disability is being treated unfairly?",
+      "options": [
+        { "label": "Report your concerns using your organisation's safeguarding or whistleblowing procedures", "is_correct": true },
+        { "label": "Assume it is not your problem", "is_correct": false },
+        { "label": "Confront the person responsible directly", "is_correct": false },
+        { "label": "Wait to see if the situation resolves itself", "is_correct": false }
+      ],
+      "explanation": "People with learning disabilities and autistic people are at higher risk of discrimination, abuse, and poor care. If you have concerns, you must report them through your organisation's safeguarding or whistleblowing procedures."
+    },
+    {
+      "id": "cc16-q08",
+      "source_criterion": "16.1 Demonstrate awareness of learning disability and autism",
+      "prompt": "What is meant by 'person-centred support' for someone with a learning disability?",
+      "options": [
+        { "label": "Planning and delivering support around the individual's own goals, preferences, and strengths — not fitting them into existing services", "is_correct": true },
+        { "label": "Giving everyone with a learning disability the same type of support", "is_correct": false },
+        { "label": "Supporting them only during set hours that suit the service", "is_correct": false },
+        { "label": "Making decisions on their behalf to keep them safe", "is_correct": false }
+      ],
+      "explanation": "Person-centred support puts the individual at the centre — focusing on what is important to them, their strengths, and what they want to achieve. It means listening to them and involving them in decisions, with the right support to enable them to participate."
+    },
+    {
+      "id": "cc16-q09",
+      "source_criterion": "16.1 Demonstrate awareness of learning disability and autism",
+      "prompt": "What does the 'double empathy problem' refer to in autism?",
+      "options": [
+        { "label": "Communication difficulties are a two-way problem — autistic and non-autistic people both struggle to understand each other", "is_correct": true },
+        { "label": "Autistic people feel twice as much empathy as others", "is_correct": false },
+        { "label": "Autistic people lack empathy entirely", "is_correct": false },
+        { "label": "Empathy problems are caused by a double dose of a certain gene", "is_correct": false }
+      ],
+      "explanation": "The double empathy problem challenges the idea that communication difficulties in autism are caused by a deficit in the autistic person. Instead, it recognises that autistic and non-autistic people both have different communication styles, so understanding is a two-way challenge."
+    },
+    {
+      "id": "cc16-q10",
+      "source_criterion": "16.1 Demonstrate awareness of learning disability and autism",
+      "prompt": "Why might a person with a learning disability need a 'hospital passport' or 'health passport'?",
+      "options": [
+        { "label": "To communicate their communication needs, reasonable adjustments, and health information to healthcare staff", "is_correct": true },
+        { "label": "To prove their identity when travelling abroad", "is_correct": false },
+        { "label": "As a form of identification for voting", "is_correct": false },
+        { "label": "To track their attendance at appointments", "is_correct": false }
+      ],
+      "explanation": "A hospital or health passport is a document that helps people with learning disabilities, autism, or other communication needs share important information about themselves with health and care staff. It explains their needs, how best to communicate with them, and what adjustments they need."
+    },
+    {
+      "id": "cc16-q11",
+      "source_criterion": "16.1 Demonstrate awareness of learning disability and autism",
+      "prompt": "What is the best approach if you need to support someone with a learning disability to make a decision?",
+      "options": [
+        { "label": "Give them information in a way they can understand, using pictures or simple words, and give them time to decide with support if needed", "is_correct": true },
+        { "label": "Make the decision for them to avoid confusion", "is_correct": false },
+        { "label": "Ask a family member to decide on their behalf", "is_correct": false },
+        { "label": "Only offer two choices, neither of which is what you want", "is_correct": false }
+      ],
+      "explanation": "Under the Mental Capacity Act 2005, you must assume people with learning disabilities have capacity to make decisions unless proven otherwise. You should give them all the information in an accessible format (e.g. Easy Read, pictures), allow extra time, and provide the support they need to make their own decision."
+    },
+    {
+      "id": "cc16-q12",
+      "source_criterion": "16.1 Demonstrate awareness of learning disability and autism",
+      "prompt": "What is the Oliver McGowan Mandatory Training?",
+      "options": [
+        { "label": "The statutory training on learning disability and autism that all health and social care staff must complete", "is_correct": true },
+        { "label": "A voluntary course on communication skills", "is_correct": false },
+        { "label": "Training that only doctors and nurses need to complete", "is_correct": false },
+        { "label": "A one-time awareness session that covers all conditions", "is_correct": false }
+      ],
+      "explanation": "The Oliver McGowan Mandatory Training on Learning Disability and Autism is named after Oliver McGowan, whose death highlighted the need for better awareness. It is now a legal requirement (under the Health and Care Act 2022) for all health and social care staff to have this training at the appropriate level for their role."
+    }
+  ]
+}

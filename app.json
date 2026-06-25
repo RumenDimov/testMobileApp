@@ -30,7 +30,11 @@
     ],
     "extra": {
       "posthogApiKey": "phc_placeholder",
-      "posthogHost": "https://eu.i.posthog.com"
+      "posthogHost": "https://eu.i.posthog.com",
+      "router": {},
+      "eas": {
+        "projectId": "2f5320a7-ec55-41e3-ad8d-450137d2a691"
+      }
     }
   }
 }
